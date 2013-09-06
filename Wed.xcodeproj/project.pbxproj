@@ -84,6 +84,7 @@
 		0604F2F317DA502A001F0C84 /* PRFamilyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFamilyCell.h; sourceTree = "<group>"; };
 		0604F2F417DA502A001F0C84 /* PRFamilyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFamilyCell.m; sourceTree = "<group>"; };
 		0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRFamilyCell.xib; sourceTree = "<group>"; };
+		06536B1317DA5F33001DFE4E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +149,7 @@
 			children = (
 				0604F2BE17D98DD3001F0C84 /* Images */,
 				0604F29E17D988AC001F0C84 /* Wed-Info.plist */,
+				06536B1317DA5F33001DFE4E /* Constants.h */,
 				0604F29F17D988AC001F0C84 /* InfoPlist.strings */,
 				0604F2A217D988AC001F0C84 /* main.m */,
 				0604F2A417D988AC001F0C84 /* Wed-Prefix.pch */,

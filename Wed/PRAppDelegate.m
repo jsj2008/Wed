@@ -21,8 +21,10 @@
     } else {
         self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController_iPad" bundle:nil];
     }
-UINavigationController* navC = [[UINavigationController
-                                 alloc] initWithRootViewController:_viewController];
+    UINavigationController* navC = [[UINavigationController
+                                     alloc] initWithRootViewController:_viewController];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeFont: [UIFont fontWithName:PRFontHelveticaNeueRegular size:0.0],
+     }];
     self.window.rootViewController = navC;
     [self.window makeKeyAndVisible];
     return YES;
@@ -36,7 +38,7 @@ UINavigationController* navC = [[UINavigationController
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
