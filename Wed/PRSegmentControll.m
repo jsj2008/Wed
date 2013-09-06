@@ -33,7 +33,7 @@
     [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
     [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
-    UIFont *font = [UIFont boldSystemFontOfSize:13.0f];
+    UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueRegular size:13.0f];
     NSDictionary *normalStateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, font, UITextAttributeFont, nil];
 
     NSDictionary* selectedStateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor lightGrayColor], UITextAttributeTextColor, font, UITextAttributeFont, nil];

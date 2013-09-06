@@ -32,8 +32,6 @@
 		0604F2E317DA4359001F0C84 /* tab-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2DF17DA4359001F0C84 /* tab-on.png */; };
 		0604F2E417DA4359001F0C84 /* tab-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2E017DA4359001F0C84 /* tab-on@2x.png */; };
 		0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */; };
-		0604F2E917DA4483001F0C84 /* Thakurs Family.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2E817DA4483001F0C84 /* Thakurs Family.plist */; };
-		0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EA17DA4495001F0C84 /* Tayals Family.plist */; };
 		0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */; };
 		0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */; };
 		0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2F417DA502A001F0C84 /* PRFamilyCell.m */; };
@@ -80,8 +78,6 @@
 		0604F2E017DA4359001F0C84 /* tab-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-on@2x.png"; sourceTree = "<group>"; };
 		0604F2E517DA43B2001F0C84 /* UIImage+CustomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomColor.h"; sourceTree = "<group>"; };
 		0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomColor.m"; sourceTree = "<group>"; };
-		0604F2E817DA4483001F0C84 /* Thakurs Family.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Thakurs Family.plist"; sourceTree = "<group>"; };
-		0604F2EA17DA4495001F0C84 /* Tayals Family.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tayals Family.plist"; sourceTree = "<group>"; };
 		0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRScheduleViewController.h; sourceTree = "<group>"; };
 		0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRScheduleViewController.m; sourceTree = "<group>"; };
 		0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRScheduleViewController.xib; sourceTree = "<group>"; };
@@ -141,12 +137,12 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
+				0604F2D117DA3B1E001F0C84 /* Common View */,
 				0604F2EC17DA4857001F0C84 /* Events View Controller */,
 				0604F2D417DA3C2F001F0C84 /* Family View Controller */,
-				0604F2D317DA3C10001F0C84 /* App Delegate */,
-				0604F2D117DA3B1E001F0C84 /* Common View */,
 				0604F2D017DA3B17001F0C84 /* Venues View Controller */,
 				0604F2D217DA3B29001F0C84 /* Home View Controller */,
+				0604F2D317DA3C10001F0C84 /* App Delegate */,
 				0604F29D17D988AC001F0C84 /* Supporting Files */,
 			);
 			path = Wed;
@@ -170,12 +166,8 @@
 			children = (
 				06536B1917DA71C1001DFE4E /* back.png */,
 				06536B1A17DA71C1001DFE4E /* back@2x.png */,
-				06536B1517DA679D001DFE4E /* left_panel_shadow_1px.png */,
-				06536B1617DA679D001DFE4E /* left_panel_shadow_1px@2x.png */,
-				0604F2DD17DA4359001F0C84 /* tab-off.png */,
-				0604F2DE17DA4359001F0C84 /* tab-off@2x.png */,
-				0604F2DF17DA4359001F0C84 /* tab-on.png */,
-				0604F2E017DA4359001F0C84 /* tab-on@2x.png */,
+				06536B1D17DA7332001DFE4E /* Table View */,
+				06536B1E17DA733A001DFE4E /* Segment Control */,
 				0604F2BF17D98DE1001F0C84 /* App Images */,
 				0604F2BC17D98C7F001F0C84 /* img_01.JPG */,
 			);
@@ -242,8 +234,6 @@
 				0604F2D517DA3C40001F0C84 /* PRFamilyViewController.h */,
 				0604F2D617DA3C40001F0C84 /* PRFamilyViewController.m */,
 				0604F2D717DA3C40001F0C84 /* PRFamilyViewController.xib */,
-				0604F2E817DA4483001F0C84 /* Thakurs Family.plist */,
-				0604F2EA17DA4495001F0C84 /* Tayals Family.plist */,
 			);
 			name = "Family View Controller";
 			sourceTree = "<group>";
@@ -266,6 +256,26 @@
 				0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		06536B1D17DA7332001DFE4E /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				06536B1517DA679D001DFE4E /* left_panel_shadow_1px.png */,
+				06536B1617DA679D001DFE4E /* left_panel_shadow_1px@2x.png */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
+		06536B1E17DA733A001DFE4E /* Segment Control */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2DD17DA4359001F0C84 /* tab-off.png */,
+				0604F2DE17DA4359001F0C84 /* tab-off@2x.png */,
+				0604F2DF17DA4359001F0C84 /* tab-on.png */,
+				0604F2E017DA4359001F0C84 /* tab-on@2x.png */,
+			);
+			name = "Segment Control";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +343,6 @@
 				0604F2E217DA4359001F0C84 /* tab-off@2x.png in Resources */,
 				0604F2E317DA4359001F0C84 /* tab-on.png in Resources */,
 				0604F2E417DA4359001F0C84 /* tab-on@2x.png in Resources */,
-				0604F2E917DA4483001F0C84 /* Thakurs Family.plist in Resources */,
-				0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */,
 				0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */,
 				0604F2F717DA5072001F0C84 /* PRFamilyCell.xib in Resources */,
 				06536B1717DA679D001DFE4E /* left_panel_shadow_1px.png in Resources */,
@@ -455,10 +463,14 @@
 		0604F2BA17D988AD001F0C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -466,10 +478,14 @@
 		0604F2BB17D988AD001F0C84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

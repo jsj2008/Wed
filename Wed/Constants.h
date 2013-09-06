@@ -13,6 +13,8 @@
 #define PRFontHelveticaNeueRegular @"HelveticaNeue"
 
 #define PRDropboxEventsScheduleURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/schedule_list.plist"
+#define PRDropboxThakurFamilyURL @""
+#define PRDropboxTayalFamilyURL @""
 
 #define NAVIGATIONBARBACKBUTTON @"back.png"
 #endif

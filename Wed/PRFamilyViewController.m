@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNavigationBarLeftButton];
+
     _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Thakurs Family" ofType:@"plist"]];
     _tableView.tableFooterView = _footer;
 }
@@ -34,6 +36,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) setNavigationBarLeftButton
+{
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 40, 40)];
+    [button setImage:[UIImage imageNamed:NAVIGATIONBARBACKBUTTON] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+}
+
+-(void)back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(IBAction)familyChanged:(id)sender {

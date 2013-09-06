@@ -9,6 +9,9 @@
 #import "PRScheduleViewController.h"
 
 @interface PRScheduleViewController ()
+{
+    int scrollToSection;
+}
 
 @end
 
@@ -27,7 +30,13 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadRemoteData)];
     [self setNavigationBarLeftButton];
-    _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
+    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    //        _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            [_tableView reloadData];
+    //        });
+    //    });
+    [self reloadRemoteData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,8 +59,13 @@
 }
 
 -(void)reloadRemoteData {
-    _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
-    [_tableView reloadData];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableView reloadData];
+            
+        });
+    });
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -83,5 +97,24 @@
 {
     [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+//-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSString* currentDateString = [[_datasource objectAtIndex:indexPath.section] objectForKey:@"Date"];
+//    NSDateFormatter* df = [[NSDateFormatter alloc] init];
+//    [df setDateFormat:@"MMM dd, yyyy"];
+//    NSDate* currentDate = [df dateFromString:currentDateString];
+//    NSDate* todaysDate = [NSDate date];
+//    if ([currentDate compare:todaysDate] == NSOrderedAscending) {
+//        scrollToSection = indexPath.section + 1;
+//    }
+//    
+//    if([indexPath row] == ((NSIndexPath*)[[tableView indexPathsForVisibleRows] lastObject]).row){
+//        //end of loading
+//        //for example [activityIndicator stopAnimating];
+//        NSLog(@"Table View Finished Loading");
+//        [_tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:scrollToSection] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+//    }
+//}
 
 @end
