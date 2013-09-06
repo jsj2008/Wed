@@ -10,6 +10,11 @@
 
 @interface PRViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UILabel* lblDays;
+@property (nonatomic, strong) IBOutlet UILabel* lblHours;
+@property (nonatomic, strong) IBOutlet UILabel* lblMinute;
+@property (nonatomic, strong) IBOutlet UILabel* lblSec;
+
 -(IBAction)buttonClicked:(id)sender;
 
 @end

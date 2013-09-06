@@ -94,10 +94,10 @@
 			children = (
 				0604F2A517D988AC001F0C84 /* PRAppDelegate.h */,
 				0604F2A617D988AC001F0C84 /* PRAppDelegate.m */,
-				0604F2AE17D988AC001F0C84 /* PRViewController.h */,
 				0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */,
 				0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */,
 				0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */,
+				0604F2AE17D988AC001F0C84 /* PRViewController.h */,
 				0604F2AF17D988AC001F0C84 /* PRViewController.m */,
 				0604F2B117D988AD001F0C84 /* PRViewController_iPhone.xib */,
 				0604F2B417D988AD001F0C84 /* PRViewController_iPad.xib */,
