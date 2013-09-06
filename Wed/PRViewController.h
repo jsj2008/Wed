@@ -10,4 +10,6 @@
 
 @interface PRViewController : UIViewController
 
+-(IBAction)buttonClicked:(id)sender;
+
 @end
