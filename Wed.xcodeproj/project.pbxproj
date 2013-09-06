@@ -22,6 +22,8 @@
 		0604F2BD17D98C7F001F0C84 /* img_01.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2BC17D98C7F001F0C84 /* img_01.JPG */; };
 		0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */; };
 		0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */; };
+		0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2CC17D99DDF001F0C84 /* PRButton.m */; };
+		0604F2CF17D99E11001F0C84 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604F2CE17D99E11001F0C84 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRVenuesViewController.h; sourceTree = "<group>"; };
 		0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRVenuesViewController.m; sourceTree = "<group>"; };
 		0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRVenuesViewController.xib; sourceTree = "<group>"; };
+		0604F2CB17D99DDF001F0C84 /* PRButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRButton.h; sourceTree = "<group>"; };
+		0604F2CC17D99DDF001F0C84 /* PRButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRButton.m; sourceTree = "<group>"; };
+		0604F2CE17D99E11001F0C84 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0604F2CF17D99E11001F0C84 /* QuartzCore.framework in Frameworks */,
 				0604F29717D988AC001F0C84 /* UIKit.framework in Frameworks */,
 				0604F29917D988AC001F0C84 /* Foundation.framework in Frameworks */,
 				0604F29B17D988AC001F0C84 /* CoreGraphics.framework in Frameworks */,
@@ -65,6 +71,7 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
+				0604F2CE17D99E11001F0C84 /* QuartzCore.framework */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
 				0604F29417D988AC001F0C84 /* Products */,
@@ -94,6 +101,8 @@
 			children = (
 				0604F2A517D988AC001F0C84 /* PRAppDelegate.h */,
 				0604F2A617D988AC001F0C84 /* PRAppDelegate.m */,
+				0604F2CB17D99DDF001F0C84 /* PRButton.h */,
+				0604F2CC17D99DDF001F0C84 /* PRButton.m */,
 				0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */,
 				0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */,
 				0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */,
@@ -211,6 +220,7 @@
 				0604F2A717D988AC001F0C84 /* PRAppDelegate.m in Sources */,
 				0604F2B017D988AC001F0C84 /* PRViewController.m in Sources */,
 				0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */,
+				0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
