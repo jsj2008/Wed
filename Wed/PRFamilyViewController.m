@@ -43,7 +43,7 @@
     else{
         _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle ] pathForResource:@"Tayals Family" ofType:@"plist"]];
     }
-    [_tableView reloadData];
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
