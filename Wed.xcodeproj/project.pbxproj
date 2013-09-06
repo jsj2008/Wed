@@ -20,6 +20,8 @@
 		0604F2B317D988AD001F0C84 /* PRViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2B117D988AD001F0C84 /* PRViewController_iPhone.xib */; };
 		0604F2B617D988AD001F0C84 /* PRViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2B417D988AD001F0C84 /* PRViewController_iPad.xib */; };
 		0604F2BD17D98C7F001F0C84 /* img_01.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2BC17D98C7F001F0C84 /* img_01.JPG */; };
+		0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */; };
+		0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,9 @@
 		0604F2B217D988AD001F0C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PRViewController_iPhone.xib; sourceTree = "<group>"; };
 		0604F2B517D988AD001F0C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PRViewController_iPad.xib; sourceTree = "<group>"; };
 		0604F2BC17D98C7F001F0C84 /* img_01.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_01.JPG; sourceTree = "<group>"; };
+		0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRVenuesViewController.h; sourceTree = "<group>"; };
+		0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRVenuesViewController.m; sourceTree = "<group>"; };
+		0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRVenuesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +95,9 @@
 				0604F2A517D988AC001F0C84 /* PRAppDelegate.h */,
 				0604F2A617D988AC001F0C84 /* PRAppDelegate.m */,
 				0604F2AE17D988AC001F0C84 /* PRViewController.h */,
+				0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */,
+				0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */,
+				0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */,
 				0604F2AF17D988AC001F0C84 /* PRViewController.m */,
 				0604F2B117D988AD001F0C84 /* PRViewController_iPhone.xib */,
 				0604F2B417D988AD001F0C84 /* PRViewController_iPad.xib */,
@@ -188,6 +196,7 @@
 				0604F2B317D988AD001F0C84 /* PRViewController_iPhone.xib in Resources */,
 				0604F2B617D988AD001F0C84 /* PRViewController_iPad.xib in Resources */,
 				0604F2BD17D98C7F001F0C84 /* img_01.JPG in Resources */,
+				0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +210,7 @@
 				0604F2A317D988AC001F0C84 /* main.m in Sources */,
 				0604F2A717D988AC001F0C84 /* PRAppDelegate.m in Sources */,
 				0604F2B017D988AC001F0C84 /* PRViewController.m in Sources */,
+				0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
