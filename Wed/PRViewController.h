@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PRViewController : UIViewController
+typedef enum {
+    PRHomeButtonTypeSchedule = 1,
+    PRHomeButtonTypeGallery,
+    PRHomeButtonTypeVenues,
+    PRHomeButtonTypeFamily,
+}PRHomeButtonType;
 
-@property (nonatomic, strong) IBOutlet UILabel* lblDays;
-@property (nonatomic, strong) IBOutlet UILabel* lblHours;
-@property (nonatomic, strong) IBOutlet UILabel* lblMinute;
-@property (nonatomic, strong) IBOutlet UILabel* lblSec;
+@interface PRViewController : UIViewController
 
 -(IBAction)buttonClicked:(id)sender;
 

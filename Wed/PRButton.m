@@ -26,6 +26,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
     self.layer.cornerRadius = 10; // this value vary as per your desire
     self.clipsToBounds = YES;
     // Drawing code

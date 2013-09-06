@@ -24,6 +24,18 @@
 		0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */; };
 		0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2CC17D99DDF001F0C84 /* PRButton.m */; };
 		0604F2CF17D99E11001F0C84 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604F2CE17D99E11001F0C84 /* QuartzCore.framework */; };
+		0604F2D817DA3C40001F0C84 /* PRFamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2D617DA3C40001F0C84 /* PRFamilyViewController.m */; };
+		0604F2D917DA3C40001F0C84 /* PRFamilyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2D717DA3C40001F0C84 /* PRFamilyViewController.xib */; };
+		0604F2DC17DA42F4001F0C84 /* PRSegmentControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2DB17DA42F4001F0C84 /* PRSegmentControll.m */; };
+		0604F2E117DA4359001F0C84 /* tab-off.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2DD17DA4359001F0C84 /* tab-off.png */; };
+		0604F2E217DA4359001F0C84 /* tab-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2DE17DA4359001F0C84 /* tab-off@2x.png */; };
+		0604F2E317DA4359001F0C84 /* tab-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2DF17DA4359001F0C84 /* tab-on.png */; };
+		0604F2E417DA4359001F0C84 /* tab-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2E017DA4359001F0C84 /* tab-on@2x.png */; };
+		0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */; };
+		0604F2E917DA4483001F0C84 /* Thakurs Family.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2E817DA4483001F0C84 /* Thakurs Family.plist */; };
+		0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EA17DA4495001F0C84 /* Tayals Family.plist */; };
+		0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */; };
+		0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +63,22 @@
 		0604F2CB17D99DDF001F0C84 /* PRButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRButton.h; sourceTree = "<group>"; };
 		0604F2CC17D99DDF001F0C84 /* PRButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRButton.m; sourceTree = "<group>"; };
 		0604F2CE17D99E11001F0C84 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0604F2D517DA3C40001F0C84 /* PRFamilyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFamilyViewController.h; sourceTree = "<group>"; };
+		0604F2D617DA3C40001F0C84 /* PRFamilyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFamilyViewController.m; sourceTree = "<group>"; };
+		0604F2D717DA3C40001F0C84 /* PRFamilyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRFamilyViewController.xib; sourceTree = "<group>"; };
+		0604F2DA17DA42F4001F0C84 /* PRSegmentControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRSegmentControll.h; sourceTree = "<group>"; };
+		0604F2DB17DA42F4001F0C84 /* PRSegmentControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRSegmentControll.m; sourceTree = "<group>"; };
+		0604F2DD17DA4359001F0C84 /* tab-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-off.png"; sourceTree = "<group>"; };
+		0604F2DE17DA4359001F0C84 /* tab-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-off@2x.png"; sourceTree = "<group>"; };
+		0604F2DF17DA4359001F0C84 /* tab-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-on.png"; sourceTree = "<group>"; };
+		0604F2E017DA4359001F0C84 /* tab-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-on@2x.png"; sourceTree = "<group>"; };
+		0604F2E517DA43B2001F0C84 /* UIImage+CustomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomColor.h"; sourceTree = "<group>"; };
+		0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomColor.m"; sourceTree = "<group>"; };
+		0604F2E817DA4483001F0C84 /* Thakurs Family.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Thakurs Family.plist"; sourceTree = "<group>"; };
+		0604F2EA17DA4495001F0C84 /* Tayals Family.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tayals Family.plist"; sourceTree = "<group>"; };
+		0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRScheduleViewController.h; sourceTree = "<group>"; };
+		0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRScheduleViewController.m; sourceTree = "<group>"; };
+		0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRScheduleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +99,6 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
-				0604F2CE17D99E11001F0C84 /* QuartzCore.framework */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
 				0604F29417D988AC001F0C84 /* Products */,
@@ -89,6 +116,7 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0604F2CE17D99E11001F0C84 /* QuartzCore.framework */,
 				0604F29617D988AC001F0C84 /* UIKit.framework */,
 				0604F29817D988AC001F0C84 /* Foundation.framework */,
 				0604F29A17D988AC001F0C84 /* CoreGraphics.framework */,
@@ -99,17 +127,12 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
-				0604F2A517D988AC001F0C84 /* PRAppDelegate.h */,
-				0604F2A617D988AC001F0C84 /* PRAppDelegate.m */,
-				0604F2CB17D99DDF001F0C84 /* PRButton.h */,
-				0604F2CC17D99DDF001F0C84 /* PRButton.m */,
-				0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */,
-				0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */,
-				0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */,
-				0604F2AE17D988AC001F0C84 /* PRViewController.h */,
-				0604F2AF17D988AC001F0C84 /* PRViewController.m */,
-				0604F2B117D988AD001F0C84 /* PRViewController_iPhone.xib */,
-				0604F2B417D988AD001F0C84 /* PRViewController_iPad.xib */,
+				0604F2EC17DA4857001F0C84 /* Schedule View Controller */,
+				0604F2D417DA3C2F001F0C84 /* Family View Controller */,
+				0604F2D317DA3C10001F0C84 /* App Delegate */,
+				0604F2D117DA3B1E001F0C84 /* Common View */,
+				0604F2D017DA3B17001F0C84 /* Venues View Controller */,
+				0604F2D217DA3B29001F0C84 /* Home View Controller */,
 				0604F29D17D988AC001F0C84 /* Supporting Files */,
 			);
 			path = Wed;
@@ -130,6 +153,10 @@
 		0604F2BE17D98DD3001F0C84 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0604F2DD17DA4359001F0C84 /* tab-off.png */,
+				0604F2DE17DA4359001F0C84 /* tab-off@2x.png */,
+				0604F2DF17DA4359001F0C84 /* tab-on.png */,
+				0604F2E017DA4359001F0C84 /* tab-on@2x.png */,
 				0604F2BF17D98DE1001F0C84 /* App Images */,
 				0604F2BC17D98C7F001F0C84 /* img_01.JPG */,
 			);
@@ -144,6 +171,71 @@
 				0604F2AC17D988AC001F0C84 /* Default-568h@2x.png */,
 			);
 			name = "App Images";
+			sourceTree = "<group>";
+		};
+		0604F2D017DA3B17001F0C84 /* Venues View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */,
+				0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */,
+				0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */,
+			);
+			name = "Venues View Controller";
+			sourceTree = "<group>";
+		};
+		0604F2D117DA3B1E001F0C84 /* Common View */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2E517DA43B2001F0C84 /* UIImage+CustomColor.h */,
+				0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */,
+				0604F2CB17D99DDF001F0C84 /* PRButton.h */,
+				0604F2CC17D99DDF001F0C84 /* PRButton.m */,
+				0604F2DA17DA42F4001F0C84 /* PRSegmentControll.h */,
+				0604F2DB17DA42F4001F0C84 /* PRSegmentControll.m */,
+			);
+			name = "Common View";
+			sourceTree = "<group>";
+		};
+		0604F2D217DA3B29001F0C84 /* Home View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2AE17D988AC001F0C84 /* PRViewController.h */,
+				0604F2AF17D988AC001F0C84 /* PRViewController.m */,
+				0604F2B117D988AD001F0C84 /* PRViewController_iPhone.xib */,
+				0604F2B417D988AD001F0C84 /* PRViewController_iPad.xib */,
+			);
+			name = "Home View Controller";
+			sourceTree = "<group>";
+		};
+		0604F2D317DA3C10001F0C84 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2A517D988AC001F0C84 /* PRAppDelegate.h */,
+				0604F2A617D988AC001F0C84 /* PRAppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		0604F2D417DA3C2F001F0C84 /* Family View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2D517DA3C40001F0C84 /* PRFamilyViewController.h */,
+				0604F2D617DA3C40001F0C84 /* PRFamilyViewController.m */,
+				0604F2D717DA3C40001F0C84 /* PRFamilyViewController.xib */,
+				0604F2E817DA4483001F0C84 /* Thakurs Family.plist */,
+				0604F2EA17DA4495001F0C84 /* Tayals Family.plist */,
+			);
+			name = "Family View Controller";
+			sourceTree = "<group>";
+		};
+		0604F2EC17DA4857001F0C84 /* Schedule View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */,
+				0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */,
+				0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */,
+			);
+			name = "Schedule View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +298,14 @@
 				0604F2B617D988AD001F0C84 /* PRViewController_iPad.xib in Resources */,
 				0604F2BD17D98C7F001F0C84 /* img_01.JPG in Resources */,
 				0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */,
+				0604F2D917DA3C40001F0C84 /* PRFamilyViewController.xib in Resources */,
+				0604F2E117DA4359001F0C84 /* tab-off.png in Resources */,
+				0604F2E217DA4359001F0C84 /* tab-off@2x.png in Resources */,
+				0604F2E317DA4359001F0C84 /* tab-on.png in Resources */,
+				0604F2E417DA4359001F0C84 /* tab-on@2x.png in Resources */,
+				0604F2E917DA4483001F0C84 /* Thakurs Family.plist in Resources */,
+				0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */,
+				0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +321,10 @@
 				0604F2B017D988AC001F0C84 /* PRViewController.m in Sources */,
 				0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */,
 				0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */,
+				0604F2D817DA3C40001F0C84 /* PRFamilyViewController.m in Sources */,
+				0604F2DC17DA42F4001F0C84 /* PRSegmentControll.m in Sources */,
+				0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */,
+				0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +457,7 @@
 				0604F2BB17D988AD001F0C84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
