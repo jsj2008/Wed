@@ -7,6 +7,7 @@
 //
 
 #import "PRViewController.h"
+#import "PRVenuesViewController.h"
 
 @interface PRViewController ()
 
@@ -27,7 +28,9 @@
 }
 
 -(IBAction)buttonClicked:(id)sender {
-
+    PRVenuesViewController* venuesVC = [[PRVenuesViewController alloc] init];
+    venuesVC.title = ((UIButton*)sender).titleLabel.text;
+    [self.navigationController pushViewController:venuesVC animated:YES];
 }
 
 @end
