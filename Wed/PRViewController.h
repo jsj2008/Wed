@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    PRHomeButtonTypeSchedule = 1,
+    PRHomeButtonTypeEvents = 1,
     PRHomeButtonTypeGallery,
     PRHomeButtonTypeVenues,
     PRHomeButtonTypeFamily,

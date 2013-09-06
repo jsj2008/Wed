@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PRScheduleViewController : UIViewController
+@interface PRScheduleViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSMutableArray* datasource;
+@property (nonatomic, strong) IBOutlet UITableView* tableView;
 
 @end

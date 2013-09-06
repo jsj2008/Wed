@@ -46,7 +46,7 @@
 }
 
 -(void)setButtonTags {
-    _scheduleButton.tag = PRHomeButtonTypeSchedule;
+    _scheduleButton.tag = PRHomeButtonTypeEvents;
     _galleryButton.tag = PRHomeButtonTypeGallery;
     _venuesButton.tag = PRHomeButtonTypeVenues;
     _familyButton.tag = PRHomeButtonTypeFamily;
@@ -55,7 +55,7 @@
 -(IBAction)buttonClicked:(id)sender {
     UIButton* button = (UIButton*)sender;
     switch (button.tag) {
-        case PRHomeButtonTypeSchedule:{
+        case PRHomeButtonTypeEvents:{
             PRScheduleViewController* scheduleVC = [[PRScheduleViewController alloc] init];
             scheduleVC.title = ((UIButton*)sender).titleLabel.text;
             [self.navigationController pushViewController:scheduleVC animated:YES];
@@ -110,10 +110,7 @@
     
     
     
-    _lblDays.text=[NSString stringWithFormat:@"%02d Days\t%02d Hours\t%02d Min\t%02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
-//    _lblHours.text=[NSString stringWithFormat:@"%02d Hours",(24-componentsHours.hour)];
-//    _lblMinute.text=[NSString stringWithFormat:@"%02d Min",(60-componentMint.minute)];
-//    _lblSec.text=[NSString stringWithFormat:@"%02d Sec",(60-componentSec.second)];
+    _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
 }
 
 @end

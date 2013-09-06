@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Thakurs Family" ofType:@"plist"]];
+    _tableView.tableFooterView = _footer;
 }
 
 - (void)didReceiveMemoryWarning

@@ -75,6 +75,7 @@
 						<string key="NSFrame">{{9, 15}, {302, 30}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1031865120"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -118,7 +119,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<string key="IBUINormalTitle">Schedule</string>
+						<string key="IBUINormalTitle">Events</string>
 						<reference key="IBUIHighlightedTitleColor" ref="780941444"/>
 						<reference key="IBUINormalTitleColor" ref="780941444"/>
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="85049764">
@@ -233,6 +234,7 @@
 						<string key="NSFrame">{{188, 345}, {90, 90}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>

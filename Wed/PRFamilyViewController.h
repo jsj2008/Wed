@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) IBOutlet UITableView* tableView;
 @property (nonatomic, strong) NSMutableArray* datasource;
+@property (nonatomic, strong) IBOutlet UIView* footer;
 
 -(IBAction)familyChanged:(id)sender;
 

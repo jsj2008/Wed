@@ -38,6 +38,8 @@
 		0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */; };
 		0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2F417DA502A001F0C84 /* PRFamilyCell.m */; };
 		0604F2F717DA5072001F0C84 /* PRFamilyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */; };
+		06536B1717DA679D001DFE4E /* left_panel_shadow_1px.png in Resources */ = {isa = PBXBuildFile; fileRef = 06536B1517DA679D001DFE4E /* left_panel_shadow_1px.png */; };
+		06536B1817DA679D001DFE4E /* left_panel_shadow_1px@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06536B1617DA679D001DFE4E /* left_panel_shadow_1px@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,8 @@
 		0604F2F417DA502A001F0C84 /* PRFamilyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFamilyCell.m; sourceTree = "<group>"; };
 		0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRFamilyCell.xib; sourceTree = "<group>"; };
 		06536B1317DA5F33001DFE4E /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		06536B1517DA679D001DFE4E /* left_panel_shadow_1px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_panel_shadow_1px.png; sourceTree = "<group>"; };
+		06536B1617DA679D001DFE4E /* left_panel_shadow_1px@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_panel_shadow_1px@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +137,7 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
-				0604F2EC17DA4857001F0C84 /* Schedule View Controller */,
+				0604F2EC17DA4857001F0C84 /* Events View Controller */,
 				0604F2D417DA3C2F001F0C84 /* Family View Controller */,
 				0604F2D317DA3C10001F0C84 /* App Delegate */,
 				0604F2D117DA3B1E001F0C84 /* Common View */,
@@ -160,6 +164,8 @@
 		0604F2BE17D98DD3001F0C84 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				06536B1517DA679D001DFE4E /* left_panel_shadow_1px.png */,
+				06536B1617DA679D001DFE4E /* left_panel_shadow_1px@2x.png */,
 				0604F2DD17DA4359001F0C84 /* tab-off.png */,
 				0604F2DE17DA4359001F0C84 /* tab-off@2x.png */,
 				0604F2DF17DA4359001F0C84 /* tab-on.png */,
@@ -236,14 +242,14 @@
 			name = "Family View Controller";
 			sourceTree = "<group>";
 		};
-		0604F2EC17DA4857001F0C84 /* Schedule View Controller */ = {
+		0604F2EC17DA4857001F0C84 /* Events View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */,
 				0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */,
 				0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */,
 			);
-			name = "Schedule View Controller";
+			name = "Events View Controller";
 			sourceTree = "<group>";
 		};
 		0604F2F217DA500F001F0C84 /* TableViewCell */ = {
@@ -325,6 +331,8 @@
 				0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */,
 				0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */,
 				0604F2F717DA5072001F0C84 /* PRFamilyCell.xib in Resources */,
+				06536B1717DA679D001DFE4E /* left_panel_shadow_1px.png in Resources */,
+				06536B1817DA679D001DFE4E /* left_panel_shadow_1px@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
