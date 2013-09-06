@@ -25,12 +25,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:@"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/schedule_list.plist"]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadRemoteData)];
+    [self setNavigationBarLeftButton];
+    _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(void) setNavigationBarLeftButton
+{
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:CGRectMake(0, 0, 40, 40)];
+    [button setImage:[UIImage imageNamed:NAVIGATIONBARBACKBUTTON] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+}
+
+-(void)back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)reloadRemoteData {
+    _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
+    [_tableView reloadData];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -56,6 +77,11 @@
     }
     cell.textLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
