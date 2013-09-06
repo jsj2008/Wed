@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
-	<string>Prem Singh Thakur</string>
-	<string>Daadi Ji</string>
-	<string>Anand Singh Thakur</string>
-	<string>Sheela Thakur</string>
-	<string>Pradeep Singh Thakur</string>
-</array>
+    <array>
+        <dict>
+            <key>Name</key>
+            <string>Prem Singh Thakur</string>
+            <key>Relation</key>
+            <string>Grand Father</string>
+        </dict>
+        <dict>
+            <key>Name</key>
+            <string>Daadi Ji</string>
+            <key>Relation</key>
+            <string>Grand Mother</string>
+        </dict>
+        
+        <dict>
+            <key>Name</key>
+            <string>Anand Singh Thakur</string>
+            <key>Relation</key>
+            <string>Father</string>
+        </dict>
+        
+        <dict>
+            <key>Name</key>
+            <string>Sheela Thakur</string>
+            <key>Relation</key>
+            <string>Mother</string>
+        </dict>
+        
+        <dict>
+            <key>Name</key>
+            <string>Pradeep Singh Thakur</string>
+            <key>Relation</key>
+            <string>Brother</string>
+        </dict>
+    </array>
 </plist>

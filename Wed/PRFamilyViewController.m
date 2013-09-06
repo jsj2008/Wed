@@ -7,6 +7,7 @@
 //
 
 #import "PRFamilyViewController.h"
+#import "PRFamilyCell.h"
 
 @interface PRFamilyViewController ()
 
@@ -52,11 +53,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    PRFamilyCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PRFamilyCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[PRFamilyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PRFamilyCell"];
     }
-    cell.textLabel.text = [_datasource objectAtIndex:indexPath.row];
+    cell.nameLabel.text = [[_datasource objectAtIndex:indexPath.row] objectForKey:@"Name"];
+    cell.relationShipLabel.text = [[_datasource objectAtIndex:indexPath.row] objectForKey:@"Relation"];
     return cell;
 }
 

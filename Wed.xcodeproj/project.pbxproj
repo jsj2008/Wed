@@ -36,6 +36,8 @@
 		0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EA17DA4495001F0C84 /* Tayals Family.plist */; };
 		0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */; };
 		0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */; };
+		0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2F417DA502A001F0C84 /* PRFamilyCell.m */; };
+		0604F2F717DA5072001F0C84 /* PRFamilyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,9 @@
 		0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRScheduleViewController.h; sourceTree = "<group>"; };
 		0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRScheduleViewController.m; sourceTree = "<group>"; };
 		0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRScheduleViewController.xib; sourceTree = "<group>"; };
+		0604F2F317DA502A001F0C84 /* PRFamilyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFamilyCell.h; sourceTree = "<group>"; };
+		0604F2F417DA502A001F0C84 /* PRFamilyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRFamilyCell.m; sourceTree = "<group>"; };
+		0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRFamilyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +224,7 @@
 		0604F2D417DA3C2F001F0C84 /* Family View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0604F2F217DA500F001F0C84 /* TableViewCell */,
 				0604F2D517DA3C40001F0C84 /* PRFamilyViewController.h */,
 				0604F2D617DA3C40001F0C84 /* PRFamilyViewController.m */,
 				0604F2D717DA3C40001F0C84 /* PRFamilyViewController.xib */,
@@ -236,6 +242,16 @@
 				0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */,
 			);
 			name = "Schedule View Controller";
+			sourceTree = "<group>";
+		};
+		0604F2F217DA500F001F0C84 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0604F2F317DA502A001F0C84 /* PRFamilyCell.h */,
+				0604F2F417DA502A001F0C84 /* PRFamilyCell.m */,
+				0604F2F617DA5072001F0C84 /* PRFamilyCell.xib */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +322,7 @@
 				0604F2E917DA4483001F0C84 /* Thakurs Family.plist in Resources */,
 				0604F2EB17DA4495001F0C84 /* Tayals Family.plist in Resources */,
 				0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */,
+				0604F2F717DA5072001F0C84 /* PRFamilyCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +342,7 @@
 				0604F2DC17DA42F4001F0C84 /* PRSegmentControll.m in Sources */,
 				0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */,
 				0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */,
+				0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
