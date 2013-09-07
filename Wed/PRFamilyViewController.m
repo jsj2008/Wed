@@ -50,7 +50,7 @@
 
 -(void)back:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popControllerWithTransition];
 }
 
 -(IBAction)familyChanged:(PRSegmentControl*)sender {

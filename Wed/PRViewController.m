@@ -65,14 +65,14 @@
         {
             PRVenuesViewController* venuesVC = [[PRVenuesViewController alloc] init];
             venuesVC.title = ((UIButton*)sender).titleLabel.text;
-            [self.navigationController pushViewController:venuesVC animated:YES];
+            [self.navigationController pushController:venuesVC];
         }
             break;
         case PRHomeButtonTypeFamily:
         {
             PRFamilyViewController* familyVC = [[PRFamilyViewController alloc] init];
             familyVC.title = ((UIButton*)sender).titleLabel.text;
-            [self.navigationController pushViewController:familyVC animated:YES];
+            [self.navigationController pushController:familyVC];
         }
             break;
         default:
