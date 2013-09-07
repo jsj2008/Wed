@@ -10,6 +10,7 @@
 #import "PRVenuesViewController.h"
 #import "PRFamilyViewController.h"
 #import "PRScheduleViewController.h"
+#import "PRVenuesWithMapViewController.h"
 
 @interface PRViewController ()
 
@@ -63,7 +64,7 @@
             break;
         case PRHomeButtonTypeVenues:
         {
-            PRVenuesViewController* venuesVC = [[PRVenuesViewController alloc] init];
+            PRVenuesWithMapViewController* venuesVC = [[PRVenuesWithMapViewController alloc] init];
             venuesVC.title = ((UIButton*)sender).titleLabel.text;
             [self.navigationController pushController:venuesVC];
         }
