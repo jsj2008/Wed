@@ -7,7 +7,6 @@
 //
 
 #import "PRAppDelegate.h"
-
 #import "PRViewController.h"
 
 @implementation PRAppDelegate
@@ -21,8 +20,7 @@
     } else {
         self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController_iPad" bundle:nil];
     }
-    UINavigationController* navC = [[UINavigationController
-                                     alloc] initWithRootViewController:_viewController];
+    UINavigationController* navC = [[UINavigationController alloc] initWithRootViewController:_viewController];
     [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeFont: [UIFont fontWithName:PRFontHelveticaNeueRegular size:0.0],
      }];
     self.window.rootViewController = navC;

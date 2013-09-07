@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0604815517DB7E3A007989E3 /* UINavigationController+PRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604815417DB7E3A007989E3 /* UINavigationController+PRNavigationController.m */; };
 		0604F29717D988AC001F0C84 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604F29617D988AC001F0C84 /* UIKit.framework */; };
 		0604F29917D988AC001F0C84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604F29817D988AC001F0C84 /* Foundation.framework */; };
 		0604F29B17D988AC001F0C84 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604F29A17D988AC001F0C84 /* CoreGraphics.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0604815317DB7E3A007989E3 /* UINavigationController+PRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+PRNavigationController.h"; sourceTree = "<group>"; };
+		0604815417DB7E3A007989E3 /* UINavigationController+PRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+PRNavigationController.m"; sourceTree = "<group>"; };
 		0604F29317D988AC001F0C84 /* Wed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0604F29617D988AC001F0C84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0604F29817D988AC001F0C84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,6 +206,8 @@
 				0604F2CC17D99DDF001F0C84 /* PRButton.m */,
 				0604F2DA17DA42F4001F0C84 /* PRSegmentControl.h */,
 				0604F2DB17DA42F4001F0C84 /* PRSegmentControl.m */,
+				0604815317DB7E3A007989E3 /* UINavigationController+PRNavigationController.h */,
+				0604815417DB7E3A007989E3 /* UINavigationController+PRNavigationController.m */,
 			);
 			name = "Common View";
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */,
 				0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */,
 				0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */,
+				0604815517DB7E3A007989E3 /* UINavigationController+PRNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

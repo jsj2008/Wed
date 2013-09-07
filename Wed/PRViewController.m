@@ -58,7 +58,7 @@
         case PRHomeButtonTypeEvents:{
             PRScheduleViewController* scheduleVC = [[PRScheduleViewController alloc] init];
             scheduleVC.title = ((UIButton*)sender).titleLabel.text;
-            [self.navigationController pushViewController:scheduleVC animated:YES];
+            [self.navigationController pushController:scheduleVC];
         }
             break;
         case PRHomeButtonTypeVenues:
