@@ -1,5 +1,5 @@
 //
-//  PRSegmentControll.h
+//  PRSegmentControl.h
 //  Wed
 //
 //  Created by Rishabh Tayal on 9/6/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PRSegmentControll : UISegmentedControl
+@interface PRSegmentControl : UISegmentedControl
 
 @end

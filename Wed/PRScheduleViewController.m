@@ -30,12 +30,7 @@
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadRemoteData)];
     [self setNavigationBarLeftButton];
-    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-    //        _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
-    //        dispatch_async(dispatch_get_main_queue(), ^{
-    //            [_tableView reloadData];
-    //        });
-    //    });
+    
     [self reloadRemoteData];
 }
 
@@ -62,8 +57,9 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_tableView reloadData];
-            
+            [UIView transitionWithView:_tableView duration:0.3f options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void) {
+                [_tableView reloadData];
+            } completion:NULL];
         });
     });
 }
@@ -108,7 +104,7 @@
 //    if ([currentDate compare:todaysDate] == NSOrderedAscending) {
 //        scrollToSection = indexPath.section + 1;
 //    }
-//    
+//
 //    if([indexPath row] == ((NSIndexPath*)[[tableView indexPathsForVisibleRows] lastObject]).row){
 //        //end of loading
 //        //for example [activityIndicator stopAnimating];

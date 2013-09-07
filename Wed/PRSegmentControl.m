@@ -1,16 +1,16 @@
 //
-//  PRSegmentControll.m
+//  PRSegmentControl.m
 //  Wed
 //
 //  Created by Rishabh Tayal on 9/6/13.
 //  Copyright (c) 2013 Appikon. All rights reserved.
 //
 
-#import "PRSegmentControll.h"
+#import "PRSegmentControl.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImage+CustomColor.h"
 
-@implementation PRSegmentControll
+@implementation PRSegmentControl
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -45,6 +45,5 @@
     [self.layer setMasksToBounds:YES];
     [self setNeedsLayout];
 }
-
 
 @end
