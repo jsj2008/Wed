@@ -34,7 +34,7 @@
         UILabel* caption = [[UILabel alloc] initWithFrame:CGRectMake(0, kThumbSide-16, kThumbSide, 16)];
         caption.backgroundColor = [UIColor blackColor];
         caption.textColor = [UIColor whiteColor];
-        caption.textAlignment = UITextAlignmentCenter;
+        caption.textAlignment = NSTextAlignmentCenter;
         caption.font = [UIFont systemFontOfSize:12];
         caption.text = [NSString stringWithFormat:@"@%@",[data objectForKey:@"username"]];
         [self addSubview: caption];
