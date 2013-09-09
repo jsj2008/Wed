@@ -30,11 +30,10 @@
 {
     [super viewDidLoad];
     [self setNavigationBarLeftButton];
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePicture)]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshStream)]];
     [self createUserNameAndLogin];
     
     [self refreshStream];
-
 }
 
 -(void)createUserNameAndLogin {
@@ -72,6 +71,28 @@
     [self.navigationController popControllerWithTransition];
 }
 
+-(IBAction)takePhoto:(id)sender
+{
+    NSLog(@"Take Picture");
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    // Displays a control that allows the user to choose picture or
+    // movie capture, if both are available:
+    cameraUI.mediaTypes =
+    [UIImagePickerController availableMediaTypesForSourceType:
+     UIImagePickerControllerSourceTypeCamera];
+    
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    cameraUI.allowsEditing = NO;
+    
+    cameraUI.delegate = self;
+    
+    [self.navigationController presentViewController:cameraUI animated:YES completion:nil];
+}
+
 -(void)refreshStream {
     //just call the "stream" command from the web API
     [[API sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"stream", @"command", nil] onCompletion:^(NSDictionary *json) {
@@ -100,31 +121,10 @@
 
 -(void)didSelectPhoto:(PhotoView*)sender {
     //photo selected - show it full screen
-    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] init];
-    photoScreen.IdPhoto = [NSNumber numberWithInt:sender.tag];
+    NSNumber* tag = [NSNumber numberWithInt:sender.tag];
+    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] initWithIdPhoto:tag];
+//    photoScreen.IdPhoto = [NSNumber numberWithInt:sender.tag];
     [self.navigationController pushController:photoScreen];
-}
-
--(void)takePicture
-{
-    NSLog(@"Take Picture");
-    
-    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
-    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
-    
-    // Displays a control that allows the user to choose picture or
-    // movie capture, if both are available:
-    cameraUI.mediaTypes =
-    [UIImagePickerController availableMediaTypesForSourceType:
-     UIImagePickerControllerSourceTypeCamera];
-    
-    // Hides the controls for moving & scaling pictures, or for
-    // trimming movies. To instead show the controls, use YES.
-    cameraUI.allowsEditing = NO;
-    
-    cameraUI.delegate = self;
-    
-    [self.navigationController presentViewController:cameraUI animated:YES completion:nil];
 }
 
 #pragma mark - UIImagePickerController Delegate
@@ -169,9 +169,7 @@
                                                  moviePath, nil, nil, nil);
         }
         [picker dismissViewControllerAnimated:YES completion:nil];
-
     }
-    
 }
 
 #pragma mark -

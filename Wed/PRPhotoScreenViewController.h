@@ -15,6 +15,8 @@
     IBOutlet UILabel* lblTitle;
 }
 
-@property (assign, nonatomic) NSNumber* IdPhoto;
+@property (strong, nonatomic) NSNumber* IdPhoto;
+
+-(id)initWithIdPhoto:(NSNumber*)idPhoto;
 
 @end

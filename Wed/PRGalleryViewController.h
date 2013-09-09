@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) IBOutlet UIScrollView* listView;
 
+-(IBAction)takePhoto:(id)sender;
+
 @end
