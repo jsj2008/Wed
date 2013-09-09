@@ -55,11 +55,14 @@
 }
 
 -(void)reloadRemoteData {
+    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:progressView];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
         dispatch_async(dispatch_get_main_queue(), ^{
             [UIView transitionWithView:_tableView duration:0.3f options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void) {
                 [_tableView reloadData];
+                [progressView stop];
             } completion:NULL];
         });
     });

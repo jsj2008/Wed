@@ -53,6 +53,8 @@
 		066146B917DD8FC7001229FF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B817DD8FC7001229FF /* AddressBook.framework */; };
 		0675ACEC17DE1B1C003FCD67 /* PREventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675ACEB17DE1B1C003FCD67 /* PREventsCell.m */; };
 		0675ACEF17DE1B32003FCD67 /* PREventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675ACEE17DE1B32003FCD67 /* PREventsCell.xib */; };
+		0675ACF217DE1F38003FCD67 /* PRProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675ACF117DE1F38003FCD67 /* PRProgressView.m */; };
+		0675ACF517DE1F6A003FCD67 /* PRProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675ACF417DE1F6A003FCD67 /* PRProgressView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,9 @@
 		0675ACEA17DE1B1C003FCD67 /* PREventsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PREventsCell.h; sourceTree = "<group>"; };
 		0675ACEB17DE1B1C003FCD67 /* PREventsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PREventsCell.m; sourceTree = "<group>"; };
 		0675ACEE17DE1B32003FCD67 /* PREventsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PREventsCell.xib; sourceTree = "<group>"; };
+		0675ACF017DE1F38003FCD67 /* PRProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRProgressView.h; sourceTree = "<group>"; };
+		0675ACF117DE1F38003FCD67 /* PRProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRProgressView.m; sourceTree = "<group>"; };
+		0675ACF417DE1F6A003FCD67 /* PRProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRProgressView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +150,6 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
-				066146B817DD8FC7001229FF /* AddressBook.framework */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
 				0604F29417D988AC001F0C84 /* Products */,
@@ -163,6 +167,7 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				066146B817DD8FC7001229FF /* AddressBook.framework */,
 				066146B617DD73EA001229FF /* Security.framework */,
 				066146B417DD73B5001229FF /* DropboxSDK.framework */,
 				066146B217DD4802001229FF /* MobileCoreServices.framework */,
@@ -252,6 +257,7 @@
 				0604F2DB17DA42F4001F0C84 /* PRSegmentControl.m */,
 				0604815317DB7E3A007989E3 /* UINavigationController+PRNavigationController.h */,
 				0604815417DB7E3A007989E3 /* UINavigationController+PRNavigationController.m */,
+				0675ACF317DE1F58003FCD67 /* Progress Indicator */,
 			);
 			name = "Common View";
 			sourceTree = "<group>";
@@ -348,6 +354,16 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		0675ACF317DE1F58003FCD67 /* Progress Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				0675ACF017DE1F38003FCD67 /* PRProgressView.h */,
+				0675ACF117DE1F38003FCD67 /* PRProgressView.m */,
+				0675ACF417DE1F6A003FCD67 /* PRProgressView.xib */,
+			);
+			name = "Progress Indicator";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +438,7 @@
 				0604815717DB823F007989E3 /* PRVenuesWithMapViewController.xib in Resources */,
 				066146B117DD10A1001229FF /* PRGalleryViewController.xib in Resources */,
 				0675ACEF17DE1B32003FCD67 /* PREventsCell.xib in Resources */,
+				0675ACF517DE1F6A003FCD67 /* PRProgressView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +464,7 @@
 				066146AB17DB83DF001229FF /* PRAnnotation.m in Sources */,
 				066146B017DD10A1001229FF /* PRGalleryViewController.m in Sources */,
 				0675ACEC17DE1B1C003FCD67 /* PREventsCell.m in Sources */,
+				0675ACF217DE1F38003FCD67 /* PRProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
