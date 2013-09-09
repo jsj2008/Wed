@@ -12,7 +12,10 @@
 @interface PRAnnotation : NSObject<MKAnnotation>
 
 @property (nonatomic, strong) NSString* title;
+@property (nonatomic, strong) NSString* address;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
--(id)initWithTitle:(NSString*)title coordinatioes:(CLLocationCoordinate2D)coordinate;
+-(MKMapItem*) mapItem;
+
+-(id)initWithTitle:(NSString*)title address:(NSString*)address coordinates:(CLLocationCoordinate2D)coordinate;
 @end

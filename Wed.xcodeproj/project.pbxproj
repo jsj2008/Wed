@@ -50,6 +50,7 @@
 		066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B217DD4802001229FF /* MobileCoreServices.framework */; };
 		066146B517DD73B5001229FF /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B417DD73B5001229FF /* DropboxSDK.framework */; };
 		066146B717DD73EA001229FF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B617DD73EA001229FF /* Security.framework */; };
+		066146B917DD8FC7001229FF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B817DD8FC7001229FF /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		066146B217DD4802001229FF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		066146B417DD73B5001229FF /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		066146B617DD73EA001229FF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		066146B817DD8FC7001229FF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066146B917DD8FC7001229FF /* AddressBook.framework in Frameworks */,
 				066146B717DD73EA001229FF /* Security.framework in Frameworks */,
 				066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */,
 				066146A517DB8329001229FF /* MapKit.framework in Frameworks */,
@@ -137,6 +140,7 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
+				066146B817DD8FC7001229FF /* AddressBook.framework */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
 				0604F29417D988AC001F0C84 /* Products */,
