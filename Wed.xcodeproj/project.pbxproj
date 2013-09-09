@@ -48,6 +48,8 @@
 		066146B017DD10A1001229FF /* PRGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 066146AE17DD10A1001229FF /* PRGalleryViewController.m */; };
 		066146B117DD10A1001229FF /* PRGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066146AF17DD10A1001229FF /* PRGalleryViewController.xib */; };
 		066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B217DD4802001229FF /* MobileCoreServices.framework */; };
+		066146B517DD73B5001229FF /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B417DD73B5001229FF /* DropboxSDK.framework */; };
+		066146B717DD73EA001229FF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B617DD73EA001229FF /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +111,8 @@
 		066146AE17DD10A1001229FF /* PRGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRGalleryViewController.m; sourceTree = "<group>"; };
 		066146AF17DD10A1001229FF /* PRGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRGalleryViewController.xib; sourceTree = "<group>"; };
 		066146B217DD4802001229FF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		066146B417DD73B5001229FF /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		066146B617DD73EA001229FF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,12 +120,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066146B717DD73EA001229FF /* Security.framework in Frameworks */,
 				066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */,
 				066146A517DB8329001229FF /* MapKit.framework in Frameworks */,
 				0604F2CF17D99E11001F0C84 /* QuartzCore.framework in Frameworks */,
 				0604F29717D988AC001F0C84 /* UIKit.framework in Frameworks */,
 				0604F29917D988AC001F0C84 /* Foundation.framework in Frameworks */,
 				0604F29B17D988AC001F0C84 /* CoreGraphics.framework in Frameworks */,
+				066146B517DD73B5001229FF /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +137,6 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
-				066146B217DD4802001229FF /* MobileCoreServices.framework */,
-				066146A417DB8329001229FF /* MapKit.framework */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
 				0604F29417D988AC001F0C84 /* Products */,
@@ -150,6 +154,10 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				066146B617DD73EA001229FF /* Security.framework */,
+				066146B417DD73B5001229FF /* DropboxSDK.framework */,
+				066146B217DD4802001229FF /* MobileCoreServices.framework */,
+				066146A417DB8329001229FF /* MapKit.framework */,
 				0604F2CE17D99E11001F0C84 /* QuartzCore.framework */,
 				0604F29617D988AC001F0C84 /* UIKit.framework */,
 				0604F29817D988AC001F0C84 /* Foundation.framework */,
@@ -513,6 +521,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
@@ -528,6 +540,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";

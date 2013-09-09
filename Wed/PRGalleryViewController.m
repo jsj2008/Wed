@@ -79,7 +79,9 @@
         }
         
         // Save the new image (original or edited) to the Camera Roll
-        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+//        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+        
+        [self uploadImageToDropbox:imageToSave];
     }
     
     // Handle a movie capture
@@ -96,6 +98,35 @@
     }
 
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)uploadImageToDropbox:(UIImage*)imageToUpload {
+
+//    [self.restClient createFolder:@"Wed Photos"];
+    
+    NSString *fileName = @"myImage.png";
+    NSString *tempDir = NSTemporaryDirectory();
+    NSString *imagePath = [tempDir stringByAppendingPathComponent:fileName];
+    
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(imageToUpload)];
+    [imageData writeToFile:imagePath atomically:YES];
+
+//    [_restClient loadSharableLinkForFile:imagePath];
+    
+    [self.restClient uploadFile:[imagePath lastPathComponent] toPath:@"https://www.dropbox.com/sh/xn1ie3sh7zcbml7/IDe1E7Uf6a" withParentRev:nil fromPath:imagePath];
+}
+-(void)restClient:(DBRestClient *)restClient loadedSharableLink:(NSString *)link forFile:(NSString *)path
+{
+    NSLog(@"a");
+}
+
+- (DBRestClient *)restClient {
+    if (!_restClient) {
+        _restClient =
+        [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+        _restClient.delegate = self;
+    }
+    return _restClient;
 }
 
 @end

@@ -34,16 +34,16 @@
     location.latitude = 22.75563;
     location.longitude = 75.90618;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 2*METERS_PER_MILE, 2*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 20*METERS_PER_MILE, 20*METERS_PER_MILE);
     [_mapView setRegion:viewRegion animated:YES];
     
-    PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:@"A" coordinatioes:location];
+    PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:@"Raddison Blu" coordinatioes:location];
     
     [_mapView addAnnotation:annotation];
     
-    location.latitude = 22.75691;
-    location.longitude = 75.90568;
-    annotation = [[PRAnnotation alloc] initWithTitle:@"B" coordinatioes:location];
+    location.latitude = 22.761062;
+    location.longitude = 75.952130;
+    annotation = [[PRAnnotation alloc] initWithTitle:@"Jalsa Garden" coordinatioes:location];
     
     [_mapView addAnnotation:annotation];
 }
