@@ -7,6 +7,7 @@
 //
 
 #import "PRScheduleViewController.h"
+#import "PREventsCell.h"
 
 @interface PRScheduleViewController ()
 {
@@ -64,6 +65,8 @@
     });
 }
 
+#pragma mark - UITableView Datasource
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return _datasource.count;
@@ -81,11 +84,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    PREventsCell* cell = (PREventsCell*)[tableView dequeueReusableCellWithIdentifier:@"PREventsCell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[PREventsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PREventsCell"];
     }
-    cell.textLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
+    cell.eventName.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
+    cell.locationLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"];
     return cell;
 }
 

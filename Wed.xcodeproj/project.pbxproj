@@ -51,6 +51,8 @@
 		066146B517DD73B5001229FF /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B417DD73B5001229FF /* DropboxSDK.framework */; };
 		066146B717DD73EA001229FF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B617DD73EA001229FF /* Security.framework */; };
 		066146B917DD8FC7001229FF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B817DD8FC7001229FF /* AddressBook.framework */; };
+		0675ACEC17DE1B1C003FCD67 /* PREventsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675ACEB17DE1B1C003FCD67 /* PREventsCell.m */; };
+		0675ACEF17DE1B32003FCD67 /* PREventsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675ACEE17DE1B32003FCD67 /* PREventsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +117,9 @@
 		066146B417DD73B5001229FF /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		066146B617DD73EA001229FF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		066146B817DD8FC7001229FF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		0675ACEA17DE1B1C003FCD67 /* PREventsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PREventsCell.h; sourceTree = "<group>"; };
+		0675ACEB17DE1B1C003FCD67 /* PREventsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PREventsCell.m; sourceTree = "<group>"; };
+		0675ACEE17DE1B32003FCD67 /* PREventsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PREventsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +178,8 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
-				066146AC17DD107E001229FF /* Gallery View Controller */,
 				0604F2D117DA3B1E001F0C84 /* Common View */,
+				066146AC17DD107E001229FF /* Gallery View Controller */,
 				0604F2EC17DA4857001F0C84 /* Events View Controller */,
 				0604F2D417DA3C2F001F0C84 /* Family View Controller */,
 				0604F2D017DA3B17001F0C84 /* Venues View Controller */,
@@ -285,6 +290,7 @@
 		0604F2EC17DA4857001F0C84 /* Events View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0675ACED17DE1B21003FCD67 /* Cell */,
 				0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */,
 				0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */,
 				0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */,
@@ -330,6 +336,16 @@
 				066146AF17DD10A1001229FF /* PRGalleryViewController.xib */,
 			);
 			name = "Gallery View Controller";
+			sourceTree = "<group>";
+		};
+		0675ACED17DE1B21003FCD67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0675ACEA17DE1B1C003FCD67 /* PREventsCell.h */,
+				0675ACEB17DE1B1C003FCD67 /* PREventsCell.m */,
+				0675ACEE17DE1B32003FCD67 /* PREventsCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +421,7 @@
 				06536B1C17DA71C1001DFE4E /* back@2x.png in Resources */,
 				0604815717DB823F007989E3 /* PRVenuesWithMapViewController.xib in Resources */,
 				066146B117DD10A1001229FF /* PRGalleryViewController.xib in Resources */,
+				0675ACEF17DE1B32003FCD67 /* PREventsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +446,7 @@
 				0604815A17DB8268007989E3 /* PRVenuesWithMapViewController.m in Sources */,
 				066146AB17DB83DF001229FF /* PRAnnotation.m in Sources */,
 				066146B017DD10A1001229FF /* PRGalleryViewController.m in Sources */,
+				0675ACEC17DE1B1C003FCD67 /* PREventsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
