@@ -7,7 +7,6 @@
 //
 
 #import "PRViewController.h"
-#import "PRVenuesViewController.h"
 #import "PRFamilyViewController.h"
 #import "PRScheduleViewController.h"
 #import "PRVenuesWithMapViewController.h"
@@ -16,10 +15,6 @@
 @interface PRViewController ()
 
 @property (nonatomic, strong) IBOutlet UILabel* lblDays;
-//@property (nonatomic, strong) IBOutlet UILabel* lblHours;
-//@property (nonatomic, strong) IBOutlet UILabel* lblMinute;
-//@property (nonatomic, strong) IBOutlet UILabel* lblSec;
-
 @property (nonatomic, strong) IBOutlet UIButton* scheduleButton;
 @property (nonatomic, strong) IBOutlet UIButton* galleryButton;
 @property (nonatomic, strong) IBOutlet UIButton* venuesButton;
@@ -90,7 +85,6 @@
 
 -(void) updateCountdown
 {
-    
     NSString *dateString = @"07-12-2013";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
@@ -115,8 +109,6 @@
                                                                 fromDate:now
                                                                   toDate:dateFromString
                                                                  options:0];
-    
-    
     
     _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
 }

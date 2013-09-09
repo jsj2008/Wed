@@ -266,8 +266,7 @@
 		0604F2D017DA3B17001F0C84 /* Venues View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				066146A917DB83DF001229FF /* PRAnnotation.h */,
-				066146AA17DB83DF001229FF /* PRAnnotation.m */,
+				0675AD2717DE6D8D003FCD67 /* Annotation */,
 				0604815817DB8268007989E3 /* PRVenuesWithMapViewController.h */,
 				0604815917DB8268007989E3 /* PRVenuesWithMapViewController.m */,
 				0604815617DB823F007989E3 /* PRVenuesWithMapViewController.xib */,
@@ -441,6 +440,15 @@
 				0675AD1B17DE4154003FCD67 /* PhotoView.m */,
 			);
 			name = "Photo View";
+			sourceTree = "<group>";
+		};
+		0675AD2717DE6D8D003FCD67 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				066146A917DB83DF001229FF /* PRAnnotation.h */,
+				066146AA17DB83DF001229FF /* PRAnnotation.m */,
+			);
+			name = Annotation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -642,6 +650,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -662,6 +671,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
