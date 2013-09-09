@@ -8,6 +8,8 @@
 
 #import "PRGalleryViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "API.h"
+#import "PRPhotoScreenViewController.h"
 
 @interface PRGalleryViewController ()
 
@@ -29,6 +31,20 @@
     [super viewDidLoad];
     [self setNavigationBarLeftButton];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePicture)]];
+    [self loginWithDummyUsernamePassword];
+    
+    [self refreshStream];
+
+}
+
+-(void)loginWithDummyUsernamePassword {
+    NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"login", @"command", @"rishabh", @"username", @"password", @"password", nil];
+    [[API sharedInstance] commandWithParams:params onCompletion:^(NSDictionary *json) {
+        NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
+		if ([json objectForKey:@"error"]==nil && [[res objectForKey:@"IdUser"] intValue]>0) {
+            [[API sharedInstance] setUser:res];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +52,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 -(void) setNavigationBarLeftButton
 {
@@ -50,6 +65,39 @@
 -(void)back:(id)sender
 {
     [self.navigationController popControllerWithTransition];
+}
+
+-(void)refreshStream {
+    //just call the "stream" command from the web API
+    [[API sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"stream", @"command", nil] onCompletion:^(NSDictionary *json) {
+		//got stream
+		[self showStream:[json objectForKey:@"result"]];
+	}];
+}
+
+-(void)showStream:(NSArray*)stream {
+    // 1 remove old photos
+    for (UIView* view in _listView.subviews) {
+        [view removeFromSuperview];
+    }
+    // 2 add new photo views
+    for (int i=0;i<[stream count];i++) {
+        NSDictionary* photo = [stream objectAtIndex:i];
+        PhotoView* photoView = [[PhotoView alloc] initWithIndex:i andData:photo];
+        photoView.delegate = self;
+        [_listView addSubview: photoView];
+    }
+    // 3 update scroll list's height
+    int listHeight = ([stream count]/3 + 1)*(kThumbSide+kPadding);
+    [_listView setContentSize:CGSizeMake(320, listHeight)];
+    [_listView scrollRectToVisible:CGRectMake(0, 0, 10, 10) animated:YES];
+}
+
+-(void)didSelectPhoto:(PhotoView*)sender {
+    //photo selected - show it full screen
+    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] init];
+    photoScreen.IdPhoto = [NSNumber numberWithInt:sender.tag];
+    [self.navigationController pushController:photoScreen];
 }
 
 -(void)takePicture
@@ -74,6 +122,8 @@
     [self.navigationController presentViewController:cameraUI animated:YES completion:nil];
 }
 
+#pragma mark - UIImagePickerController Delegate
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
@@ -95,9 +145,11 @@
         }
         
         // Save the new image (original or edited) to the Camera Roll
-//        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
-        
-        [self uploadImageToDropbox:imageToSave];
+        //        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+
+        [picker dismissViewControllerAnimated:YES completion:^{
+            [self uploadImageToAppikonServer:imageToSave];
+        }];
     }
     
     // Handle a movie capture
@@ -111,38 +163,35 @@
             UISaveVideoAtPathToSavedPhotosAlbum (
                                                  moviePath, nil, nil, nil);
         }
+        [picker dismissViewControllerAnimated:YES completion:nil];
+
     }
-
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
--(void)uploadImageToDropbox:(UIImage*)imageToUpload {
+#pragma mark -
 
-//    [self.restClient createFolder:@"Wed Photos"];
-    
-    NSString *fileName = @"myImage.png";
-    NSString *tempDir = NSTemporaryDirectory();
-    NSString *imagePath = [tempDir stringByAppendingPathComponent:fileName];
-    
-    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(imageToUpload)];
-    [imageData writeToFile:imagePath atomically:YES];
-
-//    [_restClient loadSharableLinkForFile:imagePath];
-    
-    [self.restClient uploadFile:[imagePath lastPathComponent] toPath:@"https://www.dropbox.com/sh/xn1ie3sh7zcbml7/IDe1E7Uf6a" withParentRev:nil fromPath:imagePath];
-}
--(void)restClient:(DBRestClient *)restClient loadedSharableLink:(NSString *)link forFile:(NSString *)path
-{
-    NSLog(@"a");
-}
-
-- (DBRestClient *)restClient {
-    if (!_restClient) {
-        _restClient =
-        [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
-        _restClient.delegate = self;
-    }
-    return _restClient;
+-(void)uploadImageToAppikonServer:(UIImage*)imageToUpload {
+    //upload the image and the title to the web service
+    [[API sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"upload", @"command", UIImageJPEGRepresentation(imageToUpload,70), @"file", @"Title", @"title", nil] onCompletion:^(NSDictionary *json) {
+		//completion
+		if (![json objectForKey:@"error"]) {
+			//success
+			[[[UIAlertView alloc]initWithTitle:@"Success!" message:@"Your photo is uploaded" delegate:nil cancelButtonTitle:@"Yay!" otherButtonTitles: nil] show];
+			
+		} else {
+			//error, check for expired session and if so - authorize the user
+			NSString* errorMsg = [json objectForKey:@"error"];
+            [[[UIAlertView alloc] initWithTitle:@"Error"
+                                        message:errorMsg
+                                       delegate:nil
+                              cancelButtonTitle:@"Close"
+                              otherButtonTitles: nil] show];
+			if ([@"Authorization required" compare:errorMsg]==NSOrderedSame) {
+				[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
+			}
+		}
+	}];
 }
 
 @end

@@ -40,6 +40,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 -(void) setNavigationBarLeftButton
 {
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -76,6 +77,8 @@
         });
     });
 }
+
+#pragma mark - MKMapView Delegate
 
 -(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
@@ -123,5 +126,7 @@
     }
     [location.mapItem openInMapsWithLaunchOptions:launchOptions];
 }
+
+#pragma mark -
 
 @end

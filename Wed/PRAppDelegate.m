@@ -8,15 +8,11 @@
 
 #import "PRAppDelegate.h"
 #import "PRViewController.h"
-#import <DropboxSDK/DropboxSDK.h>
 
 @implementation PRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    DBSession* dbSession = [[DBSession alloc] initWithAppKey:PRDropboxAppKey appSecret:PRDropboxAppKey root:kDBRootDropbox];
-    [DBSession setSharedSession:dbSession];
-    
+{   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

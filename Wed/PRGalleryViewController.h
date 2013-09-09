@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <DropboxSDK/DropboxSDK.h>
+#import "PhotoView.h"
 
-@interface PRGalleryViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, DBRestClientDelegate>
+@interface PRGalleryViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoViewDelegate>
 
-@property (nonatomic, strong) DBRestClient* restClient;
+@property (nonatomic, strong) IBOutlet UIScrollView* listView;
 
 @end
