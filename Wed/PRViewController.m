@@ -11,6 +11,7 @@
 #import "PRFamilyViewController.h"
 #import "PRScheduleViewController.h"
 #import "PRVenuesWithMapViewController.h"
+#import "PRGalleryViewController.h"
 
 @interface PRViewController ()
 
@@ -60,6 +61,12 @@
             PRScheduleViewController* scheduleVC = [[PRScheduleViewController alloc] init];
             scheduleVC.title = ((UIButton*)sender).titleLabel.text;
             [self.navigationController pushController:scheduleVC];
+        }
+            break;
+        case PRHomeButtonTypeGallery: {
+            PRGalleryViewController* galleryVC = [[PRGalleryViewController alloc] init];
+            galleryVC.title = ((UIButton*)sender).titleLabel.text;
+            [self.navigationController pushController:galleryVC];
         }
             break;
         case PRHomeButtonTypeVenues:
