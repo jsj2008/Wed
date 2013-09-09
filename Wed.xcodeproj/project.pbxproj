@@ -47,6 +47,7 @@
 		066146AB17DB83DF001229FF /* PRAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 066146AA17DB83DF001229FF /* PRAnnotation.m */; };
 		066146B017DD10A1001229FF /* PRGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 066146AE17DD10A1001229FF /* PRGalleryViewController.m */; };
 		066146B117DD10A1001229FF /* PRGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 066146AF17DD10A1001229FF /* PRGalleryViewController.xib */; };
+		066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 066146B217DD4802001229FF /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		066146AD17DD10A1001229FF /* PRGalleryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRGalleryViewController.h; sourceTree = "<group>"; };
 		066146AE17DD10A1001229FF /* PRGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRGalleryViewController.m; sourceTree = "<group>"; };
 		066146AF17DD10A1001229FF /* PRGalleryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRGalleryViewController.xib; sourceTree = "<group>"; };
+		066146B217DD4802001229FF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */,
 				066146A517DB8329001229FF /* MapKit.framework in Frameworks */,
 				0604F2CF17D99E11001F0C84 /* QuartzCore.framework in Frameworks */,
 				0604F29717D988AC001F0C84 /* UIKit.framework in Frameworks */,
@@ -128,6 +131,7 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
+				066146B217DD4802001229FF /* MobileCoreServices.framework */,
 				066146A417DB8329001229FF /* MapKit.framework */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
