@@ -8,24 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wed/PRGalleryViewController.m"
-         timestampString = "400441973.25081"
+         timestampString = "400442876.158763"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
-         landmarkName = "-loginWithDummyUsernamePassword"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wed/PRGalleryViewController.m"
-         timestampString = "400442085.008577"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "186"
-         endingLineNumber = "186"
+         startingLineNumber = "183"
+         endingLineNumber = "183"
          landmarkName = "-uploadImageToAppikonServer:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,24 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Wed/PRGalleryViewController.m"
-         timestampString = "400441973.25081"
+         timestampString = "400442876.158763"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
-         landmarkName = "-loginWithDummyUsernamePassword"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "Wed/PRGalleryViewController.m"
-         timestampString = "400441706.257875"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
          landmarkName = "-showStream:"
          landmarkType = "5">
       </FileBreakpoint>

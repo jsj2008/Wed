@@ -31,19 +31,24 @@
     [super viewDidLoad];
     [self setNavigationBarLeftButton];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(takePicture)]];
-    [self loginWithDummyUsernamePassword];
+    [self createUserNameAndLogin];
     
     [self refreshStream];
 
 }
 
--(void)loginWithDummyUsernamePassword {
-    NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"login", @"command", @"rishabh", @"username", @"password", @"password", nil];
+-(void)createUserNameAndLogin {
+    
+    NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"register", @"command", [[UIDevice currentDevice] name], @"username", @"password", @"password", nil];
     [[API sharedInstance] commandWithParams:params onCompletion:^(NSDictionary *json) {
-        NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
-		if ([json objectForKey:@"error"]==nil && [[res objectForKey:@"IdUser"] intValue]>0) {
-            [[API sharedInstance] setUser:res];
-        }
+//        NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
+        NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"login", @"command", [[UIDevice currentDevice] name], @"username", @"password", @"password", nil];
+        [[API sharedInstance] commandWithParams:params onCompletion:^(NSDictionary *json) {
+            NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
+            if ([json objectForKey:@"error"]==nil && [[res objectForKey:@"IdUser"] intValue]>0) {
+                [[API sharedInstance] setUser:res];
+            }
+        }];
     }];
 }
 

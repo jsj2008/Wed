@@ -22,7 +22,7 @@
 		//show the text in the label
 		NSArray* list = [json objectForKey:@"result"];
 		NSDictionary* photo = [list objectAtIndex:0];
-		lblTitle.text = [photo objectForKey:@"title"];
+		lblTitle.text = [NSString stringWithFormat:@"Uploaded by: %@", [photo objectForKey:@"username"]];
 	}];
 	//load the big size photo
 	NSURL* imageURL = [api urlForImageWithId:_IdPhoto isThumb:NO];
