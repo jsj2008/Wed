@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface PRVenuesWithMapViewController : UIViewController<MKMapViewDelegate>
+@interface PRVenuesWithMapViewController : UIViewController<MKMapViewDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) IBOutlet MKMapView* mapView;
 

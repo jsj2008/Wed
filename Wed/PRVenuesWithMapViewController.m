@@ -12,7 +12,9 @@
 #define METERS_PER_MILE 1609.344
 
 @interface PRVenuesWithMapViewController ()
-
+{
+    PRAnnotation* selectedLocation;
+}
 @end
 
 @implementation PRVenuesWithMapViewController
@@ -117,16 +119,31 @@
     
     NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
     
+    selectedLocation = location;
     if ([[UIApplication sharedApplication] canOpenURL:
          [NSURL URLWithString:@"comgooglemaps://"]]) {
-        NSLog(@"google maps");
-        NSString* locationTitleWithAddedPlusSigns = [location.title stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%f,%f&zoom=14&views=traffic", locationTitleWithAddedPlusSigns, location.coordinate.latitude, location.coordinate.longitude]]];
-        return;
+        
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Open in..." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Google Maps", @"Apple Maps", nil];
+        [actionSheet showInView:self.view.window];
+
     }
-    [location.mapItem openInMapsWithLaunchOptions:launchOptions];
+    else
+        [location.mapItem openInMapsWithLaunchOptions:launchOptions];
 }
 
 #pragma mark -
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        //Google Maps
+        NSString* locationTitleWithAddedPlusSigns = [selectedLocation.title stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%f,%f&zoom=14&views=traffic", locationTitleWithAddedPlusSigns, selectedLocation.coordinate.latitude, selectedLocation.coordinate.longitude]]];
+    }
+    if (buttonIndex == 1) {
+        //Apple Maps
+        [selectedLocation.mapItem openInMapsWithLaunchOptions:@{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving}];
+    }
+}
 
 @end
