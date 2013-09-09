@@ -35,17 +35,14 @@
     CLLocationCoordinate2D location;
     location.latitude = 22.75563;
     location.longitude = 75.90618;
-    
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(location, 20*METERS_PER_MILE, 20*METERS_PER_MILE);
-    [_mapView setRegion:viewRegion animated:YES];
-    
-    PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:@"Raddison" address:@"12, Scheme No 94 C, Ring Rd, Indore, MP, India" coordinates:location];
+        
+    PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:@"Raddison Blu" address:@"12, Scheme No 94 C, Ring Rd, Indore, MP, India" coordinates:location];
     
     [_mapView addAnnotation:annotation];
     
     location.latitude = 22.761062;
     location.longitude = 75.952130;
-    annotation = [[PRAnnotation alloc] initWithTitle:@"Jalsa" address:@"1 Jhalaria Road, Nipania, Near Shishukunj School, Hingoniya Rd, County Walk Township, Indore, MP, India" coordinates:location];
+    annotation = [[PRAnnotation alloc] initWithTitle:@"Jalsa Garden" address:@"1 Jhalaria Road, Nipania, Near Shishukunj School, Hingoniya Rd, County Walk Township, Indore, MP, India" coordinates:location];
     
     [_mapView addAnnotation:annotation];
 }
@@ -72,7 +69,7 @@
 {
     MKAnnotationView *annotationView = [views objectAtIndex:0];
 	id <MKAnnotation> mp = [annotationView annotation];
-	MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate], 1500, 1500);
+	MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([mp coordinate], 20*METERS_PER_MILE, 20*METERS_PER_MILE);
 	[_mapView setRegion:region animated:YES];
 	[_mapView selectAnnotation:mp animated:YES];
 }
@@ -108,7 +105,8 @@
     if ([[UIApplication sharedApplication] canOpenURL:
          [NSURL URLWithString:@"comgooglemaps://"]]) {
         NSLog(@"google maps");
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%f,%f&zoom=14&views=traffic", location.title, location.coordinate.latitude, location.coordinate.longitude]]];
+        NSString* locationTitleWithAddedPlusSigns = [location.title stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?q=%@&center=%f,%f&zoom=14&views=traffic", locationTitleWithAddedPlusSigns, location.coordinate.latitude, location.coordinate.longitude]]];
         return;
     }
     [location.mapItem openInMapsWithLaunchOptions:launchOptions];
