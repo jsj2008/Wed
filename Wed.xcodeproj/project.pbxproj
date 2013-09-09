@@ -21,8 +21,6 @@
 		0604F2AD17D988AC001F0C84 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2AC17D988AC001F0C84 /* Default-568h@2x.png */; };
 		0604F2B017D988AC001F0C84 /* PRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2AF17D988AC001F0C84 /* PRViewController.m */; };
 		0604F2BD17D98C7F001F0C84 /* img_01.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2BC17D98C7F001F0C84 /* img_01.JPG */; };
-		0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */; };
-		0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */; };
 		0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2CC17D99DDF001F0C84 /* PRButton.m */; };
 		0604F2CF17D99E11001F0C84 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0604F2CE17D99E11001F0C84 /* QuartzCore.framework */; };
 		0604F2D817DA3C40001F0C84 /* PRFamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2D617DA3C40001F0C84 /* PRFamilyViewController.m */; };
@@ -91,9 +89,6 @@
 		0604F2AE17D988AC001F0C84 /* PRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRViewController.h; sourceTree = "<group>"; };
 		0604F2AF17D988AC001F0C84 /* PRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRViewController.m; sourceTree = "<group>"; };
 		0604F2BC17D98C7F001F0C84 /* img_01.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_01.JPG; sourceTree = "<group>"; };
-		0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRVenuesViewController.h; sourceTree = "<group>"; };
-		0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRVenuesViewController.m; sourceTree = "<group>"; };
-		0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRVenuesViewController.xib; sourceTree = "<group>"; };
 		0604F2CB17D99DDF001F0C84 /* PRButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRButton.h; sourceTree = "<group>"; };
 		0604F2CC17D99DDF001F0C84 /* PRButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRButton.m; sourceTree = "<group>"; };
 		0604F2CE17D99E11001F0C84 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -271,9 +266,6 @@
 		0604F2D017DA3B17001F0C84 /* Venues View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0604F2C017D98ED9001F0C84 /* PRVenuesViewController.h */,
-				0604F2C117D98ED9001F0C84 /* PRVenuesViewController.m */,
-				0604F2C217D98ED9001F0C84 /* PRVenuesViewController.xib */,
 				066146A917DB83DF001229FF /* PRAnnotation.h */,
 				066146AA17DB83DF001229FF /* PRAnnotation.m */,
 				0604815817DB8268007989E3 /* PRVenuesWithMapViewController.h */,
@@ -373,9 +365,8 @@
 		066146AC17DD107E001229FF /* Gallery View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0675AD1A17DE4154003FCD67 /* PhotoView.h */,
-				0675AD1B17DE4154003FCD67 /* PhotoView.m */,
 				0675AD1917DE3C5C003FCD67 /* API */,
+				0675AD2617DE6D5A003FCD67 /* Photo View */,
 				066146AD17DD10A1001229FF /* PRGalleryViewController.h */,
 				066146AE17DD10A1001229FF /* PRGalleryViewController.m */,
 				066146AF17DD10A1001229FF /* PRGalleryViewController.xib */,
@@ -443,6 +434,15 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		0675AD2617DE6D5A003FCD67 /* Photo View */ = {
+			isa = PBXGroup;
+			children = (
+				0675AD1A17DE4154003FCD67 /* PhotoView.h */,
+				0675AD1B17DE4154003FCD67 /* PhotoView.m */,
+			);
+			name = "Photo View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -500,7 +500,6 @@
 				0604F2AB17D988AC001F0C84 /* Default@2x.png in Resources */,
 				0604F2AD17D988AC001F0C84 /* Default-568h@2x.png in Resources */,
 				0604F2BD17D98C7F001F0C84 /* img_01.JPG in Resources */,
-				0604F2C417D98ED9001F0C84 /* PRVenuesViewController.xib in Resources */,
 				0604F2D917DA3C40001F0C84 /* PRFamilyViewController.xib in Resources */,
 				0604F2E117DA4359001F0C84 /* tab-off.png in Resources */,
 				0604F2E217DA4359001F0C84 /* tab-off@2x.png in Resources */,
@@ -531,7 +530,6 @@
 				0604F2A317D988AC001F0C84 /* main.m in Sources */,
 				0604F2A717D988AC001F0C84 /* PRAppDelegate.m in Sources */,
 				0604F2B017D988AC001F0C84 /* PRViewController.m in Sources */,
-				0604F2C317D98ED9001F0C84 /* PRVenuesViewController.m in Sources */,
 				0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */,
 				0604F2D817DA3C40001F0C84 /* PRFamilyViewController.m in Sources */,
 				0604F2DC17DA42F4001F0C84 /* PRSegmentControl.m in Sources */,
@@ -647,6 +645,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -666,6 +665,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
