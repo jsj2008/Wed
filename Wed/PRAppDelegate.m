@@ -16,7 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController_iPhone" bundle:nil];
+        self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController" bundle:nil];
     } else {
         self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController_iPad" bundle:nil];
     }

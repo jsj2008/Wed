@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:0/255.0 green:212/255.0 blue:35/255.0 alpha:1.0];
+
     [self setNavigationBarLeftButton];
 
     [self familyChanged:_segControl];

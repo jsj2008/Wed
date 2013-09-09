@@ -31,10 +31,9 @@
     UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueLight size:16.0f];
     self.titleLabel.font = font;    
     
-    self.layer.cornerRadius = 10; // this value vary as per your desire
+    self.layer.cornerRadius = self.frame.size.width/2;
     self.clipsToBounds = YES;
     // Drawing code
 }
-
 
 @end

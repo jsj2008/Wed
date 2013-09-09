@@ -20,7 +20,7 @@
 //     [UIView commitAnimations];
     
     CATransition* theTransition = [CATransition animation];
-    theTransition.duration = 0.6;
+    theTransition.duration = 0.4;
     theTransition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     theTransition.type = kCATransitionFade;//kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
 //    theTransition.subtype = kCATransitionFromTop; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom
@@ -41,7 +41,7 @@
      */
     
     CATransition* theTransition = [CATransition animation];
-    theTransition.duration = 0.6;
+    theTransition.duration = 0.4;
     theTransition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     theTransition.type = kCATransitionFade; //kCATransitionMoveIn; //, kCATransitionPush, kCATransitionReveal, kCATransitionFade
     theTransition.subtype = kCATransitionFade; //kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom

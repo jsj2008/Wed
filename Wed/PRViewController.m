@@ -30,10 +30,14 @@
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:26/255.0 green:141/255.0 blue:225/255.0 alpha:1.0];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     
     [self setButtonTags];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:26/255.0 green:141/255.0 blue:225/255.0 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning

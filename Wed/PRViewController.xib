@@ -67,7 +67,7 @@
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MAA</bytes>
 						</object>
-						<float key="IBUIAlpha">0.60000002384185791</float>
+						<float key="IBUIAlpha">0.5</float>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUIButton" id="1031865120">
@@ -80,7 +80,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xMDE5NjA3ODQzIDAuNTUyOTQxMTc2NSAwLjg4MjM1Mjk0MTIAA</bytes>
+							<bytes key="NSRGB">MC44MzA4MDUyMDA3IDAuMjk5NzI2Mjc3NCAwLjc1NjE1ODc1OTEAA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -116,7 +116,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xMDE5NjA3ODQzIDAuNTUyOTQxMTc2NSAwLjg4MjM1Mjk0MTIAA</bytes>
+							<bytes key="NSRGB">MSAwLjE0ODYwODU3NjYgMC4wNTYzNjk3NTM2NQA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -138,7 +138,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xMDE5NjA3ODQzIDAuNTUyOTQxMTc2NSAwLjg4MjM1Mjk0MTIAA</bytes>
+							<bytes key="NSRGB">MCAwLjgzMjE3MzgxMzkgMC4xMzc4ODc3NzM3AA</bytes>
 						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
