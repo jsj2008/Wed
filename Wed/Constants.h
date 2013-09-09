@@ -16,6 +16,7 @@
 #define PRDropboxEventsScheduleURL  @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/schedule_list.plist"
 #define PRDropboxThakurFamilyURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/thakurs_family.plist"
 #define PRDropboxTayalFamilyURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/tayals_family.plist"
+#define PRDropboxVenuesURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/venues.plist"
 #define PRDropboxAppKey @"xywg510e2fascmp"
 #define PRDropboxAppSecret @"q5gonfs7ggsga39"
 

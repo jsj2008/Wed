@@ -14,5 +14,6 @@
 @property (nonatomic, strong) IBOutlet MKMapView* mapView;
 
 @property (nonatomic, assign) CLLocationCoordinate2D* coordinates;
+@property (nonatomic, strong) NSMutableArray* venuesArray;
 
 @end

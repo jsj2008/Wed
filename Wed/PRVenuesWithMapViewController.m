@@ -31,20 +31,8 @@
     [super viewDidLoad];
     
     [self setNavigationBarLeftButton];
-    
-    CLLocationCoordinate2D location;
-    location.latitude = 22.75563;
-    location.longitude = 75.90618;
-        
-    PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:@"Raddison Blu" address:@"12, Scheme No 94 C, Ring Rd, Indore, MP, India" coordinates:location];
-    
-    [_mapView addAnnotation:annotation];
-    
-    location.latitude = 22.761062;
-    location.longitude = 75.952130;
-    annotation = [[PRAnnotation alloc] initWithTitle:@"Jalsa Garden" address:@"1 Jhalaria Road, Nipania, Near Shishukunj School, Hingoniya Rd, County Walk Township, Indore, MP, India" coordinates:location];
-    
-    [_mapView addAnnotation:annotation];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(getRemoteVenues)]];
+    [self getRemoteVenues];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +53,30 @@
 {
     [self.navigationController popControllerWithTransition];
 }
+
+-(void)getRemoteVenues{
+    for (PRAnnotation* annotation in _mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
+    }
+    
+    _venuesArray = [NSMutableArray new];
+    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:progressView];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        _venuesArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxVenuesURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSDictionary* venue in _venuesArray) {
+                CLLocationCoordinate2D location;
+                location.latitude = [[venue objectForKey:@"Latitude"] floatValue];
+                location.longitude = [[venue objectForKey:@"Longitude"] floatValue];
+                PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:[venue objectForKey:@"Title"] address:[venue objectForKey:@"Address"] coordinates:location];
+                [_mapView addAnnotation:annotation];
+            }
+            [progressView stop];
+        });
+    });
+}
+
 -(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
     MKAnnotationView *annotationView = [views objectAtIndex:0];
@@ -84,7 +96,7 @@
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-//            annotationView.image = [UIImage imageNamed:@"arrest.png"];//here we use a nice image instead of the default pins
+            //            annotationView.image = [UIImage imageNamed:@"arrest.png"];//here we use a nice image instead of the default pins
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         } else {
             annotationView.annotation = annotation;
