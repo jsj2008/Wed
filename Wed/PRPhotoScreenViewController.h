@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PRPhotoScreenViewController : UIViewController
+@interface PRPhotoScreenViewController : UIViewController<UIScrollViewDelegate>
 {
     //just the photo view and the photo title
     IBOutlet UIImageView* photoView;
@@ -16,6 +16,8 @@
 }
 
 @property (strong, nonatomic) NSNumber* IdPhoto;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView* activityView;
+@property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
 
 -(id)initWithIdPhoto:(NSNumber*)idPhoto;
 

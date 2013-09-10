@@ -39,8 +39,17 @@
 	}];
 	//load the big size photo
 
+   [_activityView startAnimating];
 	NSURL* imageURL = [api urlForImageWithId:_IdPhoto isThumb:NO];
-	[photoView setImageWithURL: imageURL];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        UIImage* image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_activityView stopAnimating];
+//            [photoView setImageWithURL: imageURL];
+            [photoView setImage:image];
+        });
+    });
+
 }
 
 -(void)didReceiveMemoryWarning
@@ -60,6 +69,13 @@
 -(void)back:(id)sender
 {
     [self.navigationController popControllerWithTransition];
+}
+
+#pragma mark - UIScrollView Delegate
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return [_scrollView viewWithTag:1];
 }
 
 @end
