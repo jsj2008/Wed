@@ -24,6 +24,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.rtayal.wedding.EventsActitivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.rtayal.wedding.GalleryActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.rtayal.wedding.VenuesActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.rtayal.wedding.FamilyActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
