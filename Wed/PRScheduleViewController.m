@@ -41,6 +41,12 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[LocalyticsSession shared] tagScreen:@"Events Screen"];
+}
+
 -(void) setNavigationBarLeftButton
 {
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];

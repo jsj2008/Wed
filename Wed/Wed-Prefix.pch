@@ -14,5 +14,6 @@
 #import "Constants.h"
 #import "UINavigationController+PRNavigationController.h"
 #import "PRProgressView.h"
+#import "LocalyticsSession.h"
 
 #endif

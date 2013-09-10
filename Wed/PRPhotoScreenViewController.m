@@ -49,7 +49,6 @@
             [photoView setImage:image];
         });
     });
-
 }
 
 -(void)didReceiveMemoryWarning

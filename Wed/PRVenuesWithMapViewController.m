@@ -44,6 +44,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[LocalyticsSession shared] tagScreen:@"Venues Screen"];
+}
+
 -(void) setNavigationBarLeftButton
 {
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];

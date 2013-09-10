@@ -37,6 +37,12 @@
     [self refreshStream];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[LocalyticsSession shared] tagScreen:@"Gallery Screen"];
+}
+
 -(void)createUserNameAndLogin {
     
     NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"register", @"command", [[UIDevice currentDevice] name], @"username", @"password", @"password", nil];

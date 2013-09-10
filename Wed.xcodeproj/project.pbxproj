@@ -65,6 +65,14 @@
 		0675AD2017DE41C9003FCD67 /* PRPhotoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */; };
 		0675AD2117DE41C9003FCD67 /* PRPhotoScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */; };
 		0675AD2517DE6CAA003FCD67 /* PRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675AD2417DE6CAA003FCD67 /* PRViewController.xib */; };
+		06FA32F817DFAFAE00971661 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F717DFAFAE00971661 /* CoreData.framework */; };
+		06FA32FA17DFAFB700971661 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F917DFAFB700971661 /* SystemConfiguration.framework */; };
+		06FA32FC17DFAFBF00971661 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32FB17DFAFBF00971661 /* libz.dylib */; };
+		06FA33D617DFB5AC00971661 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA33D517DFB5AC00971661 /* AdSupport.framework */; };
+		06FA33D817DFB5B600971661 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA33D717DFB5B600971661 /* libsqlite3.dylib */; };
+		06FA33E917DFB65900971661 /* iOSa_2.18.5.version in Resources */ = {isa = PBXBuildFile; fileRef = 06FA33E417DFB65900971661 /* iOSa_2.18.5.version */; };
+		06FA33EA17DFB65900971661 /* libLocalyticsAMP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA33E517DFB65900971661 /* libLocalyticsAMP.a */; };
+		06FA33EB17DFB65900971661 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 06FA33E617DFB65900971661 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +166,16 @@
 		0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPhotoScreenViewController.m; sourceTree = "<group>"; };
 		0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRPhotoScreenViewController.xib; sourceTree = "<group>"; };
 		0675AD2417DE6CAA003FCD67 /* PRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRViewController.xib; sourceTree = "<group>"; };
+		06FA32F717DFAFAE00971661 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		06FA32F917DFAFB700971661 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		06FA32FB17DFAFBF00971661 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		06FA33D517DFB5AC00971661 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		06FA33D717DFB5B600971661 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		06FA33E417DFB65900971661 /* iOSa_2.18.5.version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = iOSa_2.18.5.version; sourceTree = "<group>"; };
+		06FA33E517DFB65900971661 /* libLocalyticsAMP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libLocalyticsAMP.a; sourceTree = "<group>"; };
+		06FA33E617DFB65900971661 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		06FA33E717DFB65900971661 /* LocalyticsAmpSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsAmpSession.h; sourceTree = "<group>"; };
+		06FA33E817DFB65900971661 /* LocalyticsSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsSession.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +183,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FA33D817DFB5B600971661 /* libsqlite3.dylib in Frameworks */,
+				06FA33D617DFB5AC00971661 /* AdSupport.framework in Frameworks */,
+				06FA32FC17DFAFBF00971661 /* libz.dylib in Frameworks */,
+				06FA32FA17DFAFB700971661 /* SystemConfiguration.framework in Frameworks */,
+				06FA32F817DFAFAE00971661 /* CoreData.framework in Frameworks */,
 				066146B917DD8FC7001229FF /* AddressBook.framework in Frameworks */,
 				066146B717DD73EA001229FF /* Security.framework in Frameworks */,
 				066146B317DD4802001229FF /* MobileCoreServices.framework in Frameworks */,
@@ -173,6 +196,7 @@
 				0604F29717D988AC001F0C84 /* UIKit.framework in Frameworks */,
 				0604F29917D988AC001F0C84 /* Foundation.framework in Frameworks */,
 				0604F29B17D988AC001F0C84 /* CoreGraphics.framework in Frameworks */,
+				06FA33EA17DFB65900971661 /* libLocalyticsAMP.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +223,12 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06FA33D717DFB5B600971661 /* libsqlite3.dylib */,
+				06FA33D517DFB5AC00971661 /* AdSupport.framework */,
+				06FA33E317DFB65900971661 /* Localytics */,
+				06FA32FB17DFAFBF00971661 /* libz.dylib */,
+				06FA32F917DFAFB700971661 /* SystemConfiguration.framework */,
+				06FA32F717DFAFAE00971661 /* CoreData.framework */,
 				066146B817DD8FC7001229FF /* AddressBook.framework */,
 				066146B617DD73EA001229FF /* Security.framework */,
 				066146B217DD4802001229FF /* MobileCoreServices.framework */,
@@ -451,6 +481,19 @@
 			name = Annotation;
 			sourceTree = "<group>";
 		};
+		06FA33E317DFB65900971661 /* Localytics */ = {
+			isa = PBXGroup;
+			children = (
+				06FA33E417DFB65900971661 /* iOSa_2.18.5.version */,
+				06FA33E517DFB65900971661 /* libLocalyticsAMP.a */,
+				06FA33E617DFB65900971661 /* LICENSE */,
+				06FA33E717DFB65900971661 /* LocalyticsAmpSession.h */,
+				06FA33E817DFB65900971661 /* LocalyticsSession.h */,
+			);
+			name = Localytics;
+			path = Wed/Localytics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -525,6 +568,8 @@
 				0675ACF517DE1F6A003FCD67 /* PRProgressView.xib in Resources */,
 				0675AD2117DE41C9003FCD67 /* PRPhotoScreenViewController.xib in Resources */,
 				0675AD2517DE6CAA003FCD67 /* PRViewController.xib in Resources */,
+				06FA33E917DFB65900971661 /* iOSa_2.18.5.version in Resources */,
+				06FA33EB17DFB65900971661 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,8 +686,8 @@
 		0604F2BA17D988AD001F0C84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: rishabh tayal (VJS8GXZ7PW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: rishabh tayal (VJS8GXZ7PW)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -651,9 +696,18 @@
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Wed/GA Library\"",
+					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/GoogleAnalytics/Library\"",
+					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2\"",
+					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/Library\"",
+					"\"$(SRCROOT)/Wed/AMP-SDK-latest.bin\"",
+					"\"$(SRCROOT)/Wed/Localytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "459F4AAD-969B-4184-9BE5-9313BF06DAE4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "459F4AAD-969B-4184-9BE5-9313BF06DAE4";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -672,6 +726,15 @@
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Wed/GA Library\"",
+					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/GoogleAnalytics/Library\"",
+					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2\"",
+					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/Library\"",
+					"\"$(SRCROOT)/Wed/AMP-SDK-latest.bin\"",
+					"\"$(SRCROOT)/Wed/Localytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "BA161094-6833-4822-A65B-BB00AB176A54";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BA161094-6833-4822-A65B-BB00AB176A54";
