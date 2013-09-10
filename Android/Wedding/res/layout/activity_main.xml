@@ -15,7 +15,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#66000000" >
+        android:background="#99000000" >
 
         <Button
             android:id="@+id/buttonEvents"
