@@ -23,7 +23,7 @@
             android:layout_height="80dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="150dp"
             android:layout_marginLeft="40dp"
             android:background="@drawable/events_button"
             android:text="Events" />
@@ -34,7 +34,7 @@
             android:layout_height="80dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="150dp"
             android:layout_marginRight="56dp"
             android:background="@drawable/gallery_button"
             android:text="Gallery" />

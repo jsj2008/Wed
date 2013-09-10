@@ -1,5 +1,6 @@
 bin/
 gen/
+Android/Wedding/bin/
 Android/Wedding/bin/classes/com/rtayal/wedding/R$drawable.class
 
 Android/Wedding/bin/classes/com/rtayal/wedding/R$layout.class
@@ -23,3 +24,5 @@ Android/Wedding/bin/classes/com/rtayal/wedding/R$style.class
 Android/Wedding/gen/com/rtayal/wedding/R.java
 
 Android/Wedding/gen/com/rtayal/wedding/R.java
+
+Android/Wedding/bin/AndroidManifest.xml
