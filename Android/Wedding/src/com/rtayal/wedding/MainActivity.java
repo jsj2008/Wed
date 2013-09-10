@@ -64,9 +64,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				long minutes = ((millisUntilFinished / (1000 * 60)) % 60);
 				long hours = ((millisUntilFinished / (1000 * 60 * 60)) % 24);
 				long days = ((millisUntilFinished / (1000 * 60 * 60 * 24)) % 365);
-				countDownTV.setText(String.format(
-						"%d Days %d Hours %d Mins %d Sec", days, hours,
-						minutes, seconds));
+				// countDownTV.setText(String.format(
+				// "%d Days %d Hours %d Mins %d Sec", days, hours,
+				// minutes, seconds));
 			}
 
 			@Override
