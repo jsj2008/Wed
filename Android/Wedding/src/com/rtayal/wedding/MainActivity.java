@@ -1,16 +1,26 @@
 package com.rtayal.wedding;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
+@SuppressLint({ "SimpleDateFormat", "DefaultLocale" })
 public class MainActivity extends Activity implements OnClickListener {
 
 	private Button eventsButton, galleryButton, venuesButton, familyButton;
+	private TextView countDownTV;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +38,42 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		familyButton = (Button) findViewById(R.id.buttonFamily);
 		familyButton.setOnClickListener(this);
+
+		countDownTV = (TextView) findViewById(R.id.countDownTextView);
+
+		Date nowDate = new Date();
+		String weddingDateString = "2013-12-07";
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Date weddingDate = null;
+		try {
+			weddingDate = format.parse(weddingDateString);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		long diffInMs = weddingDate.getTime() - nowDate.getTime();
+		long diffInSec = TimeUnit.MILLISECONDS.toSeconds(diffInMs);
+
+		new CountDownTimer(diffInSec * 1000, 1000) {
+
+			@Override
+			public void onTick(long millisUntilFinished) {
+				// TODO Auto-generated method stub
+				long seconds = (millisUntilFinished / 1000) % 60;
+				long minutes = ((millisUntilFinished / (1000 * 60)) % 60);
+				long hours = ((millisUntilFinished / (1000 * 60 * 60)) % 24);
+				long days = ((millisUntilFinished / (1000 * 60 * 60 * 24)) % 365);
+				countDownTV.setText(String.format("%d Days %d Hours %d Mins %d Sec", days,
+						hours, minutes, seconds));
+			}
+
+			@Override
+			public void onFinish() {
+				// TODO Auto-generated method stub
+
+			}
+		}.start();
 	}
 
 	@Override
