@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "API.h"
 #import "PRPhotoScreenViewController.h"
+#import "PRProgressView.h"
 
 @interface PRGalleryViewController ()
 
@@ -95,8 +96,11 @@
 
 -(void)refreshStream {
     //just call the "stream" command from the web API
+    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:progressView];
     [[API sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"stream", @"command", nil] onCompletion:^(NSDictionary *json) {
 		//got stream
+        [progressView stop];
 		[self showStream:[json objectForKey:@"result"]];
 	}];
 }

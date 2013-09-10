@@ -8,6 +8,7 @@
 
 #import "PhotoView.h"
 #import "API.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation PhotoView
 
@@ -53,8 +54,18 @@
 		}];
 		NSOperationQueue* queue = [[NSOperationQueue alloc] init];
 		[queue addOperation:imageOperation];
+        [self addDropShadow];
     }
     return self;
+}
+
+-(void)addDropShadow
+{
+    self.layer.shadowColor = [UIColor purpleColor].CGColor;
+    self.layer.shadowOffset = CGSizeMake(0, 0);
+    self.layer.shadowOpacity = 0.7;
+    self.layer.shadowRadius = 4.0f;
+    self.clipsToBounds = NO;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "PRPhotoScreenViewController.h"
 #import "API.h"
+#import "PRProgressView.h"
 
 @interface PRPhotoScreenViewController ()
 
@@ -37,6 +38,7 @@
         }
 	}];
 	//load the big size photo
+
 	NSURL* imageURL = [api urlForImageWithId:_IdPhoto isThumb:NO];
 	[photoView setImageWithURL: imageURL];
 }
