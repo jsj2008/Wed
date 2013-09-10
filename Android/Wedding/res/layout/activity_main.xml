@@ -30,33 +30,36 @@
 
         <Button
             android:id="@+id/buttonGallery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="100dp"
             android:layout_marginRight="56dp"
+            android:background="@drawable/gallery_button"
             android:text="Gallery" />
 
         <Button
             android:id="@+id/buttonVenues"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginBottom="50dp"
             android:layout_marginLeft="40dp"
+            android:background="@drawable/venues_button"
             android:text="Venues" />
 
         <Button
             android:id="@+id/buttonFamily"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="50dp"
             android:layout_marginRight="56dp"
+            android:background="@drawable/family_button"
             android:text="Family" />
     </RelativeLayout>
 
