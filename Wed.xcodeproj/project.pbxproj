@@ -30,7 +30,7 @@
 		0604F2E217DA4359001F0C84 /* tab-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2DE17DA4359001F0C84 /* tab-off@2x.png */; };
 		0604F2E317DA4359001F0C84 /* tab-on.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2DF17DA4359001F0C84 /* tab-on.png */; };
 		0604F2E417DA4359001F0C84 /* tab-on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2E017DA4359001F0C84 /* tab-on@2x.png */; };
-		0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */; };
+		0604F2E717DA43B2001F0C84 /* UIImage+CustomImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2E617DA43B2001F0C84 /* UIImage+CustomImage.m */; };
 		0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */; };
 		0604F2F117DA487B001F0C84 /* PRScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */; };
 		0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0604F2F417DA502A001F0C84 /* PRFamilyCell.m */; };
@@ -101,8 +101,8 @@
 		0604F2DE17DA4359001F0C84 /* tab-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-off@2x.png"; sourceTree = "<group>"; };
 		0604F2DF17DA4359001F0C84 /* tab-on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-on.png"; sourceTree = "<group>"; };
 		0604F2E017DA4359001F0C84 /* tab-on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-on@2x.png"; sourceTree = "<group>"; };
-		0604F2E517DA43B2001F0C84 /* UIImage+CustomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomColor.h"; sourceTree = "<group>"; };
-		0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomColor.m"; sourceTree = "<group>"; };
+		0604F2E517DA43B2001F0C84 /* UIImage+CustomImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomImage.h"; sourceTree = "<group>"; };
+		0604F2E617DA43B2001F0C84 /* UIImage+CustomImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomImage.m"; sourceTree = "<group>"; };
 		0604F2ED17DA487B001F0C84 /* PRScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRScheduleViewController.h; sourceTree = "<group>"; };
 		0604F2EE17DA487B001F0C84 /* PRScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRScheduleViewController.m; sourceTree = "<group>"; };
 		0604F2EF17DA487B001F0C84 /* PRScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRScheduleViewController.xib; sourceTree = "<group>"; };
@@ -277,8 +277,8 @@
 		0604F2D117DA3B1E001F0C84 /* Common View */ = {
 			isa = PBXGroup;
 			children = (
-				0604F2E517DA43B2001F0C84 /* UIImage+CustomColor.h */,
-				0604F2E617DA43B2001F0C84 /* UIImage+CustomColor.m */,
+				0604F2E517DA43B2001F0C84 /* UIImage+CustomImage.h */,
+				0604F2E617DA43B2001F0C84 /* UIImage+CustomImage.m */,
 				0604F2CB17D99DDF001F0C84 /* PRButton.h */,
 				0604F2CC17D99DDF001F0C84 /* PRButton.m */,
 				0604F2DA17DA42F4001F0C84 /* PRSegmentControl.h */,
@@ -541,7 +541,7 @@
 				0604F2CD17D99DDF001F0C84 /* PRButton.m in Sources */,
 				0604F2D817DA3C40001F0C84 /* PRFamilyViewController.m in Sources */,
 				0604F2DC17DA42F4001F0C84 /* PRSegmentControl.m in Sources */,
-				0604F2E717DA43B2001F0C84 /* UIImage+CustomColor.m in Sources */,
+				0604F2E717DA43B2001F0C84 /* UIImage+CustomImage.m in Sources */,
 				0604F2F017DA487B001F0C84 /* PRScheduleViewController.m in Sources */,
 				0604F2F517DA502A001F0C84 /* PRFamilyCell.m in Sources */,
 				0604815517DB7E3A007989E3 /* UINavigationController+PRNavigationController.m in Sources */,

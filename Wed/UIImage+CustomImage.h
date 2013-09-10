@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (CustomColor)
+@interface UIImage (CustomImage)
 
 + (UIImage *)imageFromRed:(float)red Green:(float)green Blue:(float)blue;
 + (UIImage*)imageFromColor:(UIColor*)color;

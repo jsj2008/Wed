@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 Rishabh Tayal. All rights reserved.
 //
 
-#import "UIImage+CustomColor.h"
+#import "UIImage+CustomImage.h"
 
-@implementation UIImage (CustomColor)
+@implementation UIImage (CustomImage)
 
 #pragma mark -
 

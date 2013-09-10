@@ -8,7 +8,7 @@
 
 #import "PRSegmentControl.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIImage+CustomColor.h"
+#import "UIImage+CustomImage.h"
 
 @implementation PRSegmentControl
 

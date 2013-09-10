@@ -11,6 +11,7 @@
 #import "PRScheduleViewController.h"
 #import "PRVenuesWithMapViewController.h"
 #import "PRGalleryViewController.h"
+#import "UIImage+CustomImage.h"
 
 @interface PRViewController ()
 
@@ -19,6 +20,7 @@
 @property (nonatomic, strong) IBOutlet UIButton* galleryButton;
 @property (nonatomic, strong) IBOutlet UIButton* venuesButton;
 @property (nonatomic, strong) IBOutlet UIButton* familyButton;
+@property (nonatomic, strong) IBOutlet UIImageView* backgroundIV;
 
 @property (nonatomic, strong) NSTimer* timer;
 
@@ -31,7 +33,6 @@
     [super viewDidLoad];
     
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
-    
     [self setButtonTags];
 }
 
@@ -113,9 +114,9 @@
                                                                 fromDate:now
                                                                   toDate:dateFromString
                                                                  options:0];
-
+    
     //Uncomment this to display actual duration
-//    _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
+    //    _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
     _lblDays.text = @"Countdown goes here";
 }
 
