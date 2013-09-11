@@ -12,6 +12,7 @@
 @interface PRGalleryViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView* listView;
+@property (nonatomic, strong) IBOutlet UILabel* noPhotosLAbel;
 
 -(IBAction)takePhoto:(id)sender;
 

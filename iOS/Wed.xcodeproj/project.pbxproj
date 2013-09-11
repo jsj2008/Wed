@@ -73,6 +73,12 @@
 		06FA33E917DFB65900971661 /* iOSa_2.18.5.version in Resources */ = {isa = PBXBuildFile; fileRef = 06FA33E417DFB65900971661 /* iOSa_2.18.5.version */; };
 		06FA33EA17DFB65900971661 /* libLocalyticsAMP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA33E517DFB65900971661 /* libLocalyticsAMP.a */; };
 		06FA33EB17DFB65900971661 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 06FA33E617DFB65900971661 /* LICENSE */; };
+		06FAFD3417E0FD670017D29D /* chooserPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD3017E0FD670017D29D /* chooserPhoto.png */; };
+		06FAFD3517E0FD670017D29D /* chooserPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD3117E0FD670017D29D /* chooserPhoto@2x.png */; };
+		06FAFD3617E0FD670017D29D /* chooserPhotoActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD3217E0FD670017D29D /* chooserPhotoActive.png */; };
+		06FAFD3717E0FD670017D29D /* chooserPhotoActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD3317E0FD670017D29D /* chooserPhotoActive@2x.png */; };
+		06FAFD4217E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD4017E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png */; };
+		06FAFD4317E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +182,12 @@
 		06FA33E617DFB65900971661 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		06FA33E717DFB65900971661 /* LocalyticsAmpSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsAmpSession.h; sourceTree = "<group>"; };
 		06FA33E817DFB65900971661 /* LocalyticsSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalyticsSession.h; sourceTree = "<group>"; };
+		06FAFD3017E0FD670017D29D /* chooserPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooserPhoto.png; sourceTree = "<group>"; };
+		06FAFD3117E0FD670017D29D /* chooserPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooserPhoto@2x.png"; sourceTree = "<group>"; };
+		06FAFD3217E0FD670017D29D /* chooserPhotoActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooserPhotoActive.png; sourceTree = "<group>"; };
+		06FAFD3317E0FD670017D29D /* chooserPhotoActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chooserPhotoActive@2x.png"; sourceTree = "<group>"; };
+		06FAFD4017E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newsfeed_NewStoriesBar_Background.png; sourceTree = "<group>"; };
+		06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsfeed_NewStoriesBar_Background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +285,12 @@
 		0604F2BE17D98DD3001F0C84 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				06FAFD4017E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png */,
+				06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */,
+				06FAFD3017E0FD670017D29D /* chooserPhoto.png */,
+				06FAFD3117E0FD670017D29D /* chooserPhoto@2x.png */,
+				06FAFD3217E0FD670017D29D /* chooserPhotoActive.png */,
+				06FAFD3317E0FD670017D29D /* chooserPhotoActive@2x.png */,
 				06536B1917DA71C1001DFE4E /* back.png */,
 				06536B1A17DA71C1001DFE4E /* back@2x.png */,
 				06536B1D17DA7332001DFE4E /* Table View */,
@@ -570,6 +588,12 @@
 				0675AD2517DE6CAA003FCD67 /* PRViewController.xib in Resources */,
 				06FA33E917DFB65900971661 /* iOSa_2.18.5.version in Resources */,
 				06FA33EB17DFB65900971661 /* LICENSE in Resources */,
+				06FAFD3417E0FD670017D29D /* chooserPhoto.png in Resources */,
+				06FAFD3517E0FD670017D29D /* chooserPhoto@2x.png in Resources */,
+				06FAFD3617E0FD670017D29D /* chooserPhotoActive.png in Resources */,
+				06FAFD3717E0FD670017D29D /* chooserPhotoActive@2x.png in Resources */,
+				06FAFD4217E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png in Resources */,
+				06FAFD4317E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

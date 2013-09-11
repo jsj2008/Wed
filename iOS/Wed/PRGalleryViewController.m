@@ -117,6 +117,9 @@
         [view removeFromSuperview];
     }
     // 2 add new photo views
+
+    _noPhotosLAbel.hidden = (stream.count > 0)? true:false;
+    
     for (int i=0;i<[stream count];i++) {
         NSDictionary* photo = [stream objectAtIndex:i];
         PhotoView* photoView = [[PhotoView alloc] initWithIndex:i andData:photo];
