@@ -31,7 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
+    UIColor* barColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = barColor;
 
     [self setNavigationBarLeftButton];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(getRemoteVenues)]];

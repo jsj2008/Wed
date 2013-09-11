@@ -15,5 +15,6 @@
 #import "UINavigationController+PRNavigationController.h"
 #import "PRProgressView.h"
 #import "LocalyticsSession.h"
+#import "UIImage+CustomImage.h"
 
 #endif
