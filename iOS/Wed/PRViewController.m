@@ -124,8 +124,8 @@
                                                                  options:0];
     
     //Uncomment this to display actual duration
-    //    _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
-    _lblDays.text = @"Countdown goes here";
+    _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
+//    _lblDays.text = @"Countdown goes here";
 }
 
 @end
