@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,9 +17,11 @@
         android:id="@+id/relationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/familyMemberName"
         android:text="Relation"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#676767"
         android:textStyle="bold" />
 
-</LinearLayout>
+</RelativeLayout>

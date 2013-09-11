@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -84,6 +86,15 @@ public class FamilyListAdapter extends BaseAdapter {
 		((TextView) convertView.findViewById(R.id.relationTextView))
 				.setText((CharSequence) familyListArray.get(position).get(
 						"Relation"));
+		Animation animation;
+		if (position % 2 == 0) {
+			animation = AnimationUtils.loadAnimation(mContext,
+					R.anim.slide_left);
+		} else
+			animation = AnimationUtils.loadAnimation(mContext,
+					R.anim.slide_right);
+
+		convertView.startAnimation(animation);
 		return convertView;
 	}
 }
