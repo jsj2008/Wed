@@ -1,4 +1,4 @@
-package com.rtayal.wedding;
+package com.rtayal.wedding.main;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +15,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.rtayal.wedding.FamilyActivity;
+import com.rtayal.wedding.GalleryActivity;
+import com.rtayal.wedding.R;
+import com.rtayal.wedding.VenuesActivity;
+import com.rtayal.wedding.events.EventsActitivity;
 
 @SuppressLint({ "SimpleDateFormat", "DefaultLocale" })
 public class MainActivity extends Activity implements OnClickListener {

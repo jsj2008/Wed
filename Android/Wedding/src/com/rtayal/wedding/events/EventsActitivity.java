@@ -1,10 +1,5 @@
-package com.rtayal.wedding;
+package com.rtayal.wedding.events;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -17,10 +12,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.foound.widget.AmazingAdapter;
+import com.rtayal.wedding.R;
+import com.rtayal.wedding.events.EventsDownload.DataDownloadListener;
 
 public class EventsActitivity extends Activity {
 
-	private ArrayList<ArrayList<HashMap<String, String>>> allArray = new ArrayList<ArrayList<HashMap<String, String>>>();
+	private ArrayList<HashMap<String, Object>> allArray = new ArrayList<HashMap<String, Object>>();
 
 	// UI References
 	private ListView listView;
@@ -32,45 +29,22 @@ public class EventsActitivity extends Activity {
 
 		setContentView(R.layout.activity_events);
 
-		URL url = null;
-		try {
-			url = new URL(
-					"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/schedule_list.plist");
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		EventsDownload downloader = new EventsDownload();
+		downloader.setDataDownloadListener(new DataDownloadListener() {
 
-		BufferedReader in = null;
-		try {
-			in = new BufferedReader(new InputStreamReader(
-					url.openStream()));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		String all = "";
-		String str;
-		try {
-			while ((str = in.readLine()) != null) {
-				all += str;
+			@Override
+			public void dataDownloadedSuccessfully(
+					ArrayList<HashMap<String, Object>> data) {
+				allArray = data;
+				((MyListAdapter) listView.getAdapter()).notifyDataSetChanged();
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			in.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-		// ActionBar actionBar = getActionBar();
-		// actionBar.setDisplayHomeAsUpEnabled(true);
+			@Override
+			public void dataDownloadFailed() {
 
-		// allArray.add(freightsArray);
-		// allArray.add(UPSArray);
+			}
+		});
+		downloader.execute();
 
 		listView = (ListView) findViewById(R.id.amazingListView);
 		listView.setAdapter(new MyListAdapter());
@@ -97,12 +71,15 @@ public class EventsActitivity extends Activity {
 			return res;
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public HashMap<String, String> getItem(int position) {
 			int c = 0;
 			for (int i = 0; i < allArray.size(); i++) {
 				if (position >= c && position < c + allArray.get(i).size()) {
-					return allArray.get(i).get(position - c);
+					// return allArray.get(i).get(position - c);
+					return ((ArrayList<HashMap<String, String>>) allArray
+							.get(i).get("Events")).get(position - c);
 				}
 				c += allArray.get(i).size();
 			}
@@ -122,13 +99,13 @@ public class EventsActitivity extends Activity {
 		protected void bindSectionHeader(View view, int position,
 				boolean displaySectionHeader) {
 			if (displaySectionHeader) {
-//				view.findViewById(R.id.header).setVisibility(View.VISIBLE);
-//				TextView lSectionTitle = (TextView) view
-//						.findViewById(R.id.header);
-//				lSectionTitle
-//						.setText(getSections()[getSectionForPosition(position)]);
+				view.findViewById(R.id.header).setVisibility(View.VISIBLE);
+				TextView lSectionTitle = (TextView) view
+						.findViewById(R.id.header);
+				lSectionTitle
+						.setText(getSections()[getSectionForPosition(position)]);
 			} else {
-//				view.findViewById(R.id.header).setVisibility(View.GONE);
+				view.findViewById(R.id.header).setVisibility(View.GONE);
 			}
 		}
 
@@ -136,26 +113,21 @@ public class EventsActitivity extends Activity {
 		public View getAmazingView(int position, View convertView,
 				ViewGroup parent) {
 			View res = convertView;
-//			if (res == null)
-//				res = getLayoutInflater().inflate(
-//						R.layout.wm_shipping_calc_detail_item, null);
+			if (res == null)
+				res = getLayoutInflater().inflate(R.layout.schedule_item, null);
 
-//			TextView lName = (TextView) res
-//					.findViewById(R.id.shipMethodTextView);
-//			TextView lYear = (TextView) res
-//					.findViewById(R.id.shipPriceTextView);
-//
-//			HashMap<String, String> composer = getItem(position);
-//			String price;
-//			if (getSectionForPosition(position) == 0) {
-//				lName.setText(composer.get("Carrier"));
-//				price = composer.get("Net");
-//			} else {
-//				lName.setText(composer.get("Ship_Type_Desc"));
-//				price = composer.get("Ship_Type_Price");
-//			}
-//
-//			lYear.setText(formatPriceString(price));
+			TextView lName = (TextView) res
+					.findViewById(R.id.shipMethodTextView);
+			TextView lYear = (TextView) res
+					.findViewById(R.id.shipPriceTextView);
+
+			HashMap<String, String> composer = getItem(position);
+			String price;
+
+			lName.setText((CharSequence) composer.get("Event"));
+			price = (String) composer.get("Location");
+			lYear.setText(price);
+
 			return res;
 		}
 
@@ -199,13 +171,11 @@ public class EventsActitivity extends Activity {
 		@Override
 		public String[] getSections() {
 			String[] res = new String[2];
-			res[0] = "LTL";
-			res[1] = "UPS";
-			// for (int i = 0; i < allArray.size(); i++) {
-			// res[i] = allArray.get(i);
-			// }
+
+			for (int i = 0; i < allArray.size(); i++) {
+				res[i] = (String) allArray.get(i).get("Date");
+			}
 			return res;
 		}
-
 	}
 }
