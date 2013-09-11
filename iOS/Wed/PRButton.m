@@ -9,6 +9,12 @@
 #import "PRButton.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface PRButton()
+{
+    UIColor* originalBackgroundColor;
+}
+@end
+
 @implementation PRButton
 
 - (id)initWithFrame:(CGRect)frame
@@ -26,6 +32,9 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    if (!originalBackgroundColor) {
+        originalBackgroundColor = self.backgroundColor;
+    }
     [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
     
     UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueLight size:16.0f];
@@ -33,7 +42,19 @@
     
     self.layer.cornerRadius = self.frame.size.width/2;
     self.clipsToBounds = YES;
+    self.layer.borderWidth = 1.5;
+    self.layer.borderColor = [[UIColor whiteColor] CGColor];
     // Drawing code
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    if (highlighted) {
+        self.backgroundColor = [UIColor grayColor];
+    }
+    else {
+        self.backgroundColor = originalBackgroundColor;
+    }
 }
 
 @end

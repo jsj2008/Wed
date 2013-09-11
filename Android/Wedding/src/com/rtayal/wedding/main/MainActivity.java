@@ -83,7 +83,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onBackPressed() {
-		super.onBackPressed();
 	}
 
 	@Override
