@@ -15,7 +15,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[LocalyticsSession shared] startSession:@"dfd759fdfda91377340d12f-bb8a5478-1a55-11e3-1300-004a77f8b47f"];
-    
+    [[LocalyticsSession shared] tagEvent:[[UIDevice currentDevice] name]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
