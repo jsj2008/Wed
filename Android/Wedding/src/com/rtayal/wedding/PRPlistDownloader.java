@@ -1,4 +1,4 @@
-package com.rtayal.wedding.events;
+package com.rtayal.wedding;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import xmlwise.XmlParseException;
 import android.os.AsyncTask;
 import android.util.Log;
 
-public class EventsDownload extends AsyncTask<Void, Void, String> {
+public class PRPlistDownloader extends AsyncTask<String, Void, String> {
 
 	DataDownloadListener dataDownloadListener;
 
@@ -31,14 +31,13 @@ public class EventsDownload extends AsyncTask<Void, Void, String> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	protected String doInBackground(Void... arg0) {
-		URL url = null;
+	protected String doInBackground(String... urls) {
+
 		BufferedReader in = null;
 		String response = "";
 		String str;
 		try {
-			url = new URL(
-					"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/schedule_list.plist");
+			URL url = new URL(urls[0]);
 			in = new BufferedReader(new InputStreamReader(url.openStream()));
 			while ((str = in.readLine()) != null) {
 				response += str;

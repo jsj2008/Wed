@@ -14,19 +14,19 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.rtayal.wedding.FamilyActivity;
 import com.rtayal.wedding.GalleryActivity;
 import com.rtayal.wedding.R;
 import com.rtayal.wedding.VenuesActivity;
 import com.rtayal.wedding.events.EventsActitivity;
+import com.rtayal.wedding.family.FamilyActivity;
 
 @SuppressLint({ "SimpleDateFormat", "DefaultLocale" })
 public class MainActivity extends Activity implements OnClickListener {
 
 	private Button eventsButton, galleryButton, venuesButton, familyButton;
-	private TextView countDownTV;
+
+	// private TextView countDownTV;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		familyButton = (Button) findViewById(R.id.buttonFamily);
 		familyButton.setOnClickListener(this);
 
-		countDownTV = (TextView) findViewById(R.id.countDownTextView);
+		// countDownTV = (TextView) findViewById(R.id.countDownTextView);
 
 		Date nowDate = new Date();
 		String weddingDateString = "2013-12-07";
@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void onTick(long millisUntilFinished) {
-				// TODO Auto-generated method stub
+
 				long seconds = (millisUntilFinished / 1000) % 60;
 				long minutes = ((millisUntilFinished / (1000 * 60)) % 60);
 				long hours = ((millisUntilFinished / (1000 * 60 * 60)) % 24);

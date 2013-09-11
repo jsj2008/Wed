@@ -43,7 +43,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.rtayal.wedding.FamilyActivity"
+            android:name="com.rtayal.wedding.family.FamilyActivity"
             android:label="@string/app_name" >
         </activity>
     </application>

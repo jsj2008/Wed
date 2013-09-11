@@ -3,6 +3,7 @@ package com.rtayal.wedding.events;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,8 +13,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.foound.widget.AmazingAdapter;
+import com.rtayal.wedding.Constants;
+import com.rtayal.wedding.PRPlistDownloader.DataDownloadListener;
+import com.rtayal.wedding.PRPlistDownloader;
 import com.rtayal.wedding.R;
-import com.rtayal.wedding.events.EventsDownload.DataDownloadListener;
 
 public class EventsActitivity extends Activity {
 
@@ -22,14 +25,13 @@ public class EventsActitivity extends Activity {
 	// UI References
 	private ListView listView;
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_events);
 
-		EventsDownload downloader = new EventsDownload();
+		PRPlistDownloader downloader = new PRPlistDownloader();
 		downloader.setDataDownloadListener(new DataDownloadListener() {
 
 			@Override
@@ -44,7 +46,10 @@ public class EventsActitivity extends Activity {
 
 			}
 		});
-		downloader.execute();
+		downloader.execute(Constants.PRDropboxEventsScheduleURL);
+
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		listView = (ListView) findViewById(R.id.amazingListView);
 		listView.setAdapter(new MyListAdapter());
@@ -52,7 +57,6 @@ public class EventsActitivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// TODO Auto-generated method stub
 		if (item.getItemId() == android.R.id.home) {
 			finish();
 			return true;
@@ -99,13 +103,15 @@ public class EventsActitivity extends Activity {
 		protected void bindSectionHeader(View view, int position,
 				boolean displaySectionHeader) {
 			if (displaySectionHeader) {
-				view.findViewById(R.id.header).setVisibility(View.VISIBLE);
+				view.findViewById(R.id.eventDateTextView).setVisibility(
+						View.VISIBLE);
 				TextView lSectionTitle = (TextView) view
-						.findViewById(R.id.header);
+						.findViewById(R.id.eventDateTextView);
 				lSectionTitle
 						.setText(getSections()[getSectionForPosition(position)]);
 			} else {
-				view.findViewById(R.id.header).setVisibility(View.GONE);
+				view.findViewById(R.id.eventDateTextView).setVisibility(
+						View.GONE);
 			}
 		}
 
@@ -116,17 +122,15 @@ public class EventsActitivity extends Activity {
 			if (res == null)
 				res = getLayoutInflater().inflate(R.layout.schedule_item, null);
 
-			TextView lName = (TextView) res
-					.findViewById(R.id.shipMethodTextView);
-			TextView lYear = (TextView) res
-					.findViewById(R.id.shipPriceTextView);
+			TextView eventName = (TextView) res
+					.findViewById(R.id.eventNameTextView);
+			TextView eventLocation = (TextView) res
+					.findViewById(R.id.eventLocationTextView);
 
 			HashMap<String, String> composer = getItem(position);
-			String price;
 
-			lName.setText((CharSequence) composer.get("Event"));
-			price = (String) composer.get("Location");
-			lYear.setText(price);
+			eventName.setText((CharSequence) composer.get("Event"));
+			eventLocation.setText((String) composer.get("Location"));
 
 			return res;
 		}
