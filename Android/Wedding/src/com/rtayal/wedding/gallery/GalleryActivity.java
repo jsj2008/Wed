@@ -1,9 +1,11 @@
-package com.rtayal.wedding;
+package com.rtayal.wedding.gallery;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class GalleryActivity extends Activity{
+import com.rtayal.wedding.R;
+
+public class GalleryActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -15,11 +15,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.rtayal.wedding.GalleryActivity;
 import com.rtayal.wedding.R;
-import com.rtayal.wedding.VenuesActivity;
 import com.rtayal.wedding.events.EventsActitivity;
 import com.rtayal.wedding.family.FamilyActivity;
+import com.rtayal.wedding.gallery.GalleryActivity;
+import com.rtayal.wedding.venues.VenuesActivity;
 
 @SuppressLint({ "SimpleDateFormat", "DefaultLocale" })
 public class MainActivity extends Activity implements OnClickListener {

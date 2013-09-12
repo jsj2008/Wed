@@ -1,9 +1,9 @@
-package com.rtayal.wedding;
+package com.rtayal.wedding.venues;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.google.android.maps.MapActivity;
+import com.rtayal.wedding.R;
 
 public class VenuesActivity extends MapActivity {
 
