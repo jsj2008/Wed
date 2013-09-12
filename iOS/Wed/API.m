@@ -50,7 +50,7 @@
     return [[user objectForKey:@"IdUser"] intValue]>0;
 }
 
--(void)commandWithParams:(NSMutableDictionary*)params onCompletion:(JSONResponseBlock)completionBlock {
+-(void)commandWithParams:(NSMutableDictionary*)params onCompletion:(JSONResponseBlock)completionBlock{
 	NSData* uploadFile = nil;
 	if ([params objectForKey:@"file"]) {
 		uploadFile = (NSData*)[params objectForKey:@"file"];

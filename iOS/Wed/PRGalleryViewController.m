@@ -192,7 +192,11 @@
 
 -(void)uploadImageToAppikonServer:(UIImage*)imageToUpload {
     //upload the image and the title to the web service
+    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:progressView];
+    
     [[API sharedInstance] commandWithParams:[NSMutableDictionary dictionaryWithObjectsAndKeys:@"upload", @"command", UIImageJPEGRepresentation(imageToUpload,70), @"file", @"Title", @"title", nil] onCompletion:^(NSDictionary *json) {
+        [progressView stop];
 		//completion
 		if (![json objectForKey:@"error"]) {
 			//success
