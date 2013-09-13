@@ -28,6 +28,11 @@
      }];
     self.window.rootViewController = navC;
     [self.window makeKeyAndVisible];
+    
+    [self downloadAndStoreVenuesFile];
+    [self downloadAndStoreEventsFile];
+    [self downloadAndStoreFamilyFile];
+    
     return YES;
 }
 
@@ -68,12 +73,73 @@
     [[LocalyticsSession shared] upload];
 }
 
+-(void)downloadAndStoreVenuesFile {
+    NSString* venuesFilePath = [PRAppDelegate venuesFilesPath];
+    __block NSMutableArray* tempArray = [NSMutableArray arrayWithContentsOfFile:venuesFilePath];
+    if (tempArray.count == 0) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            tempArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxVenuesURL]];
+            [tempArray writeToFile:venuesFilePath atomically:YES];
+        });
+    }
+}
+
++(NSString*)venuesFilesPath {
+    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"venues.plist"];
+}
+
+-(void)downloadAndStoreEventsFile {
+    NSString* eventsFilePath = [PRAppDelegate eventsFilesPath];
+    __block NSMutableArray* tempArray = [NSMutableArray arrayWithContentsOfFile:eventsFilePath];
+    if (tempArray.count == 0) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            tempArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
+            [tempArray writeToFile:eventsFilePath atomically:YES];
+        });
+    }
+}
+
++(NSString*)eventsFilesPath {
+    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"events.plist"];
+}
+
+-(void)downloadAndStoreFamilyFile {
+    NSString* thakurFamilyFilePath = [PRAppDelegate thakurFamilyFilePath];
+    __block NSMutableArray* tempArray = [NSMutableArray arrayWithContentsOfFile:thakurFamilyFilePath];
+    if (tempArray.count == 0) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            tempArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxThakurFamilyURL]];
+            [tempArray writeToFile:thakurFamilyFilePath atomically:YES];
+        });
+    }
+    NSString* tayalFamilyPath = [PRAppDelegate tayalFamilyFilePath];
+    tempArray = [NSMutableArray arrayWithContentsOfFile:tayalFamilyPath];
+    if (tempArray.count == 0) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            tempArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxTayalFamilyURL]];
+            [tempArray writeToFile:tayalFamilyPath atomically:YES];
+        });
+    }   
+}
+
++(NSString*)thakurFamilyFilePath {
+    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"thakur_family.plist"];
+}
+
++(NSString*)tayalFamilyFilePath {
+    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"tayal_family.plist"];
+}
+
 +(NSString*)tempDirectory {
     return NSTemporaryDirectory();
 }
-//+(NSString*)documentsPath {
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *documentsDirectory = paths[0];
-//    return documentsDirectory;
-//}
+
++(NSString*)documentsPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = paths[0];
+    return documentsDirectory;
+}
+
+
+
 @end

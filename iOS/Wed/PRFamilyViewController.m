@@ -8,6 +8,7 @@
 
 #import "PRFamilyViewController.h"
 #import "PRFamilyCell.h"
+#import "PRAppDelegate.h"
 
 @interface PRFamilyViewController ()
 
@@ -26,10 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor* barColor = [UIColor colorWithRed:0/255.0 green:212/255.0 blue:35/255.0 alpha:1.0];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.tintColor = barColor;
-
+   
     [self setNavigationBarLeftButton];
 
     [self familyChanged:_segControl];
@@ -47,6 +45,9 @@
 {
     [super viewDidAppear:animated];
     [[LocalyticsSession shared] tagScreen:@"Family Screen"];
+    UIColor* barColor = [UIColor colorWithRed:0/255.0 green:212/255.0 blue:35/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = barColor;
 }
 
 -(void) setNavigationBarLeftButton
@@ -64,22 +65,14 @@
 }
 
 -(IBAction)familyChanged:(PRSegmentControl*)sender {
-//    _datasource = [NSMutableArray new];
-//    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:_tableView.frame];
-//    [_tableView addSubview:progressView];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        if (_segControl.selectedSegmentIndex == 0) {
-            _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxThakurFamilyURL]];
-        }
-        else{
-            _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxTayalFamilyURL]];
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-//            [progressView stop];
-        });
-    });
+    if (_segControl.selectedSegmentIndex == 0) {
+        _datasource = [NSMutableArray arrayWithContentsOfFile:[PRAppDelegate thakurFamilyFilePath]];
+    }
+    else
+    {
+        _datasource = [NSMutableArray arrayWithContentsOfFile:[PRAppDelegate tayalFamilyFilePath]];
+    }
+    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

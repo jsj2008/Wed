@@ -30,9 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor* barColor = [UIColor colorWithRed:26/255.0 green:141/255.0 blue:225/255.0 alpha:1.0];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTintColor:barColor];
     [self setNavigationBarLeftButton];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshStream)]];
     [self createUserNameAndLogin];
@@ -44,6 +41,9 @@
 {
     [super viewDidAppear:animated];
     [[LocalyticsSession shared] tagScreen:@"Gallery Screen"];
+    UIColor* barColor = [UIColor colorWithRed:26/255.0 green:141/255.0 blue:225/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:barColor];
 }
 
 -(void)createUserNameAndLogin {

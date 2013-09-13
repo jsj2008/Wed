@@ -16,4 +16,6 @@
 @property (nonatomic, assign) CLLocationCoordinate2D* coordinates;
 @property (nonatomic, strong) NSMutableArray* venuesArray;
 
+-(id)initWithLocationTitle:(NSString*)locationTitle;
+
 @end

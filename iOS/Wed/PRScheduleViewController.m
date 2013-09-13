@@ -8,6 +8,8 @@
 
 #import "PRScheduleViewController.h"
 #import "PREventsCell.h"
+#import "PRVenuesWithMapViewController.h"
+#import "PRAppDelegate.h"
 
 @interface PRScheduleViewController ()
 {
@@ -29,13 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor* barColor = [UIColor colorWithRed:212/255.0 green:76/255.0 blue:193/255.0 alpha:1.0];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTintColor:barColor];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadRemoteData)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadLocalEventsFiles)];
     [self setNavigationBarLeftButton];
     
-    [self reloadRemoteData];
+    [self loadLocalEventsFiles];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +45,11 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    UIColor* barColor = [UIColor colorWithRed:212/255.0 green:76/255.0 blue:193/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTintColor:barColor];
     [[LocalyticsSession shared] tagScreen:@"Events Screen"];
+    [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
 }
 
 -(void) setNavigationBarLeftButton
@@ -63,18 +66,9 @@
     [self.navigationController popControllerWithTransition];
 }
 
--(void)reloadRemoteData {
-    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:progressView];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxEventsScheduleURL]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [UIView transitionWithView:_tableView duration:0.3f options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void) {
-                [_tableView reloadData];
-                [progressView stop];
-            } completion:NULL];
-        });
-    });
+-(void) loadLocalEventsFiles {
+    _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[PRAppDelegate eventsFilesPath]];
+    [_tableView reloadData];
 }
 
 #pragma mark - UITableView Datasource
@@ -107,7 +101,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [_tableView deselectRowAtIndexPath:indexPath animated:YES];
+    PREventsCell* cell = (PREventsCell*) [_tableView cellForRowAtIndexPath:indexPath];
+    PRVenuesWithMapViewController* venuesVC = [[PRVenuesWithMapViewController alloc] initWithLocationTitle:cell.locationLabel.text];
+    venuesVC.title = @"Venues";
+    [self.navigationController pushController:venuesVC];
 }
 
 //-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

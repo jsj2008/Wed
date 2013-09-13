@@ -16,6 +16,9 @@
 {
     PRAnnotation* selectedLocation;
 }
+
+@property (nonatomic, strong) NSString* locationTitle;
+
 @end
 
 @implementation PRVenuesWithMapViewController
@@ -29,20 +32,22 @@
     return self;
 }
 
+-(id)initWithLocationTitle:(NSString*)locationTitle {
+    self = [self init];
+    if (self) {
+        _locationTitle = locationTitle;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor* barColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.tintColor = barColor;
     
     [self setNavigationBarLeftButton];
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(getRemoteVenues)]];
-    _venuesArray = [NSArray arrayWithContentsOfFile:[[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"venues.plist"]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(plotMapAnnotations)]];
+    _venuesArray = [NSArray arrayWithContentsOfFile:[PRAppDelegate venuesFilesPath]];
     [self plotMapAnnotations];
-    if (_venuesArray.count == 0) {
-        [self getRemoteVenues];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +60,9 @@
 {
     [super viewDidAppear:animated];
     [[LocalyticsSession shared] tagScreen:@"Venues Screen"];
+    UIColor* barColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.tintColor = barColor;
 }
 
 -(void) setNavigationBarLeftButton
@@ -71,34 +79,29 @@
     [self.navigationController popControllerWithTransition];
 }
 
--(void)getRemoteVenues{
-  
-    
-    _venuesArray = [NSMutableArray new];
-    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
-    [self.view addSubview:progressView];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        _venuesArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxVenuesURL]];
-        [_venuesArray writeToFile:[[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"venues.plist"] atomically:YES];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self plotMapAnnotations];
-            [progressView stop];
-        });
-    });
-}
-
 -(void)plotMapAnnotations {
     for (PRAnnotation* annotation in _mapView.annotations) {
         [_mapView removeAnnotation:annotation];
     }
     for (NSDictionary* venue in _venuesArray) {
-        CLLocationCoordinate2D location;
-        location.latitude = [[venue objectForKey:@"Latitude"] floatValue];
-        location.longitude = [[venue objectForKey:@"Longitude"] floatValue];
-        PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:[venue objectForKey:@"Title"] address:[venue objectForKey:@"Address"] coordinates:location];
-        [_mapView addAnnotation:annotation];
+        if (_locationTitle != nil && [[_venuesArray valueForKey:@"Title"] containsObject:_locationTitle] ) {
+            if ([_locationTitle isEqualToString:[venue objectForKey:@"Title"]]) {
+                CLLocationCoordinate2D location;
+                location.latitude = [[venue objectForKey:@"Latitude"] floatValue];
+                location.longitude = [[venue objectForKey:@"Longitude"] floatValue];
+                PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:[venue objectForKey:@"Title"] address:[venue objectForKey:@"Address"] coordinates:location];
+                [_mapView addAnnotation:annotation];
+            }
+        }
+        else
+        {
+            CLLocationCoordinate2D location;
+            location.latitude = [[venue objectForKey:@"Latitude"] floatValue];
+            location.longitude = [[venue objectForKey:@"Longitude"] floatValue];
+            PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:[venue objectForKey:@"Title"] address:[venue objectForKey:@"Address"] coordinates:location];
+            [_mapView addAnnotation:annotation];
+        }
     }
-    
 }
 
 #pragma mark - MKMapView Delegate

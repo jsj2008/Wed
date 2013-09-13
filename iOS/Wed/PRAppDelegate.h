@@ -16,7 +16,11 @@
 
 @property (strong, nonatomic) PRViewController *viewController;
 
-//+(NSString*)documentsPath;
++(NSString*)documentsPath;
 +(NSString*)tempDirectory;
++(NSString*)venuesFilesPath;
++(NSString*)eventsFilesPath;
++(NSString*)thakurFamilyFilePath;
++(NSString*)tayalFamilyFilePath;
 
 @end
