@@ -205,13 +205,9 @@
 		} else {
 			//error, check for expired session and if so - authorize the user
 			NSString* errorMsg = [json objectForKey:@"error"];
-            [[[UIAlertView alloc] initWithTitle:@"Error"
-                                        message:errorMsg
-                                       delegate:nil
-                              cancelButtonTitle:@"Close"
-                              otherButtonTitles: nil] show];
 			if ([@"Authorization required" compare:errorMsg]==NSOrderedSame) {
-				[self performSegueWithIdentifier:@"ShowLogin" sender:nil];
+                [self createUserNameAndLogin];
+                [self uploadImageToAppikonServer:imageToUpload];
 			}
 		}
 	}];
