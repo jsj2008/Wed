@@ -68,4 +68,12 @@
     [[LocalyticsSession shared] upload];
 }
 
++(NSString*)tempDirectory {
+    return NSTemporaryDirectory();
+}
+//+(NSString*)documentsPath {
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = paths[0];
+//    return documentsDirectory;
+//}
 @end

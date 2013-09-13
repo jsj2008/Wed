@@ -16,4 +16,7 @@
 
 @property (strong, nonatomic) PRViewController *viewController;
 
+//+(NSString*)documentsPath;
++(NSString*)tempDirectory;
+
 @end

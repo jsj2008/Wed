@@ -8,6 +8,7 @@
 
 #import "PRVenuesWithMapViewController.h"
 #import "PRAnnotation.h"
+#import "PRAppDelegate.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -34,10 +35,14 @@
     UIColor* barColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = barColor;
-
+    
     [self setNavigationBarLeftButton];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(getRemoteVenues)]];
-    [self getRemoteVenues];
+    _venuesArray = [NSArray arrayWithContentsOfFile:[[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"venues.plist"]];
+    [self plotMapAnnotations];
+    if (_venuesArray.count == 0) {
+        [self getRemoteVenues];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,26 +72,33 @@
 }
 
 -(void)getRemoteVenues{
-    for (PRAnnotation* annotation in _mapView.annotations) {
-        [_mapView removeAnnotation:annotation];
-    }
+  
     
     _venuesArray = [NSMutableArray new];
     PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:progressView];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         _venuesArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxVenuesURL]];
+        [_venuesArray writeToFile:[[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"venues.plist"] atomically:YES];
         dispatch_async(dispatch_get_main_queue(), ^{
-            for (NSDictionary* venue in _venuesArray) {
-                CLLocationCoordinate2D location;
-                location.latitude = [[venue objectForKey:@"Latitude"] floatValue];
-                location.longitude = [[venue objectForKey:@"Longitude"] floatValue];
-                PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:[venue objectForKey:@"Title"] address:[venue objectForKey:@"Address"] coordinates:location];
-                [_mapView addAnnotation:annotation];
-            }
+            [self plotMapAnnotations];
             [progressView stop];
         });
     });
+}
+
+-(void)plotMapAnnotations {
+    for (PRAnnotation* annotation in _mapView.annotations) {
+        [_mapView removeAnnotation:annotation];
+    }
+    for (NSDictionary* venue in _venuesArray) {
+        CLLocationCoordinate2D location;
+        location.latitude = [[venue objectForKey:@"Latitude"] floatValue];
+        location.longitude = [[venue objectForKey:@"Longitude"] floatValue];
+        PRAnnotation* annotation = [[PRAnnotation alloc] initWithTitle:[venue objectForKey:@"Title"] address:[venue objectForKey:@"Address"] coordinates:location];
+        [_mapView addAnnotation:annotation];
+    }
+    
 }
 
 #pragma mark - MKMapView Delegate
@@ -134,7 +146,7 @@
         
         UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Open in..." delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Google Maps", @"Apple Maps", nil];
         [actionSheet showInView:self.view.window];
-
+        
     }
     else
         [location.mapItem openInMapsWithLaunchOptions:launchOptions];
