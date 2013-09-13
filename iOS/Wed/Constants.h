@@ -19,4 +19,6 @@
 #define PRDropboxVenuesURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/venues.plist"
 
 #define NAVIGATIONBARBACKBUTTON @"back.png"
+#define PRAppikonServerUploadImageURL @"http://appikon.com/wedding_app/upload/"
+
 #endif

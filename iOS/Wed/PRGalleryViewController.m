@@ -9,7 +9,7 @@
 #import "PRGalleryViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "API.h"
-#import "PRPhotoScreenViewController.h"
+//#import "PRPhotoScreenViewController.h"
 #import "PRProgressView.h"
 
 @interface PRGalleryViewController ()
@@ -122,7 +122,7 @@
     // 2 add new photo views
 
     _noPhotosLAbel.hidden = (stream.count > 0)? true:false;
-    
+    _stream = [NSMutableArray arrayWithArray:stream];
     for (int i=0;i<[stream count];i++) {
         NSDictionary* photo = [stream objectAtIndex:i];
         PhotoView* photoView = [[PhotoView alloc] initWithIndex:i andData:photo];
@@ -137,10 +137,37 @@
 
 -(void)didSelectPhoto:(PhotoView*)sender {
     //photo selected - show it full screen
-    NSNumber* tag = [NSNumber numberWithInt:sender.tag];
-    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] initWithIdPhoto:tag];
+//    NSNumber* tag = [NSNumber numberWithInt:sender.tag];
+//    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] initWithPhotoIds:_stream currentPhotoId:tag];
 //    photoScreen.IdPhoto = [NSNumber numberWithInt:sender.tag];
-    [self.navigationController pushController:photoScreen];
+//    [self.navigationController pushController:photoScreen];
+    
+    _mwPhotosArray = [NSMutableArray array];
+    for (NSDictionary* dict in _stream) {
+        NSString* urlString = [NSString stringWithFormat:@"%@%@.jpg", PRAppikonServerUploadImageURL,[dict objectForKey:@"IdPhoto"]];
+        [_mwPhotosArray addObject:[MWPhoto photoWithURL:[NSURL URLWithString:urlString]]];
+    }
+
+    MWPhotoBrowser* photoBrowser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    photoBrowser.wantsFullScreenLayout = YES;
+    photoBrowser.displayActionButton = YES;
+    [photoBrowser setInitialPageIndex:sender.tag];
+    [self.navigationController pushController:photoBrowser];
+}
+
+#pragma mark - MWPhotoBrowser Delegate
+
+-(NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
+{
+    return _mwPhotosArray.count;
+}
+
+-(id<MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index
+{
+    if (index < _mwPhotosArray.count) {
+        return [_mwPhotosArray objectAtIndex:index];
+    }
+    return nil;
 }
 
 #pragma mark - UIImagePickerController Delegate

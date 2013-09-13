@@ -15,10 +15,13 @@
     IBOutlet UILabel* lblTitle;
 }
 
-@property (strong, nonatomic) NSNumber* IdPhoto;
+@property (strong, nonatomic) NSArray* photoIds;
+@property (nonatomic, strong) NSNumber* currentPhotoId;
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView* activityView;
 @property (nonatomic, strong) IBOutlet UIScrollView* scrollView;
+@property (nonatomic, strong) IBOutlet UIScrollView* outerScrollView;
 
--(id)initWithIdPhoto:(NSNumber*)idPhoto;
+//-(id)initWithIdPhoto:(NSNumber*)idPhoto;
+-(id) initWithPhotoIds:(NSArray*)photoIds currentPhotoId:(NSNumber*)currentPhotoID;
 
 @end

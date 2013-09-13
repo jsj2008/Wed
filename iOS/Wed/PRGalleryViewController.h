@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoView.h"
+#import "MWPhotoBrowser.h"
 
-@interface PRGalleryViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoViewDelegate>
+@interface PRGalleryViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, PhotoViewDelegate, MWPhotoBrowserDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView* listView;
 @property (nonatomic, strong) IBOutlet UILabel* noPhotosLAbel;
+
+@property (nonatomic, strong) NSMutableArray* stream;
+@property (nonatomic, strong) NSMutableArray* mwPhotosArray;
 
 -(IBAction)takePhoto:(id)sender;
 
