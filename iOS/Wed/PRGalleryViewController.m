@@ -156,7 +156,7 @@
     photoBrowser.wantsFullScreenLayout = YES;
     photoBrowser.displayActionButton = YES;
     [photoBrowser setInitialPageIndex:initialPageIndex];
-    [self.navigationController pushController:photoBrowser];
+4    [self.navigationController pushController:photoBrowser];
 }
 
 #pragma mark - MWPhotoBrowser Delegate

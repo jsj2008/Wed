@@ -79,22 +79,25 @@ public class FamilyListAdapter extends BaseAdapter {
 			mHolder.v.setBackgroundColor(Color.TRANSPARENT);
 		}
 
-		((TextView) convertView.findViewById(R.id.familyMemberName))
-				.setText((CharSequence) familyListArray.get(position).get(
-						"Name"));
+		TextView familyMemberTV = (TextView) convertView
+				.findViewById(R.id.familyMemberName);
+		familyMemberTV.setText((CharSequence) familyListArray.get(position)
+				.get("Name"));
 
-		((TextView) convertView.findViewById(R.id.relationTextView))
-				.setText((CharSequence) familyListArray.get(position).get(
-						"Relation"));
-		Animation animation;
-		if (position % 2 == 0) {
-			animation = AnimationUtils.loadAnimation(mContext,
-					R.anim.slide_left);
-		} else
-			animation = AnimationUtils.loadAnimation(mContext,
-					R.anim.slide_right);
+		TextView relationTV = ((TextView) convertView
+				.findViewById(R.id.relationTextView));
 
-		convertView.startAnimation(animation);
+		relationTV.setText((CharSequence) familyListArray.get(position).get(
+				"Relation"));
+
+		Animation slideLeftAnimation = AnimationUtils.loadAnimation(mContext,
+				R.anim.slide_left);
+
+		Animation slideRightAnimation = AnimationUtils.loadAnimation(mContext,
+				R.anim.slide_right);
+
+		familyMemberTV.startAnimation(slideLeftAnimation);
+		relationTV.startAnimation(slideRightAnimation);
 		return convertView;
 	}
 }

@@ -14,7 +14,10 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.localytics.android.LocalyticsSession;
+import com.rtayal.wedding.Constants;
 import com.rtayal.wedding.R;
 import com.rtayal.wedding.events.EventsActitivity;
 import com.rtayal.wedding.family.FamilyActivity;
@@ -26,12 +29,18 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	private Button eventsButton, galleryButton, venuesButton, familyButton;
 
-	// private TextView countDownTV;
+	private TextView countDownTV;
+
+	LocalyticsSession localyticsSession;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		localyticsSession = new LocalyticsSession(getApplicationContext(),
+				Constants.Localytics_App_Key);
+		localyticsSession.open();
+		localyticsSession.upload();
 
 		eventsButton = (Button) findViewById(R.id.buttonEvents);
 		eventsButton.setOnClickListener(this);
@@ -45,7 +54,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		familyButton = (Button) findViewById(R.id.buttonFamily);
 		familyButton.setOnClickListener(this);
 
-		// countDownTV = (TextView) findViewById(R.id.countDownTextView);
+		countDownTV = (TextView) findViewById(R.id.countDownTextView);
 
 		Date nowDate = new Date();
 		String weddingDateString = "2013-12-07";
@@ -70,9 +79,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				long minutes = ((millisUntilFinished / (1000 * 60)) % 60);
 				long hours = ((millisUntilFinished / (1000 * 60 * 60)) % 24);
 				long days = ((millisUntilFinished / (1000 * 60 * 60 * 24)) % 365);
-				// countDownTV.setText(String.format(
-				// "%d Days %d Hours %d Mins %d Sec", days, hours,
-				// minutes, seconds));
+//				countDownTV.setText(String.format(
+//						"%d Days %d Hours %d Mins %d Sec", days, hours,
+//						minutes, seconds));
 			}
 
 			@Override
@@ -83,6 +92,21 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onBackPressed() {
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		localyticsSession.open();
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		localyticsSession.close();
+		localyticsSession.upload();
 	}
 
 	@Override

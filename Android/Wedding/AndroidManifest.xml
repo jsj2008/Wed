@@ -8,19 +8,23 @@
         android:minSdkVersion="11"
         android:targetSdkVersion="18" />
 
-    <uses-permission android:name="android.permission.INTERNET" >
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <application
+        android:name="com.rtayal.wedding.Wedding"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <uses-library android:name="com.google.android.maps" />
@@ -40,11 +44,11 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.rtayal.wedding.GalleryActivity"
+            android:name="com.rtayal.wedding.gallery.GalleryActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="com.rtayal.wedding.VenuesActivity"
+            android:name="com.rtayal.wedding.venues.VenuesActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
@@ -55,6 +59,9 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCSXXnLCvdwsjqoD7YsnbNN6XgXgh4R1us" />
+        <meta-data
+            android:name="LOCALYTICS_APP_KEY"
+            android:value="dfd759fdfda91377340d12f-bb8a5478-1a55-11e3-1300-004a77f8b47f" />
     </application>
 
 </manifest>
