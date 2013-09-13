@@ -110,7 +110,7 @@
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            //            annotationView.image = [UIImage imageNamed:@"arrest.png"];//here we use a nice image instead of the default pins
+            annotationView.image = [UIImage imageNamed:@"pin.png"];//here we use a nice image instead of the default pins
             annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         } else {
             annotationView.annotation = annotation;

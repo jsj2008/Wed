@@ -66,8 +66,8 @@
 -(IBAction)familyChanged:(PRSegmentControl*)sender {
 //    _datasource = [NSMutableArray new];
 //    [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:_tableView.frame];
-    [_tableView addSubview:progressView];
+//    PRProgressView* progressView = [[PRProgressView alloc] initWithFrame:_tableView.frame];
+//    [_tableView addSubview:progressView];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         if (_segControl.selectedSegmentIndex == 0) {
             _datasource = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxThakurFamilyURL]];
@@ -77,7 +77,7 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [_tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-            [progressView stop];
+//            [progressView stop];
         });
     });
 }
