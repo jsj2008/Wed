@@ -47,7 +47,6 @@
 		0605DF7617E37D1F00350822 /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0605DF5517E37D1F00350822 /* MWZoomingScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0605DF7717E37D1F00350822 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0605DF5917E37D1F00350822 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0605DF7817E37D1F00350822 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 0605DF5A17E37D1F00350822 /* README.mdown */; };
-		0605DF7917E37D1F00350822 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0605DF5C17E37D1F00350822 /* LICENSE */; };
 		0605DF7A17E37D1F00350822 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0605DF5D17E37D1F00350822 /* README.md */; };
 		0605DF7B17E37D1F00350822 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0605DF5F17E37D1F00350822 /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0605DF7C17E37D1F00350822 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0605DF6317E37D1F00350822 /* SDWebImageDecoder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -769,7 +768,6 @@
 				0605DF2A17E2C9B600350822 /* pin.png in Resources */,
 				0605DF2B17E2C9B600350822 /* pin@2x.png in Resources */,
 				0605DF7817E37D1F00350822 /* README.mdown in Resources */,
-				0605DF7917E37D1F00350822 /* LICENSE in Resources */,
 				0605DF7A17E37D1F00350822 /* README.md in Resources */,
 				0605DF8217E37D1F00350822 /* MWPhotoBrowser.bundle in Resources */,
 			);
@@ -915,11 +913,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Wed/GA Library\"",
-					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/GoogleAnalytics/Library\"",
-					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2\"",
-					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/Library\"",
-					"\"$(SRCROOT)/Wed/AMP-SDK-latest.bin\"",
 					"\"$(SRCROOT)/Wed/Localytics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -947,11 +940,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Wed/GA Library\"",
-					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/GoogleAnalytics/Library\"",
-					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2\"",
-					"\"$(SRCROOT)/Wed/GoogleAnalyticsServicesiOS_3.0 2/Library\"",
-					"\"$(SRCROOT)/Wed/AMP-SDK-latest.bin\"",
 					"\"$(SRCROOT)/Wed/Localytics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -46,7 +46,7 @@
     
     for (int i = 0; i < [[_photoIds valueForKey:@"IdPhoto"] count]; i++) {
         NSString* photoID = [[_photoIds valueForKey:@"IdPhoto"] objectAtIndex:i];
-        if ([photoID isEqualToString:_currentPhotoId]) {
+        if ([photoID isEqualToString:[NSString stringWithFormat:@"%@", _currentPhotoId]]) {
             currentPhotoRefernceNumber = i;
         }
     }
@@ -74,19 +74,19 @@
 }
 
 -(void)loadBigSizePhoto:(int) idReference {
-    //load the big size photo
-    currentPhotoRefernceNumber = idReference;
-    [_activityView startAnimating];
-    API* api = [API sharedInstance];
-	NSURL* imageURL = [api urlForImageWithId:[[_photoIds objectAtIndex:idReference] valueForKey:@"IdPhoto"] isThumb:NO];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        UIImage* image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [_activityView stopAnimating];
-            //            [photoView setImageWithURL: imageURL];
-            [photoView setImage:image];
-        });
-    });
+//    //load the big size photo
+//    currentPhotoRefernceNumber = idReference;
+//    [_activityView startAnimating];
+//    API* api = [API sharedInstance];
+//	NSURL* imageURL = [api urlForImageWithId:[[_photoIds objectAtIndex:idReference] valueForKey:@"IdPhoto"] isThumb:NO];
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+//        UIImage* image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [_activityView stopAnimating];
+//            //            [photoView setImageWithURL: imageURL];
+//            [photoView setImage:image];
+//        });
+//    });
 }
 
 #pragma mark - UIScrollView Delegate
