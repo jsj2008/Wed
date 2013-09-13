@@ -49,7 +49,8 @@
 			//create an image view, add it to the view
 			UIImageView* thumbView = [[UIImageView alloc] initWithImage: image];
             thumbView.frame = CGRectMake(0,0,90,90);
-            thumbView.contentMode = UIViewContentModeScaleAspectFit;
+            thumbView.contentMode = UIViewContentModeScaleAspectFill;
+            thumbView.clipsToBounds = YES;
 			[self insertSubview: thumbView belowSubview: caption];
 		}];
 		NSOperationQueue* queue = [[NSOperationQueue alloc] init];
