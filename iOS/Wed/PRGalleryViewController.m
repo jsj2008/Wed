@@ -9,7 +9,6 @@
 #import "PRGalleryViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "API.h"
-//#import "PRPhotoScreenViewController.h"
 #import "PRProgressView.h"
 
 @interface PRGalleryViewController ()
@@ -50,7 +49,7 @@
     
     NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"register", @"command", [[UIDevice currentDevice] name], @"username", @"password", @"password", nil];
     [[API sharedInstance] commandWithParams:params onCompletion:^(NSDictionary *json) {
-//        NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
+        //        NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
         NSMutableDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"login", @"command", [[UIDevice currentDevice] name], @"username", @"password", @"password", nil];
         [[API sharedInstance] commandWithParams:params onCompletion:^(NSDictionary *json) {
             NSDictionary* res = [[json objectForKey:@"result"] objectAtIndex:0];
@@ -120,7 +119,7 @@
         [view removeFromSuperview];
     }
     // 2 add new photo views
-
+    
     _noPhotosLAbel.hidden = (stream.count > 0)? true:false;
     _stream = [NSMutableArray arrayWithArray:stream];
     for (int i=0;i<[stream count];i++) {
@@ -137,21 +136,26 @@
 
 -(void)didSelectPhoto:(PhotoView*)sender {
     //photo selected - show it full screen
-//    NSNumber* tag = [NSNumber numberWithInt:sender.tag];
-//    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] initWithPhotoIds:_stream currentPhotoId:tag];
-//    photoScreen.IdPhoto = [NSNumber numberWithInt:sender.tag];
-//    [self.navigationController pushController:photoScreen];
+    //    NSNumber* tag = [NSNumber numberWithInt:sender.tag];
+    //    PRPhotoScreenViewController* photoScreen = [[PRPhotoScreenViewController alloc] initWithPhotoIds:_stream currentPhotoId:tag];
+    //    photoScreen.IdPhoto = [NSNumber numberWithInt:sender.tag];
+    //    [self.navigationController pushController:photoScreen];
     
     _mwPhotosArray = [NSMutableArray array];
-    for (NSDictionary* dict in _stream) {
+    int initialPageIndex = 0;
+    for (int i = 0; i < _stream.count; i++) {
+        NSDictionary* dict = [_stream objectAtIndex:i];
         NSString* urlString = [NSString stringWithFormat:@"%@%@.jpg", PRAppikonServerUploadImageURL,[dict objectForKey:@"IdPhoto"]];
         [_mwPhotosArray addObject:[MWPhoto photoWithURL:[NSURL URLWithString:urlString]]];
+        if (sender.tag == [[dict objectForKey:@"IdPhoto"] intValue]) {
+            initialPageIndex = i;
+        }
     }
-
+    
     MWPhotoBrowser* photoBrowser = [[MWPhotoBrowser alloc] initWithDelegate:self];
     photoBrowser.wantsFullScreenLayout = YES;
     photoBrowser.displayActionButton = YES;
-    [photoBrowser setInitialPageIndex:sender.tag];
+    [photoBrowser setInitialPageIndex:initialPageIndex];
     [self.navigationController pushController:photoBrowser];
 }
 
@@ -194,7 +198,7 @@
         
         // Save the new image (original or edited) to the Camera Roll
         //        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
-
+        
         [picker dismissViewControllerAnimated:YES completion:^{
             [self uploadImageToAppikonServer:imageToSave];
         }];
