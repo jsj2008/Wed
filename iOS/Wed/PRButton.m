@@ -26,35 +26,57 @@
     return self;
 }
 
-
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 
 - (void)drawRect:(CGRect)rect
 {
-    if (!originalBackgroundColor) {
-        originalBackgroundColor = self.backgroundColor;
-    }
-    [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
-    
+//    if (!originalBackgroundColor) {
+//        originalBackgroundColor = self.backgroundColor;
+//    }
+    [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    self.backgroundColor = [UIColor clearColor];
     UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueLight size:16.0f];
-    self.titleLabel.font = font;    
+    self.titleLabel.font = font;
     
     self.layer.cornerRadius = self.frame.size.width/2;
     self.clipsToBounds = YES;
     self.layer.borderWidth = 1.5;
     self.layer.borderColor = [[UIColor whiteColor] CGColor];
+    
+    //Add a translucent layer to uibutton layer. Set color of layer depending on uibutton tag.
+    CALayer*  layer = [CALayer layer];
+    layer.frame = self.bounds;
+    switch (self.tag) {
+        case 1:
+            layer.backgroundColor = [UIColor colorWithRed:212/255.0 green:76/255.0 blue:193/255.0 alpha:1].CGColor;
+            break;
+        case 2:
+            layer.backgroundColor = [UIColor colorWithRed:26/255.0 green:141/255.0 blue:225/255.0 alpha:1].CGColor;
+            break;
+        case 3:
+            layer.backgroundColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1].CGColor;
+            break;
+        case 4:
+            layer.backgroundColor = [UIColor colorWithRed:0/255.0 green:212/255.0 blue:35/255.0 alpha:1].CGColor;
+            break;
+        default:
+            break;
+    }
+    layer.opacity = 0.5;
+    [self.layer insertSublayer:layer below:self.layer];
+    
     // Drawing code
 }
 
 -(void)setHighlighted:(BOOL)highlighted
 {
-    if (highlighted) {
-        self.backgroundColor = [UIColor grayColor];
-    }
-    else {
-        self.backgroundColor = originalBackgroundColor;
-    }
+//    if (highlighted) {
+//        self.backgroundColor = [UIColor grayColor];
+//    }
+//    else {
+//        self.backgroundColor = originalBackgroundColor;
+//    }
 }
 
 @end
