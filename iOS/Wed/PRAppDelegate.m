@@ -18,11 +18,7 @@
     [[LocalyticsSession shared] tagEvent:[[UIDevice currentDevice] name]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController" bundle:nil];
-    } else {
-        self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController_iPad" bundle:nil];
-    }
+    self.viewController = [[PRViewController alloc] initWithNibName:@"PRViewController" bundle:nil];
     UINavigationController* navC = [[UINavigationController alloc] initWithRootViewController:_viewController];
     [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeFont: [UIFont fontWithName:PRFontHelveticaNeueRegular size:0.0],
      }];
@@ -119,7 +115,7 @@
             tempArray = [[NSMutableArray alloc] initWithContentsOfURL:[NSURL URLWithString:PRDropboxTayalFamilyURL]];
             [tempArray writeToFile:tayalFamilyPath atomically:YES];
         });
-    }   
+    }
 }
 
 +(NSString*)thakurFamilyFilePath {

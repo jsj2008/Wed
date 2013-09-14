@@ -45,6 +45,7 @@
 {
     [super viewDidAppear:animated];
     [[LocalyticsSession shared] tagScreen:@"Family Screen"];
+    self.navigationController.navigationBarHidden = NO;
     UIColor* barColor = [UIColor colorWithRed:0/255.0 green:212/255.0 blue:35/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = barColor;

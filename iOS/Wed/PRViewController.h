@@ -17,6 +17,8 @@ typedef enum {
 
 @interface PRViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIView* outerContainerView;
+
 -(IBAction)buttonClicked:(id)sender;
 
 @end

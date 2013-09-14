@@ -45,6 +45,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+        self.navigationController.navigationBarHidden = NO;
     UIColor* barColor = [UIColor colorWithRed:212/255.0 green:76/255.0 blue:193/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTintColor:barColor];

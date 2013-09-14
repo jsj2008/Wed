@@ -60,6 +60,7 @@
 {
     [super viewDidAppear:animated];
     [[LocalyticsSession shared] tagScreen:@"Venues Screen"];
+        self.navigationController.navigationBarHidden = NO;
     UIColor* barColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = barColor;

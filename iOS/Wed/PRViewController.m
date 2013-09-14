@@ -31,13 +31,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    self.outerContainerView.alpha = 0;
+    [UIView animateWithDuration:2 delay:0.5 options:0 animations:^{
+        self.outerContainerView.alpha = 1;
+    } completion:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     [self setButtonTags];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.navigationController.navigationBarHidden = TRUE;
     UIColor* barColor = [UIColor colorWithRed:0/255.0 green:213/255.0 blue:244/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = barColor;
