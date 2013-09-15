@@ -10,4 +10,6 @@
 
 @interface PRButton : UIButton
 
+//-(void)animate;
+
 @end

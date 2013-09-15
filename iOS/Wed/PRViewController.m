@@ -12,14 +12,15 @@
 #import "PRVenuesWithMapViewController.h"
 #import "PRGalleryViewController.h"
 #import "UIImage+CustomImage.h"
+#import "PRButton.h"
 
 @interface PRViewController ()
 
 @property (nonatomic, strong) IBOutlet UILabel* lblDays;
-@property (nonatomic, strong) IBOutlet UIButton* scheduleButton;
-@property (nonatomic, strong) IBOutlet UIButton* galleryButton;
-@property (nonatomic, strong) IBOutlet UIButton* venuesButton;
-@property (nonatomic, strong) IBOutlet UIButton* familyButton;
+@property (nonatomic, strong) IBOutlet PRButton* scheduleButton;
+@property (nonatomic, strong) IBOutlet PRButton* galleryButton;
+@property (nonatomic, strong) IBOutlet PRButton* venuesButton;
+@property (nonatomic, strong) IBOutlet PRButton* familyButton;
 @property (nonatomic, strong) IBOutlet UIImageView* backgroundIV;
 
 @property (nonatomic, strong) NSTimer* timer;
@@ -46,6 +47,11 @@
     UIColor* barColor = [UIColor colorWithRed:0/255.0 green:213/255.0 blue:244/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = barColor;
+    
+//    [_scheduleButton animate];
+//    [_galleryButton animate];
+//    [_venuesButton animate];
+//    [_familyButton animate];
 }
 
 -(void)viewDidAppear:(BOOL)animated
