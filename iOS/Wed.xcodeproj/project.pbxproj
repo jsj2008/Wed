@@ -87,6 +87,8 @@
 		06A1377A17E526B300F256BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377717E526B300F256BB /* Default-568h@2x.png */; };
 		06A1377B17E526B300F256BB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377817E526B300F256BB /* Default.png */; };
 		06A1377C17E526B300F256BB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377917E526B300F256BB /* Default@2x.png */; };
+		06A1378717E658FA00F256BB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1378617E658FA00F256BB /* CoreMotion.framework */; };
+		06A1378A17E65CDA00F256BB /* UIView+MWParallax.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A1378917E65CDA00F256BB /* UIView+MWParallax.m */; };
 		06FA32F817DFAFAE00971661 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F717DFAFAE00971661 /* CoreData.framework */; };
 		06FA32FA17DFAFB700971661 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F917DFAFB700971661 /* SystemConfiguration.framework */; };
 		06FA32FC17DFAFBF00971661 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32FB17DFAFBF00971661 /* libz.dylib */; };
@@ -238,6 +240,9 @@
 		06A1377717E526B300F256BB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		06A1377817E526B300F256BB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		06A1377917E526B300F256BB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
+		06A1378617E658FA00F256BB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		06A1378817E65CDA00F256BB /* UIView+MWParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MWParallax.h"; path = "Parallex/UIView+MWParallax.h"; sourceTree = "<group>"; };
+		06A1378917E65CDA00F256BB /* UIView+MWParallax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MWParallax.m"; path = "Parallex/UIView+MWParallax.m"; sourceTree = "<group>"; };
 		06FA32F717DFAFAE00971661 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		06FA32F917DFAFB700971661 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		06FA32FB17DFAFBF00971661 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -263,6 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A1378717E658FA00F256BB /* CoreMotion.framework in Frameworks */,
 				0605DF4617E37A6900350822 /* ImageIO.framework in Frameworks */,
 				0605DF4417E37A6300350822 /* MessageUI.framework in Frameworks */,
 				06FA33D817DFB5B600971661 /* libsqlite3.dylib in Frameworks */,
@@ -306,6 +312,7 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06A1378617E658FA00F256BB /* CoreMotion.framework */,
 				0605DF4517E37A6900350822 /* ImageIO.framework */,
 				0605DF4317E37A6300350822 /* MessageUI.framework */,
 				06FA33D717DFB5B600971661 /* libsqlite3.dylib */,
@@ -329,6 +336,7 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
+				06A1377D17E657C600F256BB /* Parallex */,
 				0675ACF917DE34DA003FCD67 /* AFNetworking */,
 				0604F2D117DA3B1E001F0C84 /* Common View */,
 				066146AC17DD107E001229FF /* Gallery View Controller */,
@@ -671,6 +679,15 @@
 			name = Annotation;
 			sourceTree = "<group>";
 		};
+		06A1377D17E657C600F256BB /* Parallex */ = {
+			isa = PBXGroup;
+			children = (
+				06A1378817E65CDA00F256BB /* UIView+MWParallax.h */,
+				06A1378917E65CDA00F256BB /* UIView+MWParallax.m */,
+			);
+			name = Parallex;
+			sourceTree = "<group>";
+		};
 		06FA33E317DFB65900971661 /* Localytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -826,6 +843,7 @@
 				0605DF7F17E37D1F00350822 /* SDWebImagePrefetcher.m in Sources */,
 				0605DF8017E37D1F00350822 /* UIButton+WebCache.m in Sources */,
 				0605DF8117E37D1F00350822 /* UIImageView+WebCache.m in Sources */,
+				06A1378A17E65CDA00F256BB /* UIView+MWParallax.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,7 +932,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wed/Localytics\"",
@@ -941,7 +959,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
 				INFOPLIST_FILE = "Wed/Wed-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wed/Localytics\"",

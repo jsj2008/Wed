@@ -41,7 +41,7 @@
     
     self.layer.cornerRadius = self.frame.size.width/2;
     self.clipsToBounds = YES;
-    self.layer.borderWidth = 1.7;
+    self.layer.borderWidth = 1.3;
     self.layer.borderColor = [[UIColor whiteColor] CGColor];
     
     //Add a translucent layer to uibutton layer. Set color of layer depending on uibutton tag.
@@ -63,16 +63,16 @@
         default:
             break;
     }
-    layer.opacity = 0.4;
+    layer.opacity = 0.3;
     [self.layer insertSublayer:layer below:self.layer];
     
     // Drawing code
-    [self animate];
+//    [self animate];
 
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGFloat outerMargin = 7.5f;
-    CGRect outerRect = CGRectInset(self.bounds, outerMargin, outerMargin);
-    drawCurvedGloss(context, outerRect, 180);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGFloat outerMargin = 7.5f;
+//    CGRect outerRect = CGRectInset(self.bounds, outerMargin, outerMargin);
+//    drawCurvedGloss(context, outerRect, 180);
 }
 
 -(void)animate {

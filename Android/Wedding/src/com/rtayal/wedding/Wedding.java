@@ -19,12 +19,12 @@ public class Wedding extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-		LocalyticsSession ls = new LocalyticsSession(getApplicationContext(),
-				Constants.Localytics_App_Key);
+//		LocalyticsSession ls = new LocalyticsSession(getApplicationContext(),
+//				Constants.Localytics_App_Key);
 
-		ls.tagEvent(getUserName());
-		ls.upload();
-		ls.close();
+//		ls.tagEvent(getUserName());
+//		ls.upload();
+//		ls.close();
 	}
 
 	String getUserName() {

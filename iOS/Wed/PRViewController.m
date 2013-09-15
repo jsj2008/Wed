@@ -13,6 +13,7 @@
 #import "PRGalleryViewController.h"
 #import "UIImage+CustomImage.h"
 #import "PRButton.h"
+#import "UIView+MWParallax.h"
 
 @interface PRViewController ()
 
@@ -39,6 +40,13 @@
     } completion:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     [self setButtonTags];
+
+//    self.backgroundIV.iOS6ParallaxIntensity = -10;
+//    self.outerContainerView.iOS6ParallaxIntensity = 30;
+//    self.familyButton.iOS6ParallaxIntensity = 20;
+//    self.scheduleButton.iOS6ParallaxIntensity = 20;
+//    self.venuesButton.iOS6ParallaxIntensity = 20;
+//    self.galleryButton.iOS6ParallaxIntensity = 20;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -47,11 +55,6 @@
     UIColor* barColor = [UIColor colorWithRed:0/255.0 green:213/255.0 blue:244/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.tintColor = barColor;
-    
-//    [_scheduleButton animate];
-//    [_galleryButton animate];
-//    [_venuesButton animate];
-//    [_familyButton animate];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -72,6 +75,8 @@
     _venuesButton.tag = PRHomeButtonTypeVenues;
     _familyButton.tag = PRHomeButtonTypeFamily;
 }
+
+#pragma mark -
 
 -(IBAction)buttonClicked:(id)sender {
     UIButton* button = (UIButton*)sender;
