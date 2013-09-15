@@ -35,12 +35,13 @@
 //        originalBackgroundColor = self.backgroundColor;
 //    }
     [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueLight size:16.0f];
     self.titleLabel.font = font;
     
     self.layer.cornerRadius = self.frame.size.width/2;
     self.clipsToBounds = YES;
-    self.layer.borderWidth = 1.5;
+    self.layer.borderWidth = 1.7;
     self.layer.borderColor = [[UIColor whiteColor] CGColor];
     
     //Add a translucent layer to uibutton layer. Set color of layer depending on uibutton tag.
