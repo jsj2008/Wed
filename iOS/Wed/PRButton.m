@@ -35,7 +35,6 @@
 //        originalBackgroundColor = self.backgroundColor;
 //    }
     [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-    self.backgroundColor = [UIColor clearColor];
     UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueLight size:16.0f];
     self.titleLabel.font = font;
     
@@ -63,10 +62,22 @@
         default:
             break;
     }
-    layer.opacity = 0.5;
+    layer.opacity = 0.4;
     [self.layer insertSublayer:layer below:self.layer];
     
     // Drawing code
+    [self animate];
+}
+
+-(void)animate {
+    float randomDelay = ((float)rand() / RAND_MAX);
+    [UIView animateWithDuration:3.0 delay:randomDelay options: UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
+        
+        int randomNumX = rand() % (10 - 7) + 7;
+//        int randomNumY = rand() % (10 - 7) + 7;
+        
+        self.center = CGPointMake(self.center.x + randomNumX, self.center.y);
+    } completion:nil];
 }
 
 -(void)setHighlighted:(BOOL)highlighted
