@@ -147,15 +147,24 @@
 
 -(IBAction)buttonDaysClicked:(UIButton*)sender
 {
-    if ([sender.titleLabel.text isEqualToString:_weddingDateString]) {
-        [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
-        _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
-    }
-    else
-    {
-        [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
-                [_timer invalidate];
-    }
-}
+    float duration = 0.3;
+    [UIView animateWithDuration:duration animations:^{
+        sender.alpha = 0;
+    } completion:^(BOOL finished) {
+        if ([sender.titleLabel.text isEqualToString:_weddingDateString]) {
+            [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
+            _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+        }
+        else
+        {
+            [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
+            [_timer invalidate];
+        }
+
+        [UIView animateWithDuration:duration animations:^{
+            sender.alpha = 1;
+        }];
+    }];
+   }
 
 @end

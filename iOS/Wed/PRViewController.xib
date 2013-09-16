@@ -172,7 +172,7 @@
 								<string key="NSFrame">{{9, 20}, {302, 30}}</string>
 								<reference key="NSSuperview" ref="774585933"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="5372601"/>
+								<reference key="NSNextKeyView" ref="950704551"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -203,7 +203,7 @@
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUIButton" id="5372601">
+							<object class="IBUIButton" id="950704551">
 								<reference key="NSNextResponder" ref="774585933"/>
 								<int key="NSvFlags">294</int>
 								<string key="NSFrame">{{9, 58}, {302, 41}}</string>
@@ -215,8 +215,14 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<reference key="IBUIHighlightedTitleColor" ref="780941444"/>
-								<reference key="IBUINormalTitleColor" ref="780941444"/>
+								<object class="NSColor" key="IBUIHighlightedTitleColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC4wMzkyMTU2ODYyNyAwLjM3NjQ3MDU4ODIgMC45OTYwNzg0MzE0AA</bytes>
+								</object>
+								<object class="NSColor" key="IBUINormalTitleColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MC4wMzkyMTU2ODYyNyAwLjM3NjQ3MDU4ODIgMC45OTYwNzg0MzE0AA</bytes>
+								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="85049764"/>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<string key="name">HelveticaNeue-Light</string>
@@ -244,7 +250,7 @@
 						<float key="IBUIAlpha">0.69999998807907104</float>
 						<int key="IBUIContentMode">1</int>
 						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-						<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics" id="40776488">
+						<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics" id="633202823">
 							<string key="IBUISimulatedSizeMetricsClass">IBUIScreenMetrics</string>
 							<object class="NSMutableDictionary" key="IBUINormalizedOrientationToSizeMap">
 								<bool key="EncodedWithXMLCoder">YES</bool>
@@ -276,7 +282,7 @@
 						<int key="NSID">2</int>
 					</object>
 				</object>
-				<reference key="IBUISimulatedDestinationMetrics" ref="40776488"/>
+				<reference key="IBUISimulatedDestinationMetrics" ref="633202823"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</array>
@@ -342,7 +348,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">buttonDays</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="5372601"/>
+						<reference key="destination" ref="950704551"/>
 					</object>
 					<int key="connectionID">49</int>
 				</object>
@@ -385,7 +391,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">buttonDaysClicked:</string>
-						<reference key="source" ref="5372601"/>
+						<reference key="source" ref="950704551"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -429,7 +435,7 @@
 							<reference ref="858865240"/>
 							<reference ref="27474923"/>
 							<reference ref="205544473"/>
-							<reference ref="5372601"/>
+							<reference ref="950704551"/>
 						</array>
 						<reference key="parent" ref="941321048"/>
 					</object>
@@ -465,7 +471,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">48</int>
-						<reference key="object" ref="5372601"/>
+						<reference key="object" ref="950704551"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
@@ -485,7 +491,7 @@
 				<string key="40.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="44.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="48.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<real value="1" key="48.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<real value="0.0" key="48.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.CustomClassName">PRButton</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
