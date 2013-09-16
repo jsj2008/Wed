@@ -24,6 +24,7 @@
 @property (nonatomic, strong) IBOutlet PRButton* venuesButton;
 @property (nonatomic, strong) IBOutlet PRButton* familyButton;
 @property (nonatomic, strong) IBOutlet UIImageView* backgroundIV;
+@property (nonatomic, strong) IBOutlet UIView* backgroundView;
 
 @property (nonatomic, strong) NSString* weddingDateString;
 @property (nonatomic, strong) NSString* durationRemainingString;
@@ -37,14 +38,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    self.backgroundView.alpha = 0;
     self.outerContainerView.alpha = 0;
     [UIView animateWithDuration:2 delay:1 options:0 animations:^{
         [self.backgroundIV setImageToBlur:[UIImage imageNamed:@"Default.png"] blurRadius:15 completionBlock:nil];
-        self.outerContainerView.alpha = 0.7;
-    } completion:nil];
-    _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
-    _weddingDateString = @"December 7, 2013";
+        self.backgroundView.alpha = 0.5;
+        self.outerContainerView.alpha = 1;
+    } completion:^(BOOL finished) {
+        _weddingDateString = @"December 7, 2013";
+//        [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
+        double delayInSeconds = 3.0;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                    _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+        });
+    }];
+
     [self setButtonTags];
 }
 
@@ -139,10 +149,10 @@
                                                                  options:0];
     
     //Uncomment this to display actual duration
-
+    
     _durationRemainingString = [NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
-        [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
-//    _lblDays.text = @"Countdown goes here";
+    [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
+    //    _lblDays.text = @"Countdown goes here";
 }
 
 -(IBAction)buttonDaysClicked:(UIButton*)sender
@@ -160,11 +170,11 @@
             [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
             [_timer invalidate];
         }
-
+        
         [UIView animateWithDuration:duration animations:^{
             sender.alpha = 1;
         }];
     }];
-   }
+}
 
 @end

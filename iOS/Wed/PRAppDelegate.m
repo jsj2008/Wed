@@ -81,7 +81,7 @@
 }
 
 +(NSString*)venuesFilesPath {
-    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"venues.plist"];
+    return [[PRAppDelegate cacheDirectory] stringByAppendingPathComponent:@"venues.plist"];
 }
 
 -(void)downloadAndStoreEventsFile {
@@ -96,7 +96,7 @@
 }
 
 +(NSString*)eventsFilesPath {
-    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"events.plist"];
+    return [[PRAppDelegate cacheDirectory] stringByAppendingPathComponent:@"events.plist"];
 }
 
 -(void)downloadAndStoreFamilyFile {
@@ -119,11 +119,16 @@
 }
 
 +(NSString*)thakurFamilyFilePath {
-    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"thakur_family.plist"];
+    return [[PRAppDelegate cacheDirectory] stringByAppendingPathComponent:@"thakur_family.plist"];
 }
 
 +(NSString*)tayalFamilyFilePath {
-    return [[PRAppDelegate tempDirectory] stringByAppendingPathComponent:@"tayal_family.plist"];
+    return [[PRAppDelegate cacheDirectory] stringByAppendingPathComponent:@"tayal_family.plist"];
+}
+
++(NSString*)cacheDirectory {
+    NSString* cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    return cachePath;
 }
 
 +(NSString*)tempDirectory {

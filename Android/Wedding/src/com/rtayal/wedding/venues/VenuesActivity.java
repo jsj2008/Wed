@@ -76,7 +76,6 @@ public class VenuesActivity extends Activity implements DataDownloadListener,
 	@Override
 	public void dataDownloadFailed() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

@@ -63,7 +63,7 @@
         default:
             break;
     }
-    layer.opacity = 0.2;
+    layer.opacity = 0.4;
     [self.layer insertSublayer:layer below:self.layer];
 
     // Drawing code
@@ -176,8 +176,8 @@
 -(void)setHighlighted:(BOOL)highlighted
 {
     if (highlighted) {
-        self.titleLabel.textColor = [UIColor darkGrayColor];
-        self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        self.titleLabel.textColor = [UIColor lightGrayColor];
+        self.layer.borderColor = [UIColor lightGrayColor].CGColor;
     }
     else {
         self.titleLabel.textColor = [UIColor whiteColor];

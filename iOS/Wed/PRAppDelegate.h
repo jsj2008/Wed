@@ -18,6 +18,7 @@
 
 +(NSString*)documentsPath;
 +(NSString*)tempDirectory;
++(NSString*)cacheDirectory;
 +(NSString*)venuesFilesPath;
 +(NSString*)eventsFilesPath;
 +(NSString*)thakurFamilyFilePath;

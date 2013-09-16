@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.localytics.android.LocalyticsSession;
 import com.rtayal.wedding.Constants;
+import com.rtayal.wedding.PRTypeFace;
 import com.rtayal.wedding.R;
 import com.rtayal.wedding.events.EventsActitivity;
 import com.rtayal.wedding.family.FamilyActivity;
@@ -44,17 +45,30 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		eventsButton = (Button) findViewById(R.id.buttonEvents);
 		eventsButton.setOnClickListener(this);
+		eventsButton.setTypeface(PRTypeFace.tfWithFont(this,
+				PRTypeFace.PRFontHelveticaNeueLight));
 
 		galleryButton = (Button) findViewById(R.id.buttonGallery);
 		galleryButton.setOnClickListener(this);
+		galleryButton.setTypeface(PRTypeFace.tfWithFont(this,
+				PRTypeFace.PRFontHelveticaNeueLight));
 
 		venuesButton = (Button) findViewById(R.id.buttonVenues);
 		venuesButton.setOnClickListener(this);
+		venuesButton.setTypeface(PRTypeFace.tfWithFont(this,
+				PRTypeFace.PRFontHelveticaNeueLight));
 
 		familyButton = (Button) findViewById(R.id.buttonFamily);
 		familyButton.setOnClickListener(this);
+		familyButton.setTypeface(PRTypeFace.tfWithFont(this,
+				PRTypeFace.PRFontHelveticaNeueLight));
 
+		((TextView) findViewById(R.id.textView1)).setTypeface(PRTypeFace
+				.tfWithFont(this, PRTypeFace.PRFontHelveticaNeueLight));
+		
 		countDownTV = (TextView) findViewById(R.id.countDownTextView);
+		countDownTV.setTypeface(PRTypeFace.tfWithFont(this,
+				PRTypeFace.PRFontHelveticaNeueLight));
 
 		Date nowDate = new Date();
 		String weddingDateString = "2013-12-07";
@@ -79,9 +93,9 @@ public class MainActivity extends Activity implements OnClickListener {
 				long minutes = ((millisUntilFinished / (1000 * 60)) % 60);
 				long hours = ((millisUntilFinished / (1000 * 60 * 60)) % 24);
 				long days = ((millisUntilFinished / (1000 * 60 * 60 * 24)) % 365);
-//				countDownTV.setText(String.format(
-//						"%d Days %d Hours %d Mins %d Sec", days, hours,
-//						minutes, seconds));
+				// countDownTV.setText(String.format(
+				// "%d Days %d Hours %d Mins %d Sec", days, hours,
+				// minutes, seconds));
 			}
 
 			@Override
