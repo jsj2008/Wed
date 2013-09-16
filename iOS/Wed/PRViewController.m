@@ -47,12 +47,8 @@
         self.outerContainerView.alpha = 1;
     } completion:^(BOOL finished) {
         _weddingDateString = @"December 7, 2013";
-//        [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
-        double delayInSeconds = 3.0;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                    _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
-        });
+        [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
+        [self performSelector:@selector(startCountDownTimer) withObject:nil afterDelay:3.0];
     }];
 
     [self setButtonTags];
@@ -147,9 +143,7 @@
                                                                 fromDate:now
                                                                   toDate:dateFromString
                                                                  options:0];
-    
-    //Uncomment this to display actual duration
-    
+     
     _durationRemainingString = [NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
     [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
     //    _lblDays.text = @"Countdown goes here";
@@ -163,7 +157,7 @@
     } completion:^(BOOL finished) {
         if ([sender.titleLabel.text isEqualToString:_weddingDateString]) {
             [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
-            _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+            [self startCountDownTimer];
         }
         else
         {
@@ -175,6 +169,10 @@
             sender.alpha = 1;
         }];
     }];
+}
+
+-(void)startCountDownTimer {
+    _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
 }
 
 @end
