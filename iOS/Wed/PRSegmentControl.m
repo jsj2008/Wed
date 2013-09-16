@@ -26,27 +26,26 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)
-    {
-        [self setBackgroundImage:[UIImage imageNamed:@"tab-on.png"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-        [self setBackgroundImage:[UIImage imageNamed:@"tab-off.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        
-        [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-        [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        
-        UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueRegular size:13.0f];
-        NSDictionary *normalStateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, font, UITextAttributeFont, nil];
-        
-        NSDictionary* selectedStateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor lightGrayColor], UITextAttributeTextColor, font, UITextAttributeFont, nil];
-        
-        [self setTitleTextAttributes:selectedStateAttributes forState:UIControlStateSelected];
-        [self setTitleTextAttributes:normalStateAttributes forState:UIControlStateNormal];
-        
-        [self.layer setCornerRadius:4.0];
-        [self.layer setMasksToBounds:YES];
-        [self setNeedsLayout];
-    }
+    
+    [self setBackgroundImage:[UIImage imageNamed:@"tab-on.png"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:[UIImage imageNamed:@"tab-off.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    [self setDividerImage:[UIImage imageFromColor:[UIColor blackColor]] forLeftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    UIFont *font = [UIFont fontWithName:PRFontHelveticaNeueRegular size:13.0f];
+    NSDictionary *normalStateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, font, UITextAttributeFont, nil];
+    
+    NSDictionary* selectedStateAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor lightGrayColor], UITextAttributeTextColor, font, UITextAttributeFont, nil];
+    
+    [self setTitleTextAttributes:selectedStateAttributes forState:UIControlStateSelected];
+    [self setTitleTextAttributes:normalStateAttributes forState:UIControlStateNormal];
+    
+    [self.layer setCornerRadius:4.0];
+    [self.layer setMasksToBounds:YES];
+    [self setNeedsLayout];
+    
 }
 
 @end
