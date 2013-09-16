@@ -8,14 +8,19 @@
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000"
+        android:background="#66000000"
         android:scaleType="centerCrop"
         android:src="@drawable/img_01" />
 
-    <RelativeLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#99000000" >
+        android:background="#99000000" />
+
+    <RelativeLayout
+        android:id="@+id/textViewsContainerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/textView1"
@@ -38,60 +43,61 @@
             android:text="Text"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white" />
+    </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textViewsContainerLayout"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="30dp"
+        android:paddingTop="30dp" >
 
-            <Button
-                android:id="@+id/buttonVenues"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/venues_button"
-                android:text="Venues"
-                android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/buttonVenues"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/venues_button"
+            android:text="Venues"
+            android:textColor="@android:color/white" />
 
-            <Button
-                android:id="@+id/buttonEvents"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_below="@id/buttonVenues"
-                android:layout_marginLeft="-50dp"
-                android:layout_marginTop="-40dp"
-                android:layout_toRightOf="@id/buttonVenues"
-                android:background="@drawable/events_button"
-                android:text="Events"
-                android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/buttonEvents"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_below="@id/buttonVenues"
+            android:layout_marginLeft="-60dp"
+            android:layout_marginTop="-50dp"
+            android:layout_toRightOf="@id/buttonVenues"
+            android:background="@drawable/events_button"
+            android:text="Events"
+            android:textColor="@android:color/white" />
 
-            <Button
-                android:id="@+id/buttonFamily"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/buttonEvents"
-                android:layout_marginRight="-20dp"
-                android:layout_marginTop="-40dp"
-                android:layout_toLeftOf="@id/buttonEvents"
-                android:background="@drawable/family_button"
-                android:text="Family"
-                android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/buttonFamily"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/buttonEvents"
+            android:layout_marginRight="-10dp"
+            android:layout_marginTop="-40dp"
+            android:layout_toLeftOf="@id/buttonEvents"
+            android:background="@drawable/family_button"
+            android:text="Family"
+            android:textColor="@android:color/white" />
 
-            <Button
-                android:id="@+id/buttonGallery"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:layout_below="@id/buttonFamily"
-                android:layout_marginLeft="-30dp"
-                android:layout_marginTop="-40dp"
-                android:layout_toRightOf="@id/buttonFamily"
-                android:background="@drawable/gallery_button"
-                android:text="Gallery"
-                android:textColor="@android:color/white" />
-        </RelativeLayout>
+        <Button
+            android:id="@+id/buttonGallery"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_below="@id/buttonFamily"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginTop="-40dp"
+            android:layout_toRightOf="@id/buttonFamily"
+            android:background="@drawable/gallery_button"
+            android:text="Gallery"
+            android:textColor="@android:color/white" />
     </RelativeLayout>
 
 </RelativeLayout>

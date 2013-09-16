@@ -38,11 +38,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		localyticsSession = new LocalyticsSession(getApplicationContext(),
 				Constants.Localytics_App_Key);
 		localyticsSession.open();
 		localyticsSession.upload();
-
+		
 		eventsButton = (Button) findViewById(R.id.buttonEvents);
 		eventsButton.setOnClickListener(this);
 		eventsButton.setTypeface(PRTypeFace.tfWithFont(this,
