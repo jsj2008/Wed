@@ -63,7 +63,7 @@
         default:
             break;
     }
-    layer.opacity = 0.3;
+    layer.opacity = 0.2;
     [self.layer insertSublayer:layer below:self.layer];
     
     // Drawing code

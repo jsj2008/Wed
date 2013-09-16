@@ -14,6 +14,7 @@
 #import "UIImage+CustomImage.h"
 #import "PRButton.h"
 #import "UIView+MWParallax.h"
+#import "UIImageView+LBBlurredImage.h"
 
 @interface PRViewController ()
 
@@ -35,18 +36,13 @@
     [super viewDidLoad];
 
     self.outerContainerView.alpha = 0;
-    [UIView animateWithDuration:2 delay:0.5 options:0 animations:^{
+    [UIView animateWithDuration:2 delay:1 options:0 animations:^{
         self.outerContainerView.alpha = 1;
     } completion:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     [self setButtonTags];
 
-//    self.backgroundIV.iOS6ParallaxIntensity = -10;
-//    self.outerContainerView.iOS6ParallaxIntensity = 30;
-//    self.familyButton.iOS6ParallaxIntensity = 20;
-//    self.scheduleButton.iOS6ParallaxIntensity = 20;
-//    self.venuesButton.iOS6ParallaxIntensity = 20;
-//    self.galleryButton.iOS6ParallaxIntensity = 20;
+    [self.backgroundIV setImageToBlur:[UIImage imageNamed:@"Default.png"] blurRadius:15 completionBlock:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated

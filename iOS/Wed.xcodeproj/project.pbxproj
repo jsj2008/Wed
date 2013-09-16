@@ -105,6 +105,8 @@
 		06FAFD4317E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */; };
 		06FAFD4917E11BCA0017D29D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD4817E11BCA0017D29D /* icon@2x.png */; };
 		06FAFD4B17E11BCD0017D29D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FAFD4A17E11BCD0017D29D /* icon.png */; };
+		06FD66E617E661D200753117 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FD66E517E661D200753117 /* UIImageView+LBBlurredImage.m */; };
+		06FD66E817E6624500753117 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FD66E717E6624500753117 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,6 +263,9 @@
 		06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newsfeed_NewStoriesBar_Background@2x.png"; sourceTree = "<group>"; };
 		06FAFD4817E11BCA0017D29D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		06FAFD4A17E11BCD0017D29D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		06FD66E417E661D200753117 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		06FD66E517E661D200753117 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		06FD66E717E6624500753117 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FD66E817E6624500753117 /* CoreImage.framework in Frameworks */,
 				06A1378717E658FA00F256BB /* CoreMotion.framework in Frameworks */,
 				0605DF4617E37A6900350822 /* ImageIO.framework in Frameworks */,
 				0605DF4417E37A6300350822 /* MessageUI.framework in Frameworks */,
@@ -312,6 +318,7 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06FD66E717E6624500753117 /* CoreImage.framework */,
 				06A1378617E658FA00F256BB /* CoreMotion.framework */,
 				0605DF4517E37A6900350822 /* ImageIO.framework */,
 				0605DF4317E37A6300350822 /* MessageUI.framework */,
@@ -336,6 +343,7 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
+				06FD66E317E661C000753117 /* Blur Image */,
 				06A1377D17E657C600F256BB /* Parallex */,
 				0675ACF917DE34DA003FCD67 /* AFNetworking */,
 				0604F2D117DA3B1E001F0C84 /* Common View */,
@@ -701,6 +709,15 @@
 			path = Wed/Localytics;
 			sourceTree = "<group>";
 		};
+		06FD66E317E661C000753117 /* Blur Image */ = {
+			isa = PBXGroup;
+			children = (
+				06FD66E417E661D200753117 /* UIImageView+LBBlurredImage.h */,
+				06FD66E517E661D200753117 /* UIImageView+LBBlurredImage.m */,
+			);
+			name = "Blur Image";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -844,6 +861,7 @@
 				0605DF8017E37D1F00350822 /* UIButton+WebCache.m in Sources */,
 				0605DF8117E37D1F00350822 /* UIImageView+WebCache.m in Sources */,
 				06A1378A17E65CDA00F256BB /* UIView+MWParallax.m in Sources */,
+				06FD66E617E661D200753117 /* UIImageView+LBBlurredImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
