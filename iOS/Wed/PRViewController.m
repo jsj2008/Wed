@@ -18,12 +18,15 @@
 
 @interface PRViewController ()
 
-@property (nonatomic, strong) IBOutlet UILabel* lblDays;
+@property (nonatomic, strong) IBOutlet UIButton* buttonDays;
 @property (nonatomic, strong) IBOutlet PRButton* scheduleButton;
 @property (nonatomic, strong) IBOutlet PRButton* galleryButton;
 @property (nonatomic, strong) IBOutlet PRButton* venuesButton;
 @property (nonatomic, strong) IBOutlet PRButton* familyButton;
 @property (nonatomic, strong) IBOutlet UIImageView* backgroundIV;
+
+@property (nonatomic, strong) NSString* weddingDateString;
+@property (nonatomic, strong) NSString* durationRemainingString;
 
 @property (nonatomic, strong) NSTimer* timer;
 
@@ -41,6 +44,7 @@
         self.outerContainerView.alpha = 0.7;
     } completion:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+    _weddingDateString = @"December 7, 2013";
     [self setButtonTags];
 }
 
@@ -135,8 +139,23 @@
                                                                  options:0];
     
     //Uncomment this to display actual duration
-    _lblDays.text=[NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
+
+    _durationRemainingString = [NSString stringWithFormat:@"%02d Days %02d Hours %02d Min %02d Sec",componentsDaysDiff.day, (24 - componentsHours.hour), (60-componentMint.minute), (60-componentSec.second)];
+        [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
 //    _lblDays.text = @"Countdown goes here";
+}
+
+-(IBAction)buttonDaysClicked:(UIButton*)sender
+{
+    if ([sender.titleLabel.text isEqualToString:_weddingDateString]) {
+        [_buttonDays setTitle:_durationRemainingString forState:UIControlStateNormal];
+        _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+    }
+    else
+    {
+        [_buttonDays setTitle:_weddingDateString forState:UIControlStateNormal];
+                [_timer invalidate];
+    }
 }
 
 @end

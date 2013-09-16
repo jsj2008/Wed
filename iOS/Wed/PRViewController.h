@@ -20,5 +20,6 @@ typedef enum {
 @property (nonatomic, strong) IBOutlet UIView* outerContainerView;
 
 -(IBAction)buttonClicked:(id)sender;
+-(IBAction)buttonDaysClicked:(id)sender;
 
 @end
