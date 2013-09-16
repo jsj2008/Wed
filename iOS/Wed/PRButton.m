@@ -65,7 +65,7 @@
     }
     layer.opacity = 0.2;
     [self.layer insertSublayer:layer below:self.layer];
-    
+
     // Drawing code
 //    [self animate];
 
@@ -175,12 +175,14 @@
 
 -(void)setHighlighted:(BOOL)highlighted
 {
-//    if (highlighted) {
-//        self.backgroundColor = [UIColor grayColor];
-//    }
-//    else {
-//        self.backgroundColor = originalBackgroundColor;
-//    }
+    if (highlighted) {
+        self.titleLabel.textColor = [UIColor darkGrayColor];
+        self.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    }
+    else {
+        self.titleLabel.textColor = [UIColor whiteColor];
+        self.layer.borderColor = [UIColor whiteColor].CGColor;
+    }
 }
 
 @end

@@ -226,11 +226,11 @@
 									<string key="name">HelveticaNeue-Bold</string>
 									<string key="family">Helvetica Neue</string>
 									<int key="traits">2</int>
-									<double key="pointSize">17</double>
+									<double key="pointSize">21</double>
 								</object>
 								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">HelveticaNeue-Bold</string>
-									<double key="NSSize">17</double>
+									<double key="NSSize">21</double>
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -249,7 +249,7 @@
 						<float key="IBUIAlpha">0.69999998807907104</float>
 						<int key="IBUIContentMode">1</int>
 						<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
-						<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics" id="381660382">
+						<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics" id="248120016">
 							<string key="IBUISimulatedSizeMetricsClass">IBUIScreenMetrics</string>
 							<object class="NSMutableDictionary" key="IBUINormalizedOrientationToSizeMap">
 								<bool key="EncodedWithXMLCoder">YES</bool>
@@ -281,7 +281,7 @@
 						<int key="NSID">2</int>
 					</object>
 				</object>
-				<reference key="IBUISimulatedDestinationMetrics" ref="381660382"/>
+				<reference key="IBUISimulatedDestinationMetrics" ref="248120016"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</array>
