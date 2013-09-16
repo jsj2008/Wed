@@ -37,12 +37,11 @@
 
     self.outerContainerView.alpha = 0;
     [UIView animateWithDuration:2 delay:1 options:0 animations:^{
-        self.outerContainerView.alpha = 1;
+        [self.backgroundIV setImageToBlur:[UIImage imageNamed:@"Default.png"] blurRadius:15 completionBlock:nil];
+        self.outerContainerView.alpha = 0.7;
     } completion:nil];
     _timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     [self setButtonTags];
-
-    [self.backgroundIV setImageToBlur:[UIImage imageNamed:@"Default.png"] blurRadius:15 completionBlock:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated
