@@ -3,11 +3,11 @@ package com.rtayal.wedding;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.localytics.android.LocalyticsSession;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Application;
+
+import com.localytics.android.LocalyticsSession;
 
 public class Wedding extends Application {
 
@@ -19,12 +19,12 @@ public class Wedding extends Application {
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
-//		LocalyticsSession ls = new LocalyticsSession(getApplicationContext(),
-//				Constants.Localytics_App_Key);
+		 LocalyticsSession ls = new LocalyticsSession(getApplicationContext(),
+		 Constants.Localytics_App_Key);
 
-//		ls.tagEvent(getUserName());
-//		ls.upload();
-//		ls.close();
+		ls.tagEvent(getUserName());
+		ls.upload();
+		ls.close();
 	}
 
 	String getUserName() {
@@ -42,10 +42,10 @@ public class Wedding extends Application {
 			if (parts.length > 0 && parts[0] != null) {
 				return parts[0];
 			} else
-				return null;
+				return "";
 		}
 
-		return null;
+		return "";
 	}
 
 }

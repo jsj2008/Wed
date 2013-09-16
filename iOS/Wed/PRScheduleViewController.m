@@ -34,7 +34,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadLocalEventsFiles)];
     [self setNavigationBarLeftButton];
     
-    [self loadLocalEventsFiles];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +50,8 @@
     [self.navigationController.navigationBar setTintColor:barColor];
     [[LocalyticsSession shared] tagScreen:@"Events Screen"];
     [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
+    
+    [self loadLocalEventsFiles];
 }
 
 -(void) setNavigationBarLeftButton
@@ -69,7 +70,10 @@
 
 -(void) loadLocalEventsFiles {
     _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[PRAppDelegate eventsFilesPath]];
-    [_tableView reloadData];
+//    [_tableView reloadData];
+    for (int i = 0; i < _datasource.count; i++) {
+        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 #pragma mark - UITableView Datasource
