@@ -83,12 +83,14 @@
 		0675AD2017DE41C9003FCD67 /* PRPhotoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */; };
 		0675AD2117DE41C9003FCD67 /* PRPhotoScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */; };
 		0675AD2517DE6CAA003FCD67 /* PRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675AD2417DE6CAA003FCD67 /* PRViewController.xib */; };
-		06A1377617E5265F00F256BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377517E5265F00F256BB /* Default-568h@2x.png */; };
 		06A1377A17E526B300F256BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377717E526B300F256BB /* Default-568h@2x.png */; };
 		06A1377B17E526B300F256BB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377817E526B300F256BB /* Default.png */; };
 		06A1377C17E526B300F256BB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377917E526B300F256BB /* Default@2x.png */; };
 		06A1378717E658FA00F256BB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1378617E658FA00F256BB /* CoreMotion.framework */; };
 		06A1378A17E65CDA00F256BB /* UIView+MWParallax.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A1378917E65CDA00F256BB /* UIView+MWParallax.m */; };
+		06A8C0E517EA20670086579F /* Wed-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A8C0E417EA20670086579F /* Wed-Info.plist */; };
+		06A8C0E917EA210A0086579F /* iVersion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 06A8C0E617EA210A0086579F /* iVersion.bundle */; };
+		06A8C0EA17EA210A0086579F /* iVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8C0E817EA210A0086579F /* iVersion.m */; };
 		06FA32F817DFAFAE00971661 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F717DFAFAE00971661 /* CoreData.framework */; };
 		06FA32FA17DFAFB700971661 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F917DFAFB700971661 /* SystemConfiguration.framework */; };
 		06FA32FC17DFAFBF00971661 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32FB17DFAFBF00971661 /* libz.dylib */; };
@@ -119,7 +121,6 @@
 		0604F29617D988AC001F0C84 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0604F29817D988AC001F0C84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0604F29A17D988AC001F0C84 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0604F29E17D988AC001F0C84 /* Wed-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wed-Info.plist"; sourceTree = "<group>"; };
 		0604F2A017D988AC001F0C84 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0604F2A217D988AC001F0C84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0604F2A417D988AC001F0C84 /* Wed-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wed-Prefix.pch"; sourceTree = "<group>"; };
@@ -238,13 +239,16 @@
 		0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPhotoScreenViewController.m; sourceTree = "<group>"; };
 		0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRPhotoScreenViewController.xib; sourceTree = "<group>"; };
 		0675AD2417DE6CAA003FCD67 /* PRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRViewController.xib; sourceTree = "<group>"; };
-		06A1377517E5265F00F256BB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		06A1377717E526B300F256BB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		06A1377817E526B300F256BB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		06A1377917E526B300F256BB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		06A1378617E658FA00F256BB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		06A1378817E65CDA00F256BB /* UIView+MWParallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MWParallax.h"; path = "Parallex/UIView+MWParallax.h"; sourceTree = "<group>"; };
 		06A1378917E65CDA00F256BB /* UIView+MWParallax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MWParallax.m"; path = "Parallex/UIView+MWParallax.m"; sourceTree = "<group>"; };
+		06A8C0E417EA20670086579F /* Wed-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Wed-Info.plist"; sourceTree = "<group>"; };
+		06A8C0E617EA210A0086579F /* iVersion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iVersion.bundle; path = iVersion/iVersion.bundle; sourceTree = "<group>"; };
+		06A8C0E717EA210A0086579F /* iVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iVersion.h; path = iVersion/iVersion.h; sourceTree = "<group>"; };
+		06A8C0E817EA210A0086579F /* iVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iVersion.m; path = iVersion/iVersion.m; sourceTree = "<group>"; };
 		06FA32F717DFAFAE00971661 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		06FA32F917DFAFB700971661 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		06FA32FB17DFAFBF00971661 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -300,7 +304,6 @@
 		0604F28A17D988AC001F0C84 = {
 			isa = PBXGroup;
 			children = (
-				06A1377517E5265F00F256BB /* Default-568h@2x.png */,
 				0604F29C17D988AC001F0C84 /* Wed */,
 				0604F29517D988AC001F0C84 /* Frameworks */,
 				0604F29417D988AC001F0C84 /* Products */,
@@ -343,6 +346,7 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
+				06A8C0EB17EA210F0086579F /* iVersion */,
 				06FD66E317E661C000753117 /* Blur Image */,
 				06A1377D17E657C600F256BB /* Parallex */,
 				0675ACF917DE34DA003FCD67 /* AFNetworking */,
@@ -362,7 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				0604F2BE17D98DD3001F0C84 /* Images */,
-				0604F29E17D988AC001F0C84 /* Wed-Info.plist */,
+				06A8C0E417EA20670086579F /* Wed-Info.plist */,
 				06536B1317DA5F33001DFE4E /* Constants.h */,
 				0604F29F17D988AC001F0C84 /* InfoPlist.strings */,
 				0604F2A217D988AC001F0C84 /* main.m */,
@@ -696,6 +700,16 @@
 			name = Parallex;
 			sourceTree = "<group>";
 		};
+		06A8C0EB17EA210F0086579F /* iVersion */ = {
+			isa = PBXGroup;
+			children = (
+				06A8C0E617EA210A0086579F /* iVersion.bundle */,
+				06A8C0E717EA210A0086579F /* iVersion.h */,
+				06A8C0E817EA210A0086579F /* iVersion.m */,
+			);
+			name = iVersion;
+			sourceTree = "<group>";
+		};
 		06FA33E317DFB65900971661 /* Localytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -804,10 +818,11 @@
 				0605DF7817E37D1F00350822 /* README.mdown in Resources */,
 				0605DF7A17E37D1F00350822 /* README.md in Resources */,
 				0605DF8217E37D1F00350822 /* MWPhotoBrowser.bundle in Resources */,
-				06A1377617E5265F00F256BB /* Default-568h@2x.png in Resources */,
 				06A1377A17E526B300F256BB /* Default-568h@2x.png in Resources */,
 				06A1377B17E526B300F256BB /* Default.png in Resources */,
 				06A1377C17E526B300F256BB /* Default@2x.png in Resources */,
+				06A8C0E517EA20670086579F /* Wed-Info.plist in Resources */,
+				06A8C0E917EA210A0086579F /* iVersion.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,6 +877,7 @@
 				0605DF8117E37D1F00350822 /* UIImageView+WebCache.m in Sources */,
 				06A1378A17E65CDA00F256BB /* UIView+MWParallax.m in Sources */,
 				06FD66E617E661D200753117 /* UIImageView+LBBlurredImage.m in Sources */,
+				06A8C0EA17EA210A0086579F /* iVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,23 +957,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: rishabh tayal (VJS8GXZ7PW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: rishabh tayal (VJS8GXZ7PW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
-				INFOPLIST_FILE = "Wed/Wed-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Wed/Wed-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wed/Localytics\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "459F4AAD-969B-4184-9BE5-9313BF06DAE4";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "459F4AAD-969B-4184-9BE5-9313BF06DAE4";
+				PRODUCT_NAME = Wed;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "./**";
 				WRAPPER_EXTENSION = app;
@@ -968,23 +984,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: rishabh tayal";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: rishabh tayal";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WALTER MEIER (MANUFACTURING) INC.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WALTER MEIER (MANUFACTURING) INC.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wed/Wed-Prefix.pch";
-				INFOPLIST_FILE = "Wed/Wed-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Wed/Wed-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Wed/Localytics\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "BA161094-6833-4822-A65B-BB00AB176A54";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BA161094-6833-4822-A65B-BB00AB176A54";
+				PRODUCT_NAME = Wed;
+				PROVISIONING_PROFILE = "0B1F2919-CE19-4A9C-A14A-B0213B45BC62";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0B1F2919-CE19-4A9C-A14A-B0213B45BC62";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "./**";
 				WRAPPER_EXTENSION = app;
