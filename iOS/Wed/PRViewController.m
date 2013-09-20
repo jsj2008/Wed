@@ -123,9 +123,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     
     [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-    NSDate *dateFromString = [[NSDate alloc] init];
+//    NSDate *dateFromString = [[NSDate alloc] init];
     // voila!
-    dateFromString = [dateFormatter dateFromString:dateString];
+    NSDate* dateFromString = [dateFormatter dateFromString:dateString];
     
     
     NSDate *now = [NSDate date];
