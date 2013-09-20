@@ -10,7 +10,7 @@
 
 @interface PREventsCell : UITableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel* eventName;
-@property (nonatomic, strong) IBOutlet UILabel* locationLabel;
+@property (nonatomic, strong) IBOutlet UIButton* eventNameButton;
+@property (nonatomic, strong) IBOutlet UIButton* locationButton;
 
 @end

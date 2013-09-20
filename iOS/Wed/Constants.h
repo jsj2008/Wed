@@ -17,6 +17,7 @@
 #define PRDropboxThakurFamilyURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/thakurs_family.plist"
 #define PRDropboxTayalFamilyURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/tayals_family.plist"
 #define PRDropboxVenuesURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/venues.plist"
+#define PRDropboxEventDetailURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/event_detail.plist"
 
 #define NAVIGATIONBARBACKBUTTON @"back.png"
 #define PRAppikonServerUploadImageURL @"http://appikon.com/wedding_app/upload/"

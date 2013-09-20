@@ -135,6 +135,8 @@
     [_listView scrollRectToVisible:CGRectMake(0, 0, 10, 10) animated:YES];
 }
 
+#pragma mark - MWPhotoBrowser Delegate
+
 -(void)didSelectPhoto:(PhotoView*)sender {
     //photo selected - show it full screen
     //    NSNumber* tag = [NSNumber numberWithInt:sender.tag];
@@ -159,8 +161,6 @@
     [photoBrowser setInitialPageIndex:initialPageIndex];
     [self.navigationController pushController:photoBrowser];
 }
-
-#pragma mark - MWPhotoBrowser Delegate
 
 -(NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser
 {

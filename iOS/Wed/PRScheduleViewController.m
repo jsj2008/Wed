@@ -10,6 +10,7 @@
 #import "PREventsCell.h"
 #import "PRVenuesWithMapViewController.h"
 #import "PRAppDelegate.h"
+#import "PREventDetailViewController.h"
 
 @interface PRScheduleViewController ()
 {
@@ -99,18 +100,35 @@
     if (!cell) {
         cell = [[PREventsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PREventsCell"];
     }
-    cell.eventName.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
-    cell.locationLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"];
+    [cell.eventNameButton setTitle:[[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"] forState:UIControlStateNormal];
+    [cell.eventNameButton addTarget:self action:@selector(eventNameButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
+//    cell.eventName.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
+    [cell.locationButton setTitle:[[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"] forState:UIControlStateNormal];
+    [cell.locationButton addTarget:self action:@selector(locationSelected:) forControlEvents:UIControlEventTouchUpInside];
+//    cell.locationLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"];
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    PREventsCell* cell = (PREventsCell*) [_tableView cellForRowAtIndexPath:indexPath];
-    PRVenuesWithMapViewController* venuesVC = [[PRVenuesWithMapViewController alloc] initWithLocationTitle:cell.locationLabel.text];
+-(IBAction)eventNameButtonSelected:(UIButton*)sender {
+    PREventDetailViewController* eventDetailVC = [[PREventDetailViewController alloc] initWithEvent:sender.titleLabel.text];
+    eventDetailVC.title = sender.titleLabel.text;
+    [self.navigationController pushController:eventDetailVC];    
+}
+
+-(IBAction)locationSelected:(UIButton*)sender {
+//    PREventsCell* cell = (PREventsCell*) [_tableView cellForRowAtIndexPath:indexPath];
+    PRVenuesWithMapViewController* venuesVC = [[PRVenuesWithMapViewController alloc] initWithLocationTitle:sender.titleLabel.text];
     venuesVC.title = @"Venues";
     [self.navigationController pushController:venuesVC];
 }
+
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    PREventsCell* cell = (PREventsCell*) [_tableView cellForRowAtIndexPath:indexPath];
+//    PRVenuesWithMapViewController* venuesVC = [[PRVenuesWithMapViewController alloc] initWithLocationTitle:cell.locationButton.titleLabel.text];
+//    venuesVC.title = @"Venues";
+//    [self.navigationController pushController:venuesVC];
+//}
 
 //-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 //{
