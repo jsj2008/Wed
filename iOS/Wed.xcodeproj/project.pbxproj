@@ -92,7 +92,6 @@
 		06A1377C17E526B300F256BB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377917E526B300F256BB /* Default@2x.png */; };
 		06A1378717E658FA00F256BB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A1378617E658FA00F256BB /* CoreMotion.framework */; };
 		06A1378A17E65CDA00F256BB /* UIView+MWParallax.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A1378917E65CDA00F256BB /* UIView+MWParallax.m */; };
-		06A8C0E517EA20670086579F /* Wed-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06A8C0E417EA20670086579F /* Wed-Info.plist */; };
 		06A8C0E917EA210A0086579F /* iVersion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 06A8C0E617EA210A0086579F /* iVersion.bundle */; };
 		06A8C0EA17EA210A0086579F /* iVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A8C0E817EA210A0086579F /* iVersion.m */; };
 		06FA32F817DFAFAE00971661 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FA32F717DFAFAE00971661 /* CoreData.framework */; };
@@ -854,7 +853,6 @@
 				06A1377A17E526B300F256BB /* Default-568h@2x.png in Resources */,
 				06A1377B17E526B300F256BB /* Default.png in Resources */,
 				06A1377C17E526B300F256BB /* Default@2x.png in Resources */,
-				06A8C0E517EA20670086579F /* Wed-Info.plist in Resources */,
 				06A8C0E917EA210A0086579F /* iVersion.bundle in Resources */,
 				0654E4E517EC974E009B7F0E /* PREventDetailViewController.xib in Resources */,
 			);

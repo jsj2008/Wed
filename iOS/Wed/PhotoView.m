@@ -33,12 +33,12 @@
         self.backgroundColor = [UIColor grayColor];
         //add the photo caption
         UILabel* caption = [[UILabel alloc] initWithFrame:CGRectMake(0, kThumbSide-16, kThumbSide, 16)];
-        caption.backgroundColor = [UIColor blackColor];
-        caption.textColor = [UIColor whiteColor];
-        caption.textAlignment = NSTextAlignmentCenter;
-        caption.font = [UIFont systemFontOfSize:12];
-        caption.text = [NSString stringWithFormat:@"@%@",[data objectForKey:@"username"]];
-        [self addSubview: caption];
+        caption.backgroundColor = [UIColor clearColor];
+//        caption.textColor = [UIColor whiteColor];
+//        caption.textAlignment = NSTextAlignmentCenter;
+//        caption.font = [UIFont systemFontOfSize:12];
+//        caption.text = [NSString stringWithFormat:@"@%@",[data objectForKey:@"username"]];
+//        [self addSubview: caption];
 		//add touch event
 		[self addTarget:delegate action:@selector(didSelectPhoto:) forControlEvents:UIControlEventTouchUpInside];
 		//load the image

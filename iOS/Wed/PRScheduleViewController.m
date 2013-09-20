@@ -72,10 +72,10 @@
 
 -(void) loadLocalEventsFiles {
     _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[PRAppDelegate eventsFilesPath]];
-    //    [_tableView reloadData];
-    for (int i = 0; i < _datasource.count; i++) {
-        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
-    }
+    [_tableView reloadData];
+//    for (int i = 0; i < _datasource.count; i++) {
+//        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
+//    }
 }
 
 -(void)showCoachMarks
