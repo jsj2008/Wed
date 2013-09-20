@@ -86,6 +86,7 @@
 		0675AD2017DE41C9003FCD67 /* PRPhotoScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */; };
 		0675AD2117DE41C9003FCD67 /* PRPhotoScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */; };
 		0675AD2517DE6CAA003FCD67 /* PRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0675AD2417DE6CAA003FCD67 /* PRViewController.xib */; };
+		0679ECFE17ECA47F0082D091 /* WSCoachMarksView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0679ECFD17ECA47F0082D091 /* WSCoachMarksView.m */; };
 		06A1377A17E526B300F256BB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377717E526B300F256BB /* Default-568h@2x.png */; };
 		06A1377B17E526B300F256BB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377817E526B300F256BB /* Default.png */; };
 		06A1377C17E526B300F256BB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06A1377917E526B300F256BB /* Default@2x.png */; };
@@ -246,6 +247,8 @@
 		0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRPhotoScreenViewController.m; sourceTree = "<group>"; };
 		0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRPhotoScreenViewController.xib; sourceTree = "<group>"; };
 		0675AD2417DE6CAA003FCD67 /* PRViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRViewController.xib; sourceTree = "<group>"; };
+		0679ECFC17ECA47F0082D091 /* WSCoachMarksView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCoachMarksView.h; sourceTree = "<group>"; };
+		0679ECFD17ECA47F0082D091 /* WSCoachMarksView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCoachMarksView.m; sourceTree = "<group>"; };
 		06A1377717E526B300F256BB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		06A1377817E526B300F256BB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		06A1377917E526B300F256BB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -355,6 +358,7 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
+				0679ECFF17ECA4840082D091 /* Coach Marks */,
 				06A8C0EB17EA210F0086579F /* iVersion */,
 				06FD66E317E661C000753117 /* Blur Image */,
 				06A1377D17E657C600F256BB /* Parallex */,
@@ -711,6 +715,15 @@
 			name = Annotation;
 			sourceTree = "<group>";
 		};
+		0679ECFF17ECA4840082D091 /* Coach Marks */ = {
+			isa = PBXGroup;
+			children = (
+				0679ECFC17ECA47F0082D091 /* WSCoachMarksView.h */,
+				0679ECFD17ECA47F0082D091 /* WSCoachMarksView.m */,
+			);
+			name = "Coach Marks";
+			sourceTree = "<group>";
+		};
 		06A1377D17E657C600F256BB /* Parallex */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +913,7 @@
 				06FD66E617E661D200753117 /* UIImageView+LBBlurredImage.m in Sources */,
 				06A8C0EA17EA210A0086579F /* iVersion.m in Sources */,
 				0654E4E417EC974E009B7F0E /* PREventDetailViewController.m in Sources */,
+				0679ECFE17ECA47F0082D091 /* WSCoachMarksView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,8 +1020,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: WALTER MEIER (MANUFACTURING) INC.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WALTER MEIER (MANUFACTURING) INC.";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: rishabh tayal";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: rishabh tayal";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1021,8 +1035,8 @@
 					"\"$(SRCROOT)/Wed/Localytics\"",
 				);
 				PRODUCT_NAME = Wed;
-				PROVISIONING_PROFILE = "0B1F2919-CE19-4A9C-A14A-B0213B45BC62";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0B1F2919-CE19-4A9C-A14A-B0213B45BC62";
+				PROVISIONING_PROFILE = "BA161094-6833-4822-A65B-BB00AB176A54";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BA161094-6833-4822-A65B-BB00AB176A54";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "./**";
 				WRAPPER_EXTENSION = app;

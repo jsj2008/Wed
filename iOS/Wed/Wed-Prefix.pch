@@ -16,5 +16,6 @@
 #import "PRProgressView.h"
 #import "LocalyticsSession.h"
 #import "UIImage+CustomImage.h"
+#import "WSCoachMarksView.h"
 
 #endif

@@ -35,6 +35,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadLocalEventsFiles)];
     [self setNavigationBarLeftButton];
     
+    [self showCoachMarks];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +46,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-        self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = NO;
     UIColor* barColor = [UIColor colorWithRed:212/255.0 green:76/255.0 blue:193/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTintColor:barColor];
@@ -71,10 +72,28 @@
 
 -(void) loadLocalEventsFiles {
     _datasource = [[NSMutableArray alloc] initWithContentsOfFile:[PRAppDelegate eventsFilesPath]];
-//    [_tableView reloadData];
+    //    [_tableView reloadData];
     for (int i = 0; i < _datasource.count; i++) {
         [_tableView reloadSections:[NSIndexSet indexSetWithIndex:i] withRowAnimation:UITableViewRowAnimationFade];
     }
+}
+
+-(void)showCoachMarks
+{
+    NSArray* coachMarks = @[
+                            @{
+                                @"rect": [NSValue valueWithCGRect:(CGRect){{0,95}, {320, 30}}],
+                                @"caption": @"Tap on the event to see detail about the particular event."
+                                },
+                            @{
+                                @"rect":[NSValue valueWithCGRect:(CGRect){{0, 125},{320, 30}}],
+                                @"caption":@"Tap on the location to see location on the map and get directions."
+                                },
+                            ];
+    WSCoachMarksView* coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.navigationController.view.frame coachMarks:coachMarks];
+    [self.navigationController.view addSubview:coachMarksView];
+    //    coachMarksView.cutoutRadius = 6;
+    [coachMarksView start];
 }
 
 #pragma mark - UITableView Datasource
@@ -102,21 +121,21 @@
     }
     [cell.eventNameButton setTitle:[[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"] forState:UIControlStateNormal];
     [cell.eventNameButton addTarget:self action:@selector(eventNameButtonSelected:) forControlEvents:UIControlEventTouchUpInside];
-//    cell.eventName.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
+    //    cell.eventName.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Event"];
     [cell.locationButton setTitle:[[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"] forState:UIControlStateNormal];
     [cell.locationButton addTarget:self action:@selector(locationSelected:) forControlEvents:UIControlEventTouchUpInside];
-//    cell.locationLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"];
+    //    cell.locationLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"];
     return cell;
 }
 
 -(IBAction)eventNameButtonSelected:(UIButton*)sender {
     PREventDetailViewController* eventDetailVC = [[PREventDetailViewController alloc] initWithEvent:sender.titleLabel.text];
     eventDetailVC.title = sender.titleLabel.text;
-    [self.navigationController pushController:eventDetailVC];    
+    [self.navigationController pushController:eventDetailVC];
 }
 
 -(IBAction)locationSelected:(UIButton*)sender {
-//    PREventsCell* cell = (PREventsCell*) [_tableView cellForRowAtIndexPath:indexPath];
+    //    PREventsCell* cell = (PREventsCell*) [_tableView cellForRowAtIndexPath:indexPath];
     PRVenuesWithMapViewController* venuesVC = [[PRVenuesWithMapViewController alloc] initWithLocationTitle:sender.titleLabel.text];
     venuesVC.title = @"Venues";
     [self.navigationController pushController:venuesVC];
