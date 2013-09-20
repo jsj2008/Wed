@@ -27,12 +27,17 @@
 {
     [super viewDidLoad];
     [self setNavigationBarLeftButton];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        NSString* eventDetailString = [[NSDictionary dictionaryWithContentsOfURL:[NSURL URLWithString:PRDropboxEventDetailURL]] objectForKey:_eventName];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            _textView.text = eventDetailString;
+        });
+    });
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    _textView.text = [[NSDictionary dictionaryWithContentsOfURL:[NSURL URLWithString:PRDropboxEventDetailURL]] objectForKey:_eventName];
 }
 
 - (void)didReceiveMemoryWarning
