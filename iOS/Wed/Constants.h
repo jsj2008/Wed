@@ -22,4 +22,7 @@
 #define NAVIGATIONBARBACKBUTTON @"back.png"
 #define PRAppikonServerUploadImageURL @"http://appikon.com/wedding_app/upload/"
 
+//Coachmarks booleans
+#define PRCoachMarksEventsSeen @"event_coachmarks_seen"
+
 #endif

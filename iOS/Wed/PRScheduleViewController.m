@@ -80,20 +80,24 @@
 
 -(void)showCoachMarks
 {
-    NSArray* coachMarks = @[
-                            @{
-                                @"rect": [NSValue valueWithCGRect:(CGRect){{0,95}, {320, 30}}],
-                                @"caption": @"Tap on the event to see detail about the particular event."
-                                },
-                            @{
-                                @"rect":[NSValue valueWithCGRect:(CGRect){{0, 125},{320, 30}}],
-                                @"caption":@"Tap on the location to see location on the map and get directions."
-                                },
-                            ];
-    WSCoachMarksView* coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.navigationController.view.frame coachMarks:coachMarks];
-    [self.navigationController.view addSubview:coachMarksView];
-    //    coachMarksView.cutoutRadius = 6;
-    [coachMarksView start];
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:PRCoachMarksEventsSeen])
+    {
+        NSArray* coachMarks = @[
+                                @{
+                                    @"rect": [NSValue valueWithCGRect:(CGRect){{0,95}, {320, 30}}],
+                                    @"caption": @"Tap on the event to see detail about the particular event."
+                                    },
+                                @{
+                                    @"rect":[NSValue valueWithCGRect:(CGRect){{0, 125},{320, 30}}],
+                                    @"caption":@"Tap on the location to see location on the map and get directions."
+                                    },
+                                ];
+        WSCoachMarksView* coachMarksView = [[WSCoachMarksView alloc] initWithFrame:self.navigationController.view.frame coachMarks:coachMarks];
+        [self.navigationController.view addSubview:coachMarksView];
+        //    coachMarksView.cutoutRadius = 6;
+        [coachMarksView start];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:PRCoachMarksEventsSeen];
+    }
 }
 
 #pragma mark - UITableView Datasource
