@@ -17,10 +17,12 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -73,6 +75,10 @@
         <meta-data
             android:name="LOCALYTICS_APP_KEY"
             android:value="dfd759fdfda91377340d12f-bb8a5478-1a55-11e3-1300-004a77f8b47f" />
+
+        <service android:name="com.commonsware.cwac.updater.UpdateService" />
+
+        <receiver android:name="com.commonsware.cwac.updater.WakefulReceiver" />
     </application>
 
 </manifest>

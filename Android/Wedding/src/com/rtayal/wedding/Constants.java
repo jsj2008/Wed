@@ -11,4 +11,6 @@ public class Constants {
 	public static String kAPIPath = "wedding_app/";
 
 	public static String Localytics_App_Key = "dfd759fdfda91377340d12f-bb8a5478-1a55-11e3-1300-004a77f8b47f";
+
+	public static String AppUpdateRemoteJSON = "http://appikon.com/wedding_app/android/update.json";
 }

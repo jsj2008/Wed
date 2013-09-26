@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/166/src/com/commonsware/cwac/updater
+END
+SimpleHttpVersionCheckStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/166/src/com/commonsware/cwac/updater/SimpleHttpVersionCheckStrategy.java
+END
+NotificationConfirmationStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/NotificationConfirmationStrategy.java
+END
+UpdateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/166/src/com/commonsware/cwac/updater/UpdateService.java
+END
+WakefulReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/WakefulReceiver.java
+END
+SimpleHttpDownloadStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/SimpleHttpDownloadStrategy.java
+END
+VersionCheckStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/166/src/com/commonsware/cwac/updater/VersionCheckStrategy.java
+END
+InternalHttpDownloadStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/152/src/com/commonsware/cwac/updater/InternalHttpDownloadStrategy.java
+END
+DownloadStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/DownloadStrategy.java
+END
+ImmediateConfirmationStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/ImmediateConfirmationStrategy.java
+END
+ConfirmationStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/ConfirmationStrategy.java
+END
+UpdateRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/Dorn_Marketing/WM_Sales_Android/svn/!svn/ver/151/src/com/commonsware/cwac/updater/UpdateRequest.java
+END
