@@ -12,6 +12,32 @@
 
 @implementation PRAppDelegate
 
+#pragma mark - iVersionDelegate
+
++(void)initialize
+{
+    [iVersion sharedInstance].updateURL = [NSURL URLWithString:AppUpdateURL];
+    [iVersion sharedInstance].remoteVersionsPlistURL = VersionCheckPlistURL;
+    [iVersion sharedInstance].verboseLogging = true;
+    
+    [iVersion sharedInstance].remindButtonLabel = @"Remind Later";
+    
+    [iVersion sharedInstance].checkPeriod = 1/86400;
+    [iVersion sharedInstance].remindPeriod = 1/86400;
+}
+
+-(BOOL)iVersionShouldOpenAppStore
+{
+    return false;
+}
+
+-(void)iVersionUserDidAttemptToDownloadUpdate:(NSString *)version
+{
+    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:AppUpdateURL]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:AppUpdateURL]];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[LocalyticsSession shared] startSession:@"dfd759fdfda91377340d12f-bb8a5478-1a55-11e3-1300-004a77f8b47f"];

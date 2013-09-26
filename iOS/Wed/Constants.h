@@ -20,7 +20,10 @@
 #define PRDropboxEventDetailURL @"https://dl.dropboxusercontent.com/u/57884865/wedding_app_files/event_detail.plist"
 
 #define NAVIGATIONBARBACKBUTTON @"back.png"
+
 #define PRAppikonServerUploadImageURL @"http://appikon.com/wedding_app/upload/"
+#define AppUpdateURL @"itms-services://?action=download-manifest&url=http://appikon.com/wedding_app/wed.plist"
+#define VersionCheckPlistURL @"http://appikon.com/wedding_app/versions.plist"
 
 //Coachmarks booleans
 #define PRCoachMarksEventsSeen @"event_coachmarks_seen"

@@ -331,15 +331,14 @@
 		0604F29517D988AC001F0C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06FA32FB17DFAFBF00971661 /* libz.dylib */,
+				06FA33D717DFB5B600971661 /* libsqlite3.dylib */,
 				0654E4DE17EC8DDA009B7F0E /* StoreKit.framework */,
 				06FD66E717E6624500753117 /* CoreImage.framework */,
 				06A1378617E658FA00F256BB /* CoreMotion.framework */,
 				0605DF4517E37A6900350822 /* ImageIO.framework */,
 				0605DF4317E37A6300350822 /* MessageUI.framework */,
-				06FA33D717DFB5B600971661 /* libsqlite3.dylib */,
 				06FA33D517DFB5AC00971661 /* AdSupport.framework */,
-				06FA33E317DFB65900971661 /* Localytics */,
-				06FA32FB17DFAFBF00971661 /* libz.dylib */,
 				06FA32F917DFAFB700971661 /* SystemConfiguration.framework */,
 				06FA32F717DFAFAE00971661 /* CoreData.framework */,
 				066146B817DD8FC7001229FF /* AddressBook.framework */,
@@ -357,11 +356,7 @@
 		0604F29C17D988AC001F0C84 /* Wed */ = {
 			isa = PBXGroup;
 			children = (
-				0679ECFF17ECA4840082D091 /* Coach Marks */,
-				06A8C0EB17EA210F0086579F /* iVersion */,
-				06FD66E317E661C000753117 /* Blur Image */,
-				06A1377D17E657C600F256BB /* Parallex */,
-				0675ACF917DE34DA003FCD67 /* AFNetworking */,
+				0679ED0017ECC1540082D091 /* Vendor */,
 				0604F2D117DA3B1E001F0C84 /* Common View */,
 				066146AC17DD107E001229FF /* Gallery View Controller */,
 				0604F2EC17DA4857001F0C84 /* Events View Controller */,
@@ -390,18 +385,7 @@
 		0604F2BE17D98DD3001F0C84 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0605DF2817E2C9B600350822 /* pin.png */,
-				0605DF2917E2C9B600350822 /* pin@2x.png */,
-				06FAFD4A17E11BCD0017D29D /* icon.png */,
-				06FAFD4817E11BCA0017D29D /* icon@2x.png */,
-				06FAFD4017E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png */,
-				06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */,
-				06FAFD3017E0FD670017D29D /* chooserPhoto.png */,
-				06FAFD3117E0FD670017D29D /* chooserPhoto@2x.png */,
-				06FAFD3217E0FD670017D29D /* chooserPhotoActive.png */,
-				06FAFD3317E0FD670017D29D /* chooserPhotoActive@2x.png */,
-				06536B1917DA71C1001DFE4E /* back.png */,
-				06536B1A17DA71C1001DFE4E /* back@2x.png */,
+				0679ED0117ECC1E00082D091 /* Other */,
 				06536B1D17DA7332001DFE4E /* Table View */,
 				06536B1E17DA733A001DFE4E /* Segment Control */,
 				0604F2BF17D98DE1001F0C84 /* App Images */,
@@ -413,6 +397,8 @@
 		0604F2BF17D98DE1001F0C84 /* App Images */ = {
 			isa = PBXGroup;
 			children = (
+				06FAFD4A17E11BCD0017D29D /* icon.png */,
+				06FAFD4817E11BCA0017D29D /* icon@2x.png */,
 				06A1377717E526B300F256BB /* Default-568h@2x.png */,
 				06A1377817E526B300F256BB /* Default.png */,
 				06A1377917E526B300F256BB /* Default@2x.png */,
@@ -434,7 +420,6 @@
 		0604F2D117DA3B1E001F0C84 /* Common View */ = {
 			isa = PBXGroup;
 			children = (
-				0605DF4717E37CDF00350822 /* MWPhotoBrowser */,
 				0604F2E517DA43B2001F0C84 /* UIImage+CustomImage.h */,
 				0604F2E617DA43B2001F0C84 /* UIImage+CustomImage.m */,
 				0604F2CB17D99DDF001F0C84 /* PRButton.h */,
@@ -723,6 +708,37 @@
 			name = "Coach Marks";
 			sourceTree = "<group>";
 		};
+		0679ED0017ECC1540082D091 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				06FA33E317DFB65900971661 /* Localytics */,
+				0605DF4717E37CDF00350822 /* MWPhotoBrowser */,
+				0679ECFF17ECA4840082D091 /* Coach Marks */,
+				06A8C0EB17EA210F0086579F /* iVersion */,
+				06FD66E317E661C000753117 /* Blur Image */,
+				06A1377D17E657C600F256BB /* Parallex */,
+				0675ACF917DE34DA003FCD67 /* AFNetworking */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		0679ED0117ECC1E00082D091 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0605DF2817E2C9B600350822 /* pin.png */,
+				0605DF2917E2C9B600350822 /* pin@2x.png */,
+				06FAFD4017E0FED30017D29D /* newsfeed_NewStoriesBar_Background.png */,
+				06FAFD4117E0FED30017D29D /* newsfeed_NewStoriesBar_Background@2x.png */,
+				06FAFD3017E0FD670017D29D /* chooserPhoto.png */,
+				06FAFD3117E0FD670017D29D /* chooserPhoto@2x.png */,
+				06FAFD3217E0FD670017D29D /* chooserPhotoActive.png */,
+				06FAFD3317E0FD670017D29D /* chooserPhotoActive@2x.png */,
+				06536B1917DA71C1001DFE4E /* back.png */,
+				06536B1A17DA71C1001DFE4E /* back@2x.png */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
 		06A1377D17E657C600F256BB /* Parallex */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,8 +767,7 @@
 				06FA33E717DFB65900971661 /* LocalyticsAmpSession.h */,
 				06FA33E817DFB65900971661 /* LocalyticsSession.h */,
 			);
-			name = Localytics;
-			path = Wed/Localytics;
+			path = Localytics;
 			sourceTree = "<group>";
 		};
 		06FD66E317E661C000753117 /* Blur Image */ = {
@@ -1018,8 +1033,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: rishabh tayal";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: rishabh tayal";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WALTER MEIER (MANUFACTURING) INC.";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WALTER MEIER (MANUFACTURING) INC.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1033,8 +1048,8 @@
 					"\"$(SRCROOT)/Wed/Localytics\"",
 				);
 				PRODUCT_NAME = Wed;
-				PROVISIONING_PROFILE = "BA161094-6833-4822-A65B-BB00AB176A54";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BA161094-6833-4822-A65B-BB00AB176A54";
+				PROVISIONING_PROFILE = "0B1F2919-CE19-4A9C-A14A-B0213B45BC62";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0B1F2919-CE19-4A9C-A14A-B0213B45BC62";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "./**";
 				WRAPPER_EXTENSION = app;

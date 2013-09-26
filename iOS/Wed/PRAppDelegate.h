@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "iVersion.h"
 
 @class PRViewController;
 
-@interface PRAppDelegate : UIResponder <UIApplicationDelegate>
+@interface PRAppDelegate : UIResponder <UIApplicationDelegate, iVersionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
