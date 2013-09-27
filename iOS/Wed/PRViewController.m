@@ -43,7 +43,7 @@
     self.outerContainerView.alpha = 0;
     [UIView animateWithDuration:1.5 delay:1 options:0 animations:^{
         [self.backgroundIV setImageToBlur:[UIImage imageNamed:@"Default.png"] blurRadius:15 completionBlock:nil];
-        self.backgroundView.alpha = 0.5;
+        self.backgroundView.alpha = 0.7;
         self.outerContainerView.alpha = 1;
     } completion:^(BOOL finished) {
         _weddingDateString = @"December 7, 2013";

@@ -8,7 +8,7 @@
 
 #import "UIImageView+LBBlurredImage.h"
 #import <CoreImage/CoreImage.h>
-
+#import <QuartzCore/QuartzCore.h>
 
 NSString *const kLBBlurredImageErrorDomain          = @"com.lucabernardi.blurred_image_additions";
 CGFloat const   kLBBlurredImageDefaultBlurRadius    = 20.0;
@@ -78,8 +78,18 @@ CGFloat const   kLBBlurredImageDefaultBlurRadius    = 20.0;
         UIImage *blurredImage = [UIImage imageWithCGImage:cgImage];
         CGImageRelease(cgImage);
         
+       
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             selfWeak.image = blurredImage;
+            
+            CATransition *transition = [CATransition animation];
+            transition.duration = 1.0f;
+            transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+            transition.type = kCATransitionFade;
+            
+            [selfWeak.layer addAnimation:transition forKey:nil];
+            
             if (completion){
                 completion(nil);
             }
