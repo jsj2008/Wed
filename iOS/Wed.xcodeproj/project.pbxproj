@@ -485,14 +485,14 @@
 			name = TableViewCell;
 			sourceTree = "<group>";
 		};
-		0605DF2E17E362E800350822 /* Photo Viewer View Controller */ = {
+		0605DF2E17E362E800350822 /* unused */ = {
 			isa = PBXGroup;
 			children = (
 				0675AD1D17DE41C9003FCD67 /* PRPhotoScreenViewController.h */,
 				0675AD1E17DE41C9003FCD67 /* PRPhotoScreenViewController.m */,
 				0675AD1F17DE41C9003FCD67 /* PRPhotoScreenViewController.xib */,
 			);
-			name = "Photo Viewer View Controller";
+			name = unused;
 			sourceTree = "<group>";
 		};
 		0605DF2F17E362FB00350822 /* Photo Gallery VC */ = {
@@ -619,7 +619,7 @@
 				0675AD1917DE3C5C003FCD67 /* API */,
 				0675AD2617DE6D5A003FCD67 /* Photo View */,
 				0605DF2F17E362FB00350822 /* Photo Gallery VC */,
-				0605DF2E17E362E800350822 /* Photo Viewer View Controller */,
+				0605DF2E17E362E800350822 /* unused */,
 			);
 			name = "Gallery View Controller";
 			sourceTree = "<group>";
