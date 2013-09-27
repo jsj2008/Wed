@@ -11,6 +11,7 @@
 #import "PRVenuesWithMapViewController.h"
 #import "PRAppDelegate.h"
 #import "PREventDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PRScheduleViewController ()
 {
@@ -107,14 +108,21 @@
     return _datasource.count;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [[_datasource objectAtIndex:section] objectForKey:@"Date"];
-}
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[_datasource objectAtIndex:section] objectForKey:@"Events"] count];
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40)];
+    view.backgroundColor = [UIColor colorWithRed:218/255.0 green:221/255.0 blue:229/255.0 alpha:0.7];
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, view.frame.size.width, 30)];
+    label.textColor = [UIColor blackColor];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = [[_datasource objectAtIndex:section] objectForKey:@"Date"];
+    [view addSubview:label];
+    return view;    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -131,6 +139,8 @@
     //    cell.locationLabel.text = [[[[_datasource objectAtIndex:indexPath.section] objectForKey:@"Events"] objectAtIndex:indexPath.row] objectForKey:@"Location"];
     return cell;
 }
+
+#pragma mark -
 
 -(IBAction)eventNameButtonSelected:(UIButton*)sender {
     PREventDetailViewController* eventDetailVC = [[PREventDetailViewController alloc] initWithEvent:sender.titleLabel.text];
