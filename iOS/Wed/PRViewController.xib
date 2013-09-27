@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">13A524d</string>
+		<string key="IBDocument.SystemVersion">13A558</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1244.12</string>
-		<string key="IBDocument.HIToolboxVersion">686.00</string>
+		<string key="IBDocument.AppKitVersion">1249.11</string>
+		<string key="IBDocument.HIToolboxVersion">691.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -205,13 +205,13 @@
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">1</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="643543888">
 									<string key="name">HelveticaNeue-Light</string>
 									<string key="family">Helvetica Neue</string>
 									<int key="traits">0</int>
 									<double key="pointSize">21</double>
 								</object>
-								<object class="NSFont" key="IBUIFont">
+								<object class="NSFont" key="IBUIFont" id="14439097">
 									<string key="NSName">HelveticaNeue-Medium</string>
 									<double key="NSSize">21</double>
 									<int key="NSfFlags">16</int>
@@ -234,28 +234,19 @@
 								<string key="IBUINormalTitle">December 7, 2013</string>
 								<object class="NSColor" key="IBUIHighlightedTitleColor">
 									<int key="NSColorSpace">5</int>
-									<bytes key="NSCMYK">MC42OSAwLjQyIDAgMC4wNQA</bytes>
+									<bytes key="NSCMYK">MC42OSAwLjQyIDAgMAA</bytes>
 									<object class="NSColorSpace" key="NSCustomColorSpace">
 										<int key="NSID">3</int>
 									</object>
-									<characters key="NSComponents">0.69 0.42 0 0.05 1</characters>
+									<characters key="NSComponents">0.69 0.42 0 0 1</characters>
 								</object>
 								<object class="NSColor" key="IBUINormalTitleColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4wMzkyMTU2ODYyNyAwLjM3NjQ3MDU4ODIgMC45OTYwNzg0MzE0AA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="85049764"/>
-								<object class="IBUIFontDescription" key="IBUIFontDescription">
-									<string key="name">HelveticaNeue-Light</string>
-									<string key="family">Helvetica Neue</string>
-									<int key="traits">0</int>
-									<double key="pointSize">19</double>
-								</object>
-								<object class="NSFont" key="IBUIFont">
-									<string key="NSName">HelveticaNeue-Medium</string>
-									<double key="NSSize">19</double>
-									<int key="NSfFlags">16</int>
-								</object>
+								<reference key="IBUIFontDescription" ref="643543888"/>
+								<reference key="IBUIFont" ref="14439097"/>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 480}</string>
