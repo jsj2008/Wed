@@ -44,7 +44,10 @@
 {
     [super viewDidLoad];
     
-    [self setNavigationBarLeftButton];
+//    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        [self setNavigationBarLeftButton];
+//    }
+    
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(plotMapAnnotations)]];
     _venuesArray = [NSArray arrayWithContentsOfFile:[PRAppDelegate venuesFilesPath]];
     [self plotMapAnnotations];
@@ -60,17 +63,19 @@
 {
     [super viewDidAppear:animated];
     [[LocalyticsSession shared] tagScreen:@"Venues Screen"];
-        self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBarHidden = NO;
     UIColor* barColor = [UIColor colorWithRed:255/255.0 green:38/255.0 blue:14/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.tintColor = barColor;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 -(void) setNavigationBarLeftButton
 {
     UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:CGRectMake(0, 0, 40, 40)];
-    [button setImage:[UIImage imageNamed:NAVIGATIONBARBACKBUTTON] forState:UIControlStateNormal];
+    UIImage* image = [UIImage imageNamed:NAVIGATIONBARBACKBUTTON];
+    [button setImage:image forState:UIControlStateNormal];
+    
     [button addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
 }

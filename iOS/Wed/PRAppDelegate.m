@@ -55,6 +55,7 @@
     [self downloadAndStoreEventsFile];
     [self downloadAndStoreFamilyFile];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 

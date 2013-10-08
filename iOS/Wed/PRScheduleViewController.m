@@ -34,7 +34,9 @@
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadLocalEventsFiles)];
-    [self setNavigationBarLeftButton];
+//    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        [self setNavigationBarLeftButton];
+//    }
     
     [self showCoachMarks];
 }
@@ -50,7 +52,7 @@
     self.navigationController.navigationBarHidden = NO;
     UIColor* barColor = [UIColor colorWithRed:212/255.0 green:76/255.0 blue:193/255.0 alpha:1.0];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageFromColor:barColor] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setTintColor:barColor];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [[LocalyticsSession shared] tagScreen:@"Events Screen"];
     [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
     
